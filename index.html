@@ -31,16 +31,19 @@
     <select id="labFilter" onchange="filterLabs()">
         <option value="">----Select----</option>
 <option value="User Guide" selected>User Guide</option>
+<option value="Scenario">Scenario</option>
 <option value="Lab 1">Lab 1</option>
 <option value="Lab 2">Lab 2</option>
 <option value="Lab 3">Lab 3</option>
 <option value="Lab 4">Lab 4</option>
+<option value="Lab 5">Lab 5</option>
 </select>
 
 <section class="lab-section active" data-lab="User Guide">
 <h2> User Guide for HTM251: Agile Project Management Fundamentals Labs</h2>
 <ol>
 <br>You've successfully found the labs for HTM251: Agile Project Management Fundamentals! So how do you use these? Follow these instructions! <br> <br>
+<li>Read the entire scenario! Bits of it will be on each lab page, but it's important to read all the details first.</li>
 <li>Using the dropdown above, select the lab you want to complete.</li>
 <li>As you work through the labs, fill out all blanks and open text fields. They do <strong>NOT</strong> save between sessions.</li>
 <li> Remember, if you have any questions - ask! That's what the instructors are here for!</li>
@@ -48,14 +51,13 @@
 </ol>
 </section>
 
-<section class="lab-section" data-lab="Lab 1">
-<h2>Lab 1: Sprint Planning - Set the Vision</h2>
+<section class="lab-section" data-lab="Scenario">
+<h2>Scenario Details</h2>
 <ol> 
-Throughout class, we'll use the following scenario for all of our labs. <em>(Don't worry - it's on every page!)</em>
-<br><br> <Strong>Project Title:</Strong> Brosnan-Jeter Prestige Healthcare Worldwide Application Development and Deployment
+<Strong>Project Title:</Strong> Brosnan-Jeter Prestige Healthcare Worldwide Application Development and Deployment
 <br><br> <strong>Description:</strong> An up-and-coming start-up led by two healthcare prodigies, Riley and Kevin, has secured funding to develop Brosnan-Jeter Prestige Healthcare Worldwide. It will serve as a mobile and desktop application that connects patients with their Primary Care Providers for virtual care, ranging from Physical Therapy and Diagnoses to Prescriptions and Testing. The Minimum Viable Product must be delivered in 6 weeks to meet a demo for a major hospital partner. Kevin and Riley and very strict on this 6 week demo – their future funding and business success depends on this. 
-<br> Kevin and Riley are results-driven entrepreneurs with a bold vision to modernize patient care through streamlined, intuitive technology. While Kevin focuses on strategic alignment and brand reputation, Riley is more focused on clinical credibility and practical healthcare impact. 
-<br><br> Riley and Kevin have outlined some of their most critical business goals which are listed below, <strong>in order of importance: </strong>
+<br><br> Kevin and Riley are results-driven entrepreneurs with a bold vision to modernize patient care through streamlined, intuitive technology. While Kevin focuses on strategic alignment and brand reputation, Riley is more focused on clinical credibility and practical healthcare impact. 
+<br><br> Outlined below are some of their most critical business goals, <strong>in order of importance: </strong>
     <br>&emsp; 1. Reduce in-clinic appointment load by 25% 
     <br>&emsp; 2. Enable secure, HIPAA-compliant messaging and video calls between patients and Primary Care Providers
     <br>&emsp; 3. Allow patients to view care plans, medications, and appointment schedules 
@@ -101,23 +103,66 @@ Throughout class, we'll use the following scenario for all of our labs. <em>(Don
             <td style="border:1px solid black">Internal Team Members</td>
             <td style="border:1px solid black">Balancing deliver with code quality, leads sprint planning and backlog management </td>
     </table>
-<br>Here are some of the Key Requested Features, sourced from all stakeholders:
+<br>Key Requested Features, sourced from all stakeholders, include:
     <br>&emsp; 1. Secure login and role-based access
     <br>&emsp; 2. Ability to view personal care plan and appointments 
     <br>&emsp; 3. Schedule or cancel an appointment with a PCP 
     <br>&emsp; 4. Send or receive secure messages between patient and provider 
     <br>&emsp; 5. Start, join, and end real-time video consults 
     <br>&emsp; 6. Push notifications for reminders 
-<br><br>Here are some of the Requirements and Constraints, sourced from all stakeholders: 
+<br><br>Requirements and Constraints, sourced from all stakeholders, include: 
     <br>&emsp; 1. Must meet HIPAA compliance standards 
     <br>&emsp; 2. Must function on iOS, Android, and Web 
     <br>&emsp; 3. Must be accessible for all users, specifically older users and vision-impaired users 
     <br>&emsp; 4. Must be demo ready in 6 weeks
-<br><br>Potential Challenges to think about: 
+<br><br>Potential Challenges include: 
     <br>&emsp; 1. Kevin and Riley have different priorities, namely vision vs. practicality, which may lead to mid-sprint changes 
     <br>&emsp; 2. Clinical advisors may request more features that the CPO is comfortable committing to 
     <br>&emsp; 3. There is only one Dev Team to work one sprint at a time 
     <br>&emsp; 4. Late stage compliance and accessibility concerns have the potential to delay the MVP if not addressed early or managed properly 
+</ol>
+</section>
+<section class="lab-section" data-lab="Lab 1">
+<h2> Lab 1: Sprint Planning Prep and Setting the Vision</h2>
+<ol>
+<em>//In this lab, you'll be classifying 3 stakeholders, defining the product vision, creating epics, creating user stories, and beginning a product backlog.</em>
+<br><br>Let's define the project first. Given the below <em>(or referring to the Scenario tab) complete all steps defined below.</em>
+<br>&emsp;<Strong>Project Title:</Strong> Brosnan-Jeter Prestige Healthcare Worldwide Application Development and Deployment
+<br>&emsp;<strong>Description:</strong> An up-and-coming start-up led by two healthcare prodigies, Riley and Kevin, has secured funding to develop Brosnan-Jeter Prestige Healthcare Worldwide. It will serve as a mobile and desktop application that connects patients with their Primary Care Providers for virtual care, ranging from Physical Therapy and Diagnoses to Prescriptions and Testing. The Minimum Viable Product must be delivered in 6 weeks to meet a demo for a major hospital partner. Kevin and Riley and very strict on this 6 week demo – their future funding and business success depends on this. 
+<br><br>&emsp; Kevin and Riley are results-driven entrepreneurs with a bold vision to modernize patient care through streamlined, intuitive technology. While Kevin focuses on strategic alignment and brand reputation, Riley is more focused on clinical credibility and practical healthcare impact. 
+<br><br>&emsp;Outlined below are some of their most critical business goals, <strong>in order of importance: </strong>
+    <br>&emsp;&emsp; 1. Reduce in-clinic appointment load by 25% 
+    <br>&emsp;&emsp; 2. Enable secure, HIPAA-compliant messaging and video calls between patients and Primary Care Providers
+    <br>&emsp;&emsp; 3. Allow patients to view care plans, medications, and appointment schedules 
+    <br>&emsp;&emsp;4. Deliver a seamless user experience across all devices
+<li>Classify 3 (three) stakeholders - with at least one (1) not already identified by the scenario - on Power Interest Grid below
+    <br>
+    <style>
+        DIV.table 
+        {
+            display:table;
+        }
+        FORM.tr, DIV.tr
+        {
+            display:table-row;
+        }
+        SPAN.td
+        {
+            display:table-cell;
+        }
+        </style>
+        <div class="table">
+            <form class="tr" method="post" action="blah.html">
+                <span class="td"><input type="text"/></span>
+                <span class="td"><input type="text"/></span>
+            </form>
+            <div class="tr">
+                <span class="td">(cell data)</span>
+                <span class="td">(cell data)</span>
+            </div>
+            ...
+        </div>
+</li>
 </ol>
 </section>
 <script>
