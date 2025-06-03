@@ -135,34 +135,150 @@
     <br>&emsp;&emsp; 2. Enable secure, HIPAA-compliant messaging and video calls between patients and Primary Care Providers
     <br>&emsp;&emsp; 3. Allow patients to view care plans, medications, and appointment schedules 
     <br>&emsp;&emsp;4. Deliver a seamless user experience across all devices
-<li>Classify 3 (three) stakeholders - with at least one (1) not already identified by the scenario - on Power Interest Grid below
+<br><br><li>Classify 3 (three) stakeholders – with at least one (1) not already identified by the scenario – on the Power-Interest Grid below:
+  <br>
+  <style>
+    .table {
+      display: table;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    .tr {
+      display: table-row;
+    }
+    .td, .th {
+      display: table-cell;
+      border: 1px solid #ccc;
+      padding: 8px;
+    }
+    .th {
+      font-weight: bold;
+      background-color: #f0f0f0;
+    }
+  </style>
+
+  <form method="post" action="blah.html">
+    <div class="table">
+      <div class="tr">
+        <span class="th">Stakeholder Name</span>
+        <span class="th">Power Level</span>
+        <span class="th">Interest Level</span>
+        <span class="th">Quadrant Classification</span>
+      </div>
+      <div class="tr">
+        <span class="td"><input type="text" name="stakeholder1_name" required></span>
+        <span class="td">
+          <select name="stakeholder1_power" required>
+            <option value="">Select</option>
+            <option value="High">High</option>
+            <option value="Low">Low</option>
+          </select>
+        </span>
+        <span class="td">
+          <select name="stakeholder1_interest" required>
+            <option value="">Select</option>
+            <option value="High">High</option>
+            <option value="Low">Low</option>
+          </select>
+        </span>
+        <span class="td">
+          <select name="stakeholder1_quadrant" required>
+            <option value="">Select</option>
+            <option value="Manage Closely">Manage Closely</option>
+            <option value="Keep Satisfied">Keep Satisfied</option>
+            <option value="Keep Informed">Keep Informed</option>
+            <option value="Monitor">Monitor</option>
+          </select>
+        </span>
+      </div>
+      <div class="tr">
+        <span class="td"><input type="text" name="stakeholder2_name" required></span>
+        <span class="td">
+          <select name="stakeholder2_power" required>
+            <option value="">Select</option>
+            <option value="High">High</option>
+            <option value="Low">Low</option>
+          </select>
+        </span>
+        <span class="td">
+          <select name="stakeholder2_interest" required>
+            <option value="">Select</option>
+            <option value="High">High</option>
+            <option value="Low">Low</option>
+          </select>
+        </span>
+        <span class="td">
+          <select name="stakeholder2_quadrant" required>
+            <option value="">Select</option>
+            <option value="Manage Closely">Manage Closely</option>
+            <option value="Keep Satisfied">Keep Satisfied</option>
+            <option value="Keep Informed">Keep Informed</option>
+            <option value="Monitor">Monitor</option>
+          </select>
+        </span>
+      </div>
+      <div class="tr">
+        <span class="td"><input type="text" name="stakeholder3_name" required></span>
+        <span class="td">
+          <select name="stakeholder3_power" required>
+            <option value="">Select</option>
+            <option value="High">High</option>
+            <option value="Low">Low</option>
+          </select>
+        </span>
+        <span class="td">
+          <select name="stakeholder3_interest" required>
+            <option value="">Select</option>
+            <option value="High">High</option>
+            <option value="Low">Low</option>
+          </select>
+        </span>
+        <span class="td">
+          <select name="stakeholder3_quadrant" required>
+            <option value="">Select</option>
+            <option value="Manage Closely">Manage Closely</option>
+            <option value="Keep Satisfied">Keep Satisfied</option>
+            <option value="Keep Informed">Keep Informed</option>
+            <option value="Monitor">Monitor</option>
+          </select>
+        </span>
+      </div>
+    </div>
     <br>
-    <style>
-        DIV.table 
-        {
-            display:table;
-        }
-        FORM.tr, DIV.tr
-        {
-            display:table-row;
-        }
-        SPAN.td
-        {
-            display:table-cell;
-        }
-        </style>
-        <div class="table">
-            <form class="tr" method="post" action="blah.html">
-                <span class="td"><input type="text"/></span>
-                <span class="td"><input type="text"/></span>
-            </form>
-            <div class="tr">
-                <span class="td">(cell data)</span>
-                <span class="td">(cell data)</span>
-            </div>
-            ...
-        </div>
+  </form>
 </li>
+<br><li>Write a vision statement that could be shared with stakeholders and serve as your guiding 'North Star' for your Agile team.
+    <br><br><label for="vision_statement"><strong>Vision Statement:</strong></label>
+    <button onclick="toggleTemplate()">Show/Hide Vision Statement Template</button>
+    <div id="visionTemplate" style="display:none; margin-top:10px; padding:10px; border-left:3px solid #007BFF; background-color:#f9f9f9;">
+    <p><strong>Vision Statement Template:</strong></p>
+    <p>
+      Our product aims to deliver <em>[primary value or benefit]</em><br>
+      For <em>[target user or customer]</em><br>
+      By providing <em>[key features or capabilities]</em><br>
+      Which will solve <em>[user problem or need]</em><br>
+      So that <em>[desired impact or outcome]</em>.
+    </p>
+  </div><br>
+  <textarea id="vision_statement" name="vision_statement" rows="6" cols="80" placeholder="Type your vision statement here..." required></textarea>
+</li>
+</div>
+<br><li>
+  After classifying our stakeholders and defining the project vision, we need to recommend our project management approach! We know that Agile is needed, but which style of Agile would work best?
+  <br>&emsp;<em>Use a search engine (i.e. Google), lecture, and your experience to decide the best methodology and define why in a few sentences.</em>
+  <br><br>
+  <label for="agile_methodology"><strong>Select Agile Methodology:</strong></label>
+  <select id="agile_methodology" name="agile_methodology" required>
+    <option value="">-- Please choose an option --</option>
+    <option value="Scrum">Scrum</option>
+    <option value="Kanban">Kanban</option>
+    <option value="Extreme Programming (XP)">Extreme Programming (XP)</option>
+    <option value="Agile Hybrid">Agile Hybrid</option>
+  </select>
+  <br>
+  <textarea id="agile_justification" name="agile_justification" rows="5" cols="80" placeholder="Why is this Agile methodology the best fit? Explain your reasoning in 2–4 sentences..." required></textarea>
+</li>
+
 </ol>
 </section>
 <script>
@@ -186,6 +302,10 @@ function copyToClipboard(button) {
         setTimeout(() => { button.textContent = 'Copy'; }, 2000);
     });
 }
+function toggleTemplate() {
+    var template = document.getElementById('visionTemplate');
+    template.style.display = (template.style.display === 'none') ? 'block' : 'none';
+  }
 </script>
 <footer class="footer">
     © 2025 Department of Veterans Affairs. All rights reserved.
