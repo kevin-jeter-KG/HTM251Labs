@@ -135,7 +135,16 @@
     <br>&emsp;&emsp; 3. Allow patients to view care plans, medications, and appointment schedules 
     <br>&emsp;&emsp;4. Deliver a seamless user experience across all devices
 <br><br><li>Classify 3 (three) stakeholders – with at least one (1) not already identified by the scenario – on the Power-Interest Grid below. 
-    <br>After you classify, identify the method of communication (i.e. call, email, etc.) and how often you intend to communicate with the stakeholder.
+    <br>After you classify, identify the method of communication (i.e. call, email, etc.) and how often you intend to communicate with the stakeholder.<button onclick="toggleVisibility('quadrantDefinition')">Show/Hide Quadrant Definitions</button>
+    <div id="quadrantDefinition" style="display:none; margin-top:10px; padding:10px; border-left:3px solid #007BFF; background-color:#f9f9f9;">
+    <p><strong>Quadrant Definitions:</strong></p>
+    <p>
+      <strong>Manage Closely</strong> – keep them engaged and involved in decision-making<br>
+      <strong>Keep Satisfied</strong> – provide enough info to maintain goodwill without overwhelming them.<br>
+      <strong>Keep Informed</strong> – provide regular updates; they can be helpful allies.<br>
+      <strong>Monitor</strong> – minimal effort unless their status changes.
+    </p>
+  </div><br>
   <br>
   <style>
     .table {
@@ -253,7 +262,7 @@
 </li>
 <br><li>Write a vision statement that could be shared with stakeholders and serve as your guiding 'North Star' for your Agile team.
     <br><br><label for="vision_statement"><strong>Vision Statement:</strong></label>
-    <button onclick="toggleTemplate()">Show/Hide Vision Statement Template</button>
+    <button onclick="toggleVisibility('visionTemplate')">Show/Hide Vision Statement Template</button>
     <div id="visionTemplate" style="display:none; margin-top:10px; padding:10px; border-left:3px solid #007BFF; background-color:#f9f9f9;">
     <p><strong>Vision Statement Template:</strong></p>
     <p>
@@ -313,10 +322,13 @@ function copyToClipboard(button) {
         setTimeout(() => { button.textContent = 'Copy'; }, 2000);
     });
 }
-function toggleTemplate() {
-    var template = document.getElementById('visionTemplate');
-    template.style.display = (template.style.display === 'none') ? 'block' : 'none';
-  }
+
+function toggleVisibility(id) {
+    var element = document.getElementById(id);
+    if (element) {
+        element.style.display = (element.style.display === 'none' || element.style.display === '') ? 'block' : 'none';
+    }
+}
 </script>
 <footer class="footer">
     © 2025 Department of Veterans Affairs. All rights reserved.
