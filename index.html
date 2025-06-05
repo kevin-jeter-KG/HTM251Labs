@@ -275,7 +275,7 @@
       So that <em>[desired impact or outcome]</em>.
     </p>
   </div><br>
-  <textarea id="vision_statement" name="vision_statement" rows="6" cols="80" placeholder="Type your vision statement here..." required></textarea>
+  <textarea id="vision_statement" name="vision_statement" rows="6" cols="120" placeholder="Type your vision statement here..." required></textarea>
 </li>
 </div>
 <br><li>
@@ -292,15 +292,199 @@
     <option value="Agile Hybrid">Agile Hybrid</option>
   </select>
   <br>
-  <textarea id="agile_justification" name="agile_justification" rows="5" cols="80" placeholder="Why is this methodology the best fit? Explain your reasoning in 2–4 sentences..." required></textarea>
+  <textarea id="agile_justification" name="agile_justification" rows="5" cols="120" placeholder="Why is this methodology the best fit? Explain your reasoning in 2–4 sentences..." required></textarea>
 </li>
 <br><br><strong>Lab 1 Complete!</strong>
 </ol>
 </section>
+
+
 <section class="lab-section" data-lab="Lab 2">
 <h2> Lab 2: Shaping our Sprints and Tracking Progress</h2>
 <ol>
+<em>//In this lab, you'll be creating Epics, writing User Stories, creating a Product Backlog, and prioritizing work items.</em>
+<br><br><Strong>Project Title:</Strong> Brosnan-Jeter Prestige Healthcare Worldwide Application Development and Deployment
+<br><strong>Description:</strong> An up-and-coming start-up led by two healthcare prodigies, Riley and Kevin, has secured funding to develop Brosnan-Jeter Prestige Healthcare Worldwide. It will serve as a mobile and desktop application that connects patients with their Primary Care Providers for virtual care, ranging from Physical Therapy and Diagnoses to Prescriptions and Testing. The Minimum Viable Product must be delivered in 6 weeks to meet a demo for a major hospital partner. Kevin and Riley and very strict on this 6 week demo – their future funding and business success depends on this. 
+<br><br>Kevin and Riley are results-driven entrepreneurs with a bold vision to modernize patient care through streamlined, intuitive technology. While Kevin focuses on strategic alignment and brand reputation, Riley is more focused on clinical credibility and practical healthcare impact. 
+<br><br>Outlined below are some of their most critical business goals, <strong>in order of importance: </strong>
+    <br>&emsp;&emsp; 1. Reduce in-clinic appointment load by 25% 
+    <br>&emsp;&emsp; 2. Enable secure, HIPAA-compliant messaging and video calls between patients and Primary Care Providers
+    <br>&emsp;&emsp; 3. Allow patients to view care plans, medications, and appointment schedules 
+    <br>&emsp;&emsp; 4. Deliver a seamless user experience across all devices
+<br><br>
+<li>Based on the goals, stakeholder needs, and requested features, identify 3 Epics that represent the major feature groups or outcomes for the MVP. <button onclick="toggleVisibility('createEpics')">Show/Hide Creating Epics Help</button>
+    <div id="createEpics" style="display:none; margin-top:10px; padding:10px; border-left:3px solid #007BFF; background-color:#f9f9f9;">
+    <p><strong>Creating Epics:</strong></p>
+    <p>
+      1. An Epic should be broad enough to include 3–7 user stories, but not so vague it loses focus.<br>
+      2. If you find a <strong>cluster of related user stories</strong>, group them under a single Epic. Think of an Epic as a container that makes backlog management more manageable and thematic.<br>
+      &emsp; <em>If several stories start with “As a patient, I want to…” related to communication, they likely belong to an Epic about messaging or interaction.</em><br>
+      3. It's ok to start with User Stories first and then come back to catergorize you User Stories into Epics.  Agile isn't prescriptive - it's what works best for <strong>YOU</strong>.
+    </p>
+  </div>
+<br>
+<form method="post" action="blah.html">
+    <div class="table">
+      <div class="tr">
+        <span class="th">Epic Title</span>
+        <span class="th">Description</span>
+        <span class="th">Primary Stakeholders Impacted</span>
+      </div>
+      <div class="tr">
+        <span class="td">Virtual Consultations</span>
+        <span class="td">Enable secure, HIPAA-compliant real-time video calls between patients and PCPs</span>
+        <span class="td">Riley Brosnan, Dr. Patel, Daniel Kwon</span>
+      </div>
+      <div class="tr">
+        <span class="td"><textarea id="Epic Title" name="Epic Title" rows="1" cols="30" placeholder="" required></textarea></span>
+        <span class="td"><textarea id="Description" name="Description" rows="1" cols="80" placeholder="" required></textarea></span>
+        <span class="td"><textarea id="Primary Stakeholders Impacted" name="Primary Stakeholders Impacted" rows="1" cols="30" placeholder="" required></textarea></span>
+      </div>
+      <div class="tr">
+        <span class="td"><textarea id="Epic Title" name="Epic Title" rows="1" cols="30" placeholder="" required></textarea></span>
+        <span class="td"><textarea id="Description" name="Description" rows="1" cols="80" placeholder="" required></textarea></span>
+        <span class="td"><textarea id="Primary Stakeholders Impacted" name="Primary Stakeholders Impacted" rows="1" cols="30" placeholder="" required></textarea></span>
+      </div>
+      <div class="tr">
+        <span class="td"><textarea id="Epic Title" name="Epic Title" rows="1" cols="30" placeholder="" required></textarea></span>
+        <span class="td"><textarea id="Description" name="Description" rows="1" cols="80" placeholder="" required></textarea></span>
+        <span class="td"><textarea id="Primary Stakeholders Impacted" name="Primary Stakeholders Impacted" rows="1" cols="30" placeholder="" required></textarea></span>
+      </div>
+    </div>
+</form>
+</li><br>
+<li>For the Epics you created, write 4 User Stories. Ensure your stories are meeting the <strong>INVEST</strong> criteria! <button onclick="toggleVisibility('createUserStories')">Show/Hide Creating User Stories Help</button>
+    <div id="createUserStories" style="display:none; margin-top:10px; padding:10px; border-left:3px solid #007BFF; background-color:#f9f9f9;">
+    <p><strong>Creating User Stories:</strong></p>
+    <p>
+      <em>"As a <strong>[user type]</strong>, I want to <strong>[action or goal]</strong> so that <strong>[benefit or reason]</strong>"<br><br></em>
+      Hints for writing: <br>
+      &emsp; 1. Avoid generic phrases like "As a user." Be specific as to which user (e.g. <em>patient, provider, admin, etc.</em>)<br>
+      &emsp; 2. Include the Why! Instead of saying "so that I can use the app," say "so that I can follow up on my treatment plan"<br>
+      &emsp; 3. Keep it small. Each story should be able to be completed in 1 sprint. <br><br>
+      Remember the INVEST criteria: <br> 
+      &emsp; 1. <strong>Independent</strong>:  If stories rely on each other, consider combining them or re-sequencing<br>
+      &emsp; 2. <strong>Negotiable</strong>:  If the story is overly detailed with technical specs or UI mockups, it’s not negotiable<br>
+      &emsp; 3. <strong>Valuable</strong>:  Ask “Who benefits from this?” and “How does this help the user or business?”<br>
+      &emsp; 4. <strong>Estimable</strong>:  You must be able to roughly estimate the effort or complexity of the story.<br>
+      &emsp; 5. <strong>Small</strong>:  Small stories reduce risk, make progress visible, and give fast feedback.<br>
+      &emsp; 6. <strong>Testable</strong>:  Vague stories like “Improve performance” or “Make it look better” are hard to test.<br>
+    </p>
+  </div>
+<form method="post" action="blah.html">
+    <div class="table">
+      <div class="tr">
+        <span class="th">Epic Title</span>
+        <span class="th">User Story</span>
+        <span class="th">Acceptance Criteria</span>
+      </div>
+      <div class="tr">
+        <span class="td">Virtual Consultations</span>
+        <span class="td">US001: As a patient, I want to join a video call with my doctor via my computer, so that I can receive care from home.</span>
+        <span class="td">Patient can initiate video call from appointment page 5 minutes prior to scheduled time; Provider is notified when patient has joined, Encrypted call</span>
+      </div>
+      <div class="tr">
+        <span class="td"><textarea id="Epic Title" name="Epic Title" rows="1" cols="30" placeholder="" required></textarea></span>
+        <span class="td"><textarea id="User Story" name="User Story" rows="1" cols="90" placeholder="US002" required></textarea></span>
+        <span class="td"><textarea id="Acceptance Criteria" name="Acceptance Criteria" rows="1" cols="90" placeholder="" required></textarea></span>
+      </div>
+      <div class="tr">
+        <span class="td"><textarea id="Epic Title" name="Epic Title" rows="1" cols="30" placeholder="" required></textarea></span>
+        <span class="td"><textarea id="User Story" name="User Story" rows="1" cols="90" placeholder="US003" required></textarea></span>
+        <span class="td"><textarea id="Acceptance Criteria" name="Acceptance Criteria" rows="1" cols="90" placeholder="" required></textarea></span>
+      </div>
+      <div class="tr">
+        <span class="td"><textarea id="Epic Title" name="Epic Title" rows="1" cols="30" placeholder="" required></textarea></span>
+        <span class="td"><textarea id="User Story" name="User Story" rows="1" cols="90" placeholder="US004" required></textarea></span>
+        <span class="td"><textarea id="Acceptance Criteria" name="Acceptance Criteria" rows="1" cols="90" placeholder="" required></textarea></span>
+      </div>
+      <div class="tr">
+        <span class="td"><textarea id="Epic Title" name="Epic Title" rows="1" cols="30" placeholder="" required></textarea></span>
+        <span class="td"><textarea id="User Story" name="User Story" rows="1" cols="90" placeholder="US005" required></textarea></span>
+        <span class="td"><textarea id="Acceptance Criteria" name="Acceptance Criteria" rows="1" cols="90" placeholder="" required></textarea></span>
+      </div>
+    </div>
+</form>
+</li><br>
+<li>Now we're ready to prioritize! Create a backlog using the user stories above - breaking them down further as needed. <button onclick="toggleVisibility('createBacklog')">Show/Hide Creating User Stories Help</button>
+    <div id="createBacklog" style="display:none; margin-top:10px; padding:10px; border-left:3px solid #007BFF; background-color:#f9f9f9;">
+    <p><strong>The Backlog:</strong></p>
+    <p>
+      Hints for Backlog Creation and Prioritization: <br>
+      &emsp; 1. Start with the MVP in mind. <br>
+      &emsp; &emsp; <em>What must be done to be ready for the 6-week demo?</em> <br><br>
+      &emsp; 2. Your backlog should include more than just user stories. <br>
+      &emsp; &emsp; <em>Make sure to include technical tasks, compliance tasks, accessibility reviews, etc. Just make sure it's trackable!</em> <br><br>
+      &emsp; 3. Use relative sizing and don't aim for perfection. <br>
+      &emsp; &emsp; <em>Estimation helps with sprint planning and capacity planning, not forecasting down to the hour.</em>
+    </p>
+  </div>
+<form method="post" action="blah.html">
+    <div class="table">
+      <div class="tr">
+        <span class="th">ID</span>
+        <span class="th">Requirement</span>
+        <span class="th">User Story</span>
+        <span class="th">Priority (H/M/L)</span>
+        <span class="th">Effort (T-Shirt)</span>
+        <span class="th">Notes</span>
+      </div>
+      <div class="tr">
+        <span class="td">001</span>
+        <span class="td">Encryption protocols meets HIPAA Compliance</span>
+        <span class="td">US001</span>
+        <span class="td">H</span>
+        <span class="td">M</span>
+        <span class="td">See HIPAA Virtual call standards</span>
+      </div>
+      <div class="tr">
+        <span class="td">002</span>
+        <span class="td">Join button becomes selectable 5-minutes prior to start time</span>
+        <span class="td">US001</span>
+        <span class="td">H</span>
+        <span class="td">XS</span>
+        <span class="td">N/A</span>
+      </div>
+      <div class="tr">
+        <span class="td"><textarea id="Epic Title" name="Epic Title" rows="1" cols="10" placeholder="" required></textarea></span>
+        <span class="td"><textarea id="Requirement" name="Requirement" rows="1" cols="60" placeholder="" required></textarea></span>
+        <span class="td"><textarea id="User Story" name="User Story" rows="1" cols="20" placeholder="" required></textarea></span>
+        <span class="td"><textarea id="Priority (H/M/L)" name="Priority (H/M/L)" rows="1" cols="20" placeholder="" required></textarea></span>
+        <span class="td"><textarea id="Effort (T-Shirt)" name="Effort (T-Shirt)" rows="1" cols="20" placeholder="" required></textarea></span>
+        <span class="td"><textarea id="Notes" name="Notes" rows="1" cols="60" placeholder="" required></textarea></span>
+      </div>
+      <div class="tr">
+        <span class="td"><textarea id="Epic Title" name="Epic Title" rows="1" cols="10" placeholder="" required></textarea></span>
+        <span class="td"><textarea id="Requirement" name="Requirement" rows="1" cols="60" placeholder="" required></textarea></span>
+        <span class="td"><textarea id="User Story" name="User Story" rows="1" cols="20" placeholder="" required></textarea></span>
+        <span class="td"><textarea id="Priority (H/M/L)" name="Priority (H/M/L)" rows="1" cols="20" placeholder="" required></textarea></span>
+        <span class="td"><textarea id="Effort (T-Shirt)" name="Effort (T-Shirt)" rows="1" cols="20" placeholder="" required></textarea></span>
+        <span class="td"><textarea id="Notes" name="Notes" rows="1" cols="60" placeholder="" required></textarea></span>
+      </div>
+      <div class="tr">
+        <span class="td"><textarea id="Epic Title" name="Epic Title" rows="1" cols="10" placeholder="" required></textarea></span>
+        <span class="td"><textarea id="Requirement" name="Requirement" rows="1" cols="60" placeholder="" required></textarea></span>
+        <span class="td"><textarea id="User Story" name="User Story" rows="1" cols="20" placeholder="" required></textarea></span>
+        <span class="td"><textarea id="Priority (H/M/L)" name="Priority (H/M/L)" rows="1" cols="20" placeholder="" required></textarea></span>
+        <span class="td"><textarea id="Effort (T-Shirt)" name="Effort (T-Shirt)" rows="1" cols="20" placeholder="" required></textarea></span>
+        <span class="td"><textarea id="Notes" name="Notes" rows="1" cols="60" placeholder="" required></textarea></span>
+      </div>
+      <div class="tr">
+        <span class="td"><textarea id="Epic Title" name="Epic Title" rows="1" cols="10" placeholder="" required></textarea></span>
+        <span class="td"><textarea id="Requirement" name="Requirement" rows="1" cols="60" placeholder="" required></textarea></span>
+        <span class="td"><textarea id="User Story" name="User Story" rows="1" cols="20" placeholder="" required></textarea></span>
+        <span class="td"><textarea id="Priority (H/M/L)" name="Priority (H/M/L)" rows="1" cols="20" placeholder="" required></textarea></span>
+        <span class="td"><textarea id="Effort (T-Shirt)" name="Effort (T-Shirt)" rows="1" cols="20" placeholder="" required></textarea></span>
+        <span class="td"><textarea id="Notes" name="Notes" rows="1" cols="60" placeholder="" required></textarea></span>
+      </div>
+    </div>
+</form>
+</li><br>
+<li>Nice work - now let's do some reflection! What was the most challenging part of this lab? Use at minimum 2-3 sentences.
+  <br>
+  <textarea id="Lab 2 Debrief" name="Lab 2 Debrief" rows="5" cols="120" placeholder="What was the most difficult part of creating Epics, User Stories, and the Product Backlog?" required></textarea>
 
+</li>
 </ol>
 </section>
 <script>
