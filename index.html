@@ -312,48 +312,7 @@
     <br>&emsp;&emsp; 3. Allow patients to view care plans, medications, and appointment schedules 
     <br>&emsp;&emsp; 4. Deliver a seamless user experience across all devices
 <br><br>
-<table> 
-    <table style="border:1px solid black;border-collapse:collapse">
-        <tr>
-            <th style="background-color:black;color: white;">Stakeholder Name</th>
-            <th style="background-color:black;color: white;">Role</th>
-            <th style="background-color:black;color: white;">Interests / Priorities</th>
-        </tr>
-        <tr>
-            <td style="border:1px solid black">Kevin Jeter</td>
-            <td style="border:1px solid black">Co-Founder; CEO</td>
-            <td style="border:1px solid black">High level results: timeline, demo success, brand perception and investor confidence </td>
-        </tr>
-        <tr>
-            <td style="border:1px solid black">Riley Brosnan</td>
-            <td style="border:1px solid black">Co-Founder; Chief Clinical Officer</td>
-            <td style="border:1px solid black">Patient outcomes, clinical workflow integration, real-world medical credibility</td>
-        </tr>
-        <tr>
-            <td style="border:1px solid black">Dr. Priya Patel</td>
-            <td style="border:1px solid black">Primary Care Provider; Clinical Advisor </td>
-            <td style="border:1px solid black">Ease of use for providers, real-time patient access, stable video conferencing</td>
-        </tr>
-        <tr>
-            <td style="border:1px solid black">Janelle Ross</td>
-            <td style="border:1px solid black">Chief Product Officer (CPO)</td>
-            <td style="border:1px solid black">Scope control, velocity, feature prioritization – must hit MVP definition </td>
-        </tr>
-        <tr>
-            <td style="border:1px solid black">Daniel Kwon</td>
-            <td style="border:1px solid black">Compliance and Risk Management Lead</td>
-            <td style="border:1px solid black">HIPAA, encryption, secure access control – nothing ships without his compliance sign-off </td>
-        </tr>
-        <tr>
-            <td style="border:1px solid black">Lisa Thompson</td>
-            <td style="border:1px solid black">Patient Advocate</td>
-            <td style="border:1px solid black">Represents users – needs accessibility, plain language, ease of use </td>
-        </tr>
-            <td style="border:1px solid black">Dev Team (YOU!)</td>
-            <td style="border:1px solid black">Internal Team Members</td>
-            <td style="border:1px solid black">Balancing deliver with code quality, leads sprint planning and backlog management </td>
-    </table>
-</table>
+ 
 <br><br>
 <li>Based on the goals, stakeholder needs, and requested features, identify 3 Epics that represent the major feature groups or outcomes for the MVP. <button onclick="toggleVisibility('createEpics')">Show/Hide Creating Epics Help</button>
     <div id="createEpics" style="display:none; margin-top:10px; padding:10px; border-left:3px solid #007BFF; background-color:#f9f9f9;">
@@ -531,6 +490,112 @@
 <strong>Lab 2 Complete! Don't forget to print the page to save your answers! </strong>
 </ol>
 </section>
+
+
+<section class="lab-section" data-lab="Lab 3">
+<h2> Lab 3: Executing in the Sprint</h2>
+<ol>
+<em>//In this lab, you’ll explore Sprint Planning, observe a real Daily Stand-Up, identify team blockers, and practice how to respond to change mid-sprint</em>
+<br><br>You're part of the development team building the MVP for Brosnan-Jeter Prestige Healthcare. Sprint 1 has kicked off. You've committed to 5 features that focus on login, video consults, and HIPAA compliance.
+<br>Kevin and Riley are enthusiastic but demanding. They care about results and want constant visibility. Your team must balance speed with smart decision-making during execution.
+<br><br>Based on the requirements chosen for the first sprint, complete all activities.
+<br>
+<form method="post" action="blah.html">
+    <div class="table">
+      <div class="tr">
+        <span class="th">ID</span>
+        <span class="th">Requirement</span>
+        <span class="th">User Story</span>
+        <span class="th">Priority (H/M/L)</span>
+        <span class="th">Story Points</span>
+        <span class="th">Iteration</span>
+        <span class="th">Notes</span>
+      </div>
+      <div class="tr">
+        <span class="td">001</span>
+        <span class="td">Encryption protocols meet HIPAA Compliance</span>
+        <span class="td">US001</span>
+        <span class="td">H</span>
+        <span class="td">3</span>
+        <span class="td">001</span>
+        <span class="td">See HIPAA Virtual call standards</span>
+      </div>
+      <div class="tr">
+        <span class="td">002</span>
+        <span class="td">Join button becomes selectable 5-minutes prior to start time</span>
+        <span class="td">US001</span>
+        <span class="td">H</span>
+        <span class="td">1</span>
+        <span class="td">001</span>
+        <span class="td">Front-end and time check logic</span>
+      </div>
+      <div class="tr">
+        <span class="td">003</span>
+        <span class="td">Notification triggers to provider when patient joins call</span>
+        <span class="td">US001</span>
+        <span class="td">H</span>
+        <span class="td">3</span>
+        <span class="td">001</span>
+        <span class="td">Push notification or in-app alert</span>
+      </div>
+      <div class="tr">
+        <span class="td">004</span>
+        <span class="td">Patient can view care plan details from dashboard</span>
+        <span class="td">US003</span>
+        <span class="td">H</span>
+        <span class="td">1</span>
+        <span class="td">001</span>
+        <span class="td">N/A</span>
+      </div>
+      <div class="tr">
+        <span class="td">005</span>
+        <span class="td">Patient login and role-based access control (patient, provider)</span>
+        <span class="td">US001</span>
+        <span class="td">H</span>
+        <span class="td">5</span>
+        <span class="td">004</span>
+        <span class="td">Shared auth with admin roles</span>
+      </div>
+    </div>
+</form>
+<br><br>
+<li>Plan before we build. 
+  <br>&emsp; a. Why do Agile Teams hold a Sprint Planning meeting?
+  <br><textarea id="Lab 3 - Sprint Planning" name="Lab 3 - Sprint Planning" rows="5" cols="120" placeholder="Write 1-2 sentences explaining the purpose and goal of Sprint Planning" required></textarea>
+  <br>&emsp; b. Given the list of sprint items identified for work, whcih carries the most risk? Why?
+  <br><textarea id="Lab 3 - Sprint Planning" name="Lab 3 - Sprint Planning" rows="5" cols="120" placeholder="Which sprint item carries the most risk? Why?" required></textarea>
+</li>
+<li>Who’s not aligned in the Daily Stand-Up?
+  <br><br>You’re on Day 4 of Sprint 1. During today’s stand-up, each team member gives a quick update.
+  <br><br><strong>Front-End Developer:</strong>
+  <br>“Yesterday I finished the Join Video Call button and tested it. Today I’ll start the care plan dashboard. I’m still waiting on the API from the back-end team but will work around it for now.”
+  <br><br><strong>Back-End Developer:</strong>
+  <br>“Still working on the login system. I was also exploring facial recognition just for fun. It’s not in this sprint, but it could impress leadership. I’ll keep playing with it today.”
+  <br><br><strong>QA Tester:</strong>
+  <br>“Test cases are ready for login and video consults. Once the encryption review is done and I get server access, I’ll begin execution.”
+  <br><br>
+
+  <strong>a. Who is <em>not</em> following the expectations of a Daily Stand-Up?</strong><br>
+  &emsp;<input type="radio" name="q1" value="Front-End Developer"> Front-End Developer<br>
+  &emsp;<input type="radio" name="q1" value="Back-End Developer" required> Back-End Developer<br>
+  &emsp;<input type="radio" name="q1" value="QA Tester"> QA Tester<br><br>
+
+  <strong>b. What are they doing that breaks Agile team norms? (Select all that apply)</strong><br>
+  &emsp;<input type="checkbox" name="q2" value="No blockers"> They didn’t report any blockers<br>
+  &emsp;<input type="checkbox" name="q2" value="Not in sprint"> They are working on something not in the sprint plan<br>
+  &emsp;<input type="checkbox" name="q2" value="Not sprint-focused"> They didn’t focus on sprint goals<br>
+  &emsp;<input type="checkbox" name="q2" value="Skipped yesterday"> They skipped reporting what they did yesterday<br><br>
+
+  <strong>c. Why is this behavior risky to the team’s success?</strong>
+  <br>&emsp;<textarea id="Lab 3 - Standup Risk" name="Lab 3 - Standup Risk" rows="5" cols="120" placeholder="In 3-4 sentences, explain why this is risky to our success." required></textarea>
+
+  <br><strong>d. If you were the Scrum Master, how would you respond?</strong>
+  <br>&emsp;<textarea id="Lab 3 - Scrum Master" name="Lab 3 - Scrum Master" rows="5" cols="120" placeholder="In 3-4 sentences, describe the best way to address this issue" required></textarea>
+
+</li>
+</ol>
+</section>
+<br><br>
 <script>
 function filterLabs() {
     var selected = document.getElementById("labFilter").value;
@@ -565,7 +630,6 @@ function toggleVisibility(id) {
 </footer>
 <script>
   window.addEventListener("beforeunload", function (e) {
-      // Modern browsers will ignore custom messages, but we return a value to trigger the confirmation dialog
       e.preventDefault();
       e.returnValue = "Are you sure you want to leave? Your answers will be lost.";
   });
