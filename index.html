@@ -563,5 +563,12 @@ function toggleVisibility(id) {
 <footer class="footer">
     © 2025 Department of Veterans Affairs. All rights reserved.
 </footer>
+<script>
+  window.addEventListener("beforeunload", function (e) {
+      // Modern browsers will ignore custom messages, but we return a value to trigger the confirmation dialog
+      e.preventDefault();
+      e.returnValue = "Are you sure you want to leave? Your answers will be lost.";
+  });
+</script>
 </body>
 </html>
