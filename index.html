@@ -906,7 +906,147 @@ document.addEventListener('change', function(e) {
 
 <br><br><strong>Lab 4 Complete! Don't forget to print the page to save your answers!</strong>
 </section>
-<br><br>
+<section class="lab-section" data-lab="Lab 5">
+<h2>Lab 5: Agile Roles and Scaling Collaboration</h2>
+<ol>
+  <em>// In this lab, you'll clarify Agile roles, address cross-team collaboration, and plan for scaling Agile practices.</em>
+  <br><br>
+
+  <li><strong>Agile Role Definitions:</strong> Clearly identify each Agile role and select its primary responsibility from the provided options.
+  <form>
+    <div class="table">
+      <div class="tr">
+        <span class="th">Role</span>
+        <span class="th">Primary Responsibility (select one)</span>
+      </div>
+      <div class="tr">
+        <span class="td">Product Owner (PO)</span>
+        <span class="td">
+          <select required>
+            <option value="">--Select--</option>
+            <option>Facilitates ceremonies</option>
+            <option>Owns product backlog and prioritizes work</option>
+            <option>Writes all code and tests</option>
+          </select>
+        </span>
+      </div>
+      <div class="tr">
+        <span class="td">Scrum Master</span>
+        <span class="td">
+          <select required>
+            <option value="">--Select--</option>
+            <option>Defines acceptance criteria</option>
+            <option>Facilitates ceremonies and removes blockers</option>
+            <option>Creates UI/UX mockups</option>
+          </select>
+        </span>
+      </div>
+      <div class="tr">
+        <span class="td">Development Team</span>
+        <span class="td">
+          <select required>
+            <option value="">--Select--</option>
+            <option>Leads sprint planning</option>
+            <option>Facilitates retrospectives</option>
+            <option>Delivers working software increments</option>
+          </select>
+        </span>
+      </div>
+    </div>
+  </form>
+  </li>
+
+  <br>
+
+  <li><strong>Cross-Team Collaboration:</strong> Select the best Agile practice from the options provided for handling each scenario when two teams (Front-End and Back-End & Compliance) collaborate.
+  <form>
+    <div class="table">
+      <div class="tr">
+        <span class="th">Scenario</span>
+        <span class="th">Recommended Agile Practice</span>
+      </div>
+      <div class="tr">
+        <span class="td">Front-End needs new API endpoints from Back-End</span>
+        <span class="td">
+          <select required>
+            <option value="">--Select--</option>
+            <option>Hold weekly sync meetings to align integration points</option>
+            <option>Wait until Front-End is done, then define APIs</option>
+            <option>Back-End develops APIs first without consulting Front-End</option>
+          </select>
+        </span>
+      </div>
+      <div class="tr">
+        <span class="td">Compliance issue requires both teams to redesign login</span>
+        <span class="td">
+          <select required>
+            <option value="">--Select--</option>
+            <option>Stop all work until compliance issue is resolved</option>
+            <option>Hold immediate joint sprint review and planning session</option>
+            <option>Back-End redesign alone and inform Front-End later</option>
+          </select>
+        </span>
+      </div>
+      <div class="tr">
+        <span class="td">Parallel stories from both teams need joint testing</span>
+        <span class="td">
+          <select required>
+            <option value="">--Select--</option>
+            <option>Teams independently test their work and integrate at the end</option>
+            <option>Schedule joint testing sessions mid-sprint</option>
+            <option>Only test at the final release</option>
+          </select>
+        </span>
+      </div>
+    </div>
+  </form>
+  </li>
+
+  <br>
+
+  <li><strong>Scaling Agile for MVP Release:</strong> Your team is preparing for the MVP launch in 4 weeks.
+    <br><br><strong>a. Select the <em>three</em> most critical Agile scaling practices your teams must implement before the MVP release:</strong>
+    <br>
+    <form>
+      <input type="checkbox" required> Hold coordinated sprint planning meetings across teams<br>
+      <input type="checkbox"> Reduce sprint length to one week<br>
+      <input type="checkbox"> Add more team members immediately<br>
+      <input type="checkbox"> Establish clear cross-team communication channels<br>
+      <input type="checkbox"> Conduct joint sprint reviews and retrospectives<br>
+    </form>
+  </li>
+
+  <br>
+
+  <li><strong>Reflection:</strong> Select the correct answer to each question based on Agile best practices.
+    <form>
+      <br><strong>a. Which Agile role is essential for managing the product backlog and stakeholder expectations?</strong><br>
+      <input type="radio" name="essential_role" required> Scrum Master<br>
+      <input type="radio" name="essential_role"> Product Owner<br>
+      <input type="radio" name="essential_role"> Development Team<br><br>
+
+      <strong>b. If the project scales to three Agile teams, which practice best supports coordination?</strong><br>
+      <input type="radio" name="coordination_practice" required> Daily Stand-ups within individual teams only<br>
+      <input type="radio" name="coordination_practice"> Cross-team Scrum-of-Scrums meetings<br>
+      <input type="radio" name="coordination_practice"> Eliminating sprint retrospectives<br><br>
+
+      <strong>c. Why is joint sprint planning crucial when scaling Agile teams?</strong><br>
+      <input type="radio" name="joint_planning" required> It ensures teams work independently without interaction<br>
+      <input type="radio" name="joint_planning"> It promotes transparency, identifies dependencies, and aligns goals<br>
+      <input type="radio" name="joint_planning"> It reduces the need for stakeholder involvement<br>
+    </form>
+  </li>
+
+  <br>
+
+  <li><strong>Open-ended Reflection:</strong> Briefly describe one challenge your team might face when scaling Agile and how you would address it.
+    <br><textarea rows="4" cols="100" placeholder="Describe the challenge and your solution..."></textarea>
+  </li>
+
+</ol>
+
+<strong>Lab 5 Complete! Remember to print your page to save your answers!</strong>
+</section>
 <script>
 function filterLabs() {
     var selected = document.getElementById("labFilter").value;
