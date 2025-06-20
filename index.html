@@ -608,6 +608,304 @@
 </ol>
 <strong>Lab 3 Complete! Don't forget to print the page to save your answers! </strong>
 </section>
+<section class="lab-section" data-lab="Lab 4">
+<h2> Lab 4: Sprint Review and Retrospective</h2>
+<ol>
+<em>//In this lab, you'll conduct a Sprint Review with stakeholders, manage conflicting feedback, facilitate a Sprint Retrospective, and analyze team performance metrics.</em>
+<br><br>Sprint 1 is complete! Your team has delivered 4 out of 5 committed features. The login system took longer than expected due to HIPAA compliance requirements, but video consultations, care plan viewing, and basic notifications are working. It's time to review progress with stakeholders and reflect on team performance.
+<br><br><Strong>Sprint 1 Results:</Strong>
+<br>&emsp;✅ Patient login and role-based access control - <em>COMPLETE</em>
+<br>&emsp;✅ Join video call 5 minutes before appointment - <em>COMPLETE</em>
+<br>&emsp;✅ Provider notification when patient joins - <em>COMPLETE</em>
+<br>&emsp;✅ Patient can view care plan from dashboard - <em>COMPLETE</em>
+<br>&emsp;❌ HIPAA encryption protocols - <em>IN PROGRESS (80% complete)</em>
+<br><br>The Sprint Review meeting is scheduled with all key stakeholders. You need to present the work, gather feedback, and plan next steps.
+<br><br>
+
+<li>Sprint Review Preparation: You're presenting to Kevin (CEO), Riley (CCO), Dr. Patel (Clinical Advisor), and Daniel Kwon (Compliance Lead). Each has different priorities and will react differently to your progress. <button onclick="toggleVisibility('sprintReviewHelp')">Show/Hide Sprint Review Best Practices</button>
+    <div id="sprintReviewHelp" style="display:none; margin-top:10px; padding:10px; border-left:3px solid #007BFF; background-color:#f9f9f9;">
+    <p><strong>Sprint Review Best Practices:</strong></p>
+    <p>
+      1. <strong>Focus on working software</strong> - demonstrate actual functionality, not mockups<br>
+      2. <strong>Be transparent about incomplete work</strong> - explain what's done, what's not, and why<br>
+      3. <strong>Gather stakeholder feedback</strong> - this shapes the product backlog for future sprints<br>
+      4. <strong>Discuss market conditions and timeline</strong> - has anything changed that affects priorities?<br>
+      5. <strong>Update the Product Backlog</strong> - add, remove, or re-prioritize based on feedback
+    </p>
+  </div>
+  <br><strong>a. What will you demonstrate to stakeholders?</strong> (Select all that apply)<br>
+  &emsp;<input type="checkbox" name="demo_items" value="login_system"> Working login system with role-based access<br>
+  &emsp;<input type="checkbox" name="demo_items" value="video_join"> Video call join functionality<br>
+  &emsp;<input type="checkbox" name="demo_items" value="care_plan"> Care plan dashboard view<br>
+  &emsp;<input type="checkbox" name="demo_items" value="notifications"> Provider notification system<br>
+  &emsp;<input type="checkbox" name="demo_items" value="encryption_progress"> Progress on HIPAA encryption (even though incomplete)<br><br>
+
+  <strong>b. How will you address the incomplete HIPAA encryption work with Daniel Kwon?</strong><br>
+  &emsp;<textarea id="hipaa_explanation" name="hipaa_explanation" rows="4" cols="120" placeholder="How will you explain the delay and provide confidence that compliance will be met?" required></textarea>
+</li><br>
+
+<li>Stakeholder Feedback Management: After your demo, stakeholders provide feedback. Some of it conflicts! <strong>Review each stakeholder's response and decide how to handle their feedback.</strong>
+  <br><br>
+  <form method="post" action="blah.html">
+    <div class="table">
+      <div class="tr">
+        <span class="th">Stakeholder</span>
+        <span class="th">Feedback</span>
+        <span class="th">Your Response</span>
+        <span class="th">Backlog Action</span>
+      </div>
+      <div class="tr">
+        <span class="td"><strong>Kevin (CEO)</strong></span>
+        <span class="td">"Great progress! Can we add a patient satisfaction survey after each call? It would look great in investor meetings."</span>
+        <span class="td">
+          <select name="kevin_response" required>
+            <option value="">Select Response</option>
+            <option value="add_immediately">Add to current sprint immediately</option>
+            <option value="add_backlog">Add to product backlog for future sprint</option>
+            <option value="discuss_impact">Discuss scope impact with Product Owner first</option>
+            <option value="decline_politely">Politely decline - not MVP critical</option>
+          </select>
+        </span>
+        <span class="td"><textarea name="kevin_backlog" rows="2" cols="40" placeholder="What backlog changes will you make?"></textarea></span>
+      </div>
+      <div class="tr">
+        <span class="td"><strong>Riley (CCO)</strong></span>
+        <span class="td">"The care plan view is too basic. Patients need to see medication interactions and contraindications for safety."</span>
+        <span class="td">
+          <select name="riley_response" required>
+            <option value="">Select Response</option>
+            <option value="add_immediately">Add to current sprint immediately</option>
+            <option value="add_backlog">Add to product backlog for future sprint</option>
+            <option value="discuss_impact">Discuss scope impact with Product Owner first</option>
+            <option value="decline_politely">Politely decline - not MVP critical</option>
+          </select>
+        </span>
+        <span class="td"><textarea name="riley_backlog" rows="2" cols="40" placeholder="What backlog changes will you make?"></textarea></span>
+      </div>
+      <div class="tr">
+        <span class="td"><strong>Dr. Patel</strong></span>
+        <span class="td">"Video quality is good, but I need to be able to share my screen to show test results. This is essential for effective consultations."</span>
+        <span class="td">
+          <select name="patel_response" required>
+            <option value="">Select Response</option>
+            <option value="add_immediately">Add to current sprint immediately</option>
+            <option value="add_backlog">Add to product backlog for future sprint</option>
+            <option value="discuss_impact">Discuss scope impact with Product Owner first</option>
+            <option value="decline_politely">Politely decline - not MVP critical</option>
+          </select>
+        </span>
+        <span class="td"><textarea name="patel_backlog" rows="2" cols="40" placeholder="What backlog changes will you make?"></textarea></span>
+      </div>
+      <div class="tr">
+        <span class="td"><strong>Daniel (Compliance)</strong></span>
+        <span class="td">"We cannot demo to the hospital partner without full HIPAA compliance. I need encryption completed before any external presentations."</span>
+        <span class="td">
+          <select name="daniel_response" required>
+            <option value="">Select Response</option>
+            <option value="commit_timeline">Commit to specific completion timeline</option>
+            <option value="prioritize_encryption">Re-prioritize sprint to focus on encryption</option>
+            <option value="request_extension">Request demo extension if needed</option>
+            <option value="parallel_development">Continue other work in parallel</option>
+          </select>
+        </span>
+        <span class="td"><textarea name="daniel_backlog" rows="2" cols="40" placeholder="What backlog changes will you make?"></textarea></span>
+      </div>
+    </div>
+  </form>
+</li><br>
+
+<li>Sprint Retrospective: Time to reflect on what went well and what can be improved. Your team uses the Start/Stop/Continue format. <button onclick="toggleVisibility('retroHelp')">Show/Hide Retrospective Guidelines</button>
+    <div id="retroHelp" style="display:none; margin-top:10px; padding:10px; border-left:3px solid #007BFF; background-color:#f9f9f9;">
+    <p><strong>Effective Retrospectives:</strong></p>
+    <p>
+      <strong>START</strong> - What should we begin doing that we're not doing now?<br>
+      <strong>STOP</strong> - What should we stop doing because it's not helping or is harmful?<br>
+      <strong>CONTINUE</strong> - What's working well that we should keep doing?<br><br>
+      Focus on processes, communication, and team dynamics - not individual blame.
+    </p>
+  </div>
+  <br>Based on Sprint 1 experiences (HIPAA delays, scope creep requests, good collaboration), complete the retrospective:
+  <br><br>
+  <form method="post" action="blah.html">
+    <div class="table">
+      <div class="tr">
+        <span class="th">Category</span>
+        <span class="th">Team Feedback</span>
+        <span class="th">Action Item</span>
+        <span class="th">Owner</span>
+      </div>
+      <div class="tr">
+        <span class="td"><strong>START</strong></span>
+        <span class="td">Daily check-ins with Daniel Kwon on compliance items to avoid last-minute surprises</span>
+        <span class="td"><textarea name="start_action1" rows="2" cols="50" placeholder="What specific action will you take?"></textarea></span>
+        <span class="td"><textarea name="start_owner1" rows="1" cols="20" placeholder="Who is responsible?"></textarea></span>
+      </div>
+      <div class="tr">
+        <span class="td"><strong>START</strong></span>
+        <span class="td"><textarea name="start_feedback2" rows="2" cols="60" placeholder="What else should the team START doing?" required></textarea></span>
+        <span class="td"><textarea name="start_action2" rows="2" cols="50" placeholder="What specific action will you take?"></textarea></span>
+        <span class="td"><textarea name="start_owner2" rows="1" cols="20" placeholder="Who is responsible?"></textarea></span>
+      </div>
+      <div class="tr">
+        <span class="td"><strong>STOP</strong></span>
+        <span class="td">Accepting new requirements mid-sprint without impact analysis</span>
+        <span class="td"><textarea name="stop_action1" rows="2" cols="50" placeholder="What specific action will you take?"></textarea></span>
+        <span class="td"><textarea name="stop_owner1" rows="1" cols="20" placeholder="Who is responsible?"></textarea></span>
+      </div>
+      <div class="tr">
+        <span class="td"><strong>STOP</strong></span>
+        <span class="td"><textarea name="stop_feedback2" rows="2" cols="60" placeholder="What else should the team STOP doing?" required></textarea></span>
+        <span class="td"><textarea name="stop_action2" rows="2" cols="50" placeholder="What specific action will you take?"></textarea></span>
+        <span class="td"><textarea name="stop_owner2" rows="1" cols="20" placeholder="Who is responsible?"></textarea></span>
+      </div>
+      <div class="tr">
+        <span class="td"><strong>CONTINUE</strong></span>
+        <span class="td">Transparent daily stand-ups - everyone knows blockers and progress</span>
+        <span class="td"><textarea name="continue_action1" rows="2" cols="50" placeholder="How will you ensure this continues?"></textarea></span>
+        <span class="td"><textarea name="continue_owner1" rows="1" cols="20" placeholder="Who is responsible?"></textarea></span>
+      </div>
+      <div class="tr">
+        <span class="td"><strong>CONTINUE</strong></span>
+        <span class="td"><textarea name="continue_feedback2" rows="2" cols="60" placeholder="What else should the team CONTINUE doing?" required></textarea></span>
+        <span class="td"><textarea name="continue_action2" rows="2" cols="50" placeholder="How will you ensure this continues?"></textarea></span>
+        <span class="td"><textarea name="continue_owner2" rows="1" cols="20" placeholder="Who is responsible?"></textarea></span>
+      </div>
+    </div>
+  </form>
+</li><br>
+
+<li>Performance Metrics and Velocity: Analyze your team's performance to improve future sprint planning. <button onclick="toggleVisibility('metricsHelp')">Show/Hide Metrics Explanation</button>
+    <div id="metricsHelp" style="display:none; margin-top:10px; padding:10px; border-left:3px solid #007BFF; background-color:#f9f9f9;">
+    <p><strong>Key Agile Metrics:</strong></p>
+    <p>
+      <strong>Velocity</strong> - Story points completed per sprint (helps predict future capacity)<br>
+      <strong>Burn-down</strong> - Work remaining over time (shows if team is on track)<br>
+      <strong>Cycle Time</strong> - Time from start to completion of work items<br>
+      <strong>Sprint Goal Achievement</strong> - Did we meet our sprint objectives?
+    </p>
+  </div>
+  <br><strong>Sprint 1 Data:</strong>
+  <br>&emsp;• Committed Story Points: 13
+  <br>&emsp;• Completed Story Points: 8 (HIPAA encryption worth 5 points still in progress)
+  <br>&emsp;• Sprint Length: 2 weeks
+  <br>&emsp;• Team Size: 3 developers + 1 QA + 1 Scrum Master
+  <br><br>
+  <strong>a. What is your team's velocity for Sprint 1?</strong><br>
+  &emsp;<input type="text" name="velocity" placeholder="Enter velocity" required> story points per sprint
+  <br><br>
+  <strong>b. Based on this velocity, how many story points should you commit to in Sprint 2?</strong><br>
+  &emsp;<input type="radio" name="sprint2_commitment" value="8"> 8 points (same as completed)<br>
+  &emsp;<input type="radio" name="sprint2_commitment" value="10"> 10 points (slight increase)<br>
+  &emsp;<input type="radio" name="sprint2_commitment" value="13"> 13 points (same as originally planned)<br>
+  &emsp;<input type="radio" name="sprint2_commitment" value="15"> 15 points (increase capacity)<br>
+  <br><strong>c. Justify your Sprint 2 commitment decision:</strong><br>
+  &emsp;<textarea name="commitment_justification" rows="4" cols="120" placeholder="Explain your reasoning considering team capacity, lessons learned, and upcoming work..." required></textarea>
+  <br><br>
+  <strong>d. What factors might affect your velocity in future sprints?</strong> (Select all that apply)<br>
+  &emsp;<input type="checkbox" name="velocity_factors" value="compliance_reviews"> Additional compliance reviews<br>
+  &emsp;<input type="checkbox" name="velocity_factors" value="stakeholder_changes"> Stakeholder feedback and changes<br>
+  &emsp;<input type="checkbox" name="velocity_factors" value="technical_debt"> Technical debt from rushing features<br>
+  &emsp;<input type="checkbox" name="velocity_factors" value="team_learning"> Team learning curve on healthcare domain<br>
+  &emsp;<input type="checkbox" name="velocity_factors" value="integration_complexity"> Integration complexity increases<br>
+</li><br>
+
+<li>Sprint Planning for Sprint 2: Based on feedback and retrospective insights, plan your next sprint. The 6-week demo deadline is approaching (4 weeks remaining).
+  <br><br><strong>Updated Product Backlog (Top Priority Items):</strong>
+  <br>&emsp;• Complete HIPAA encryption protocols (5 pts) - <em>Carry over from Sprint 1</em>
+  <br>&emsp;• Screen sharing for providers during video calls (8 pts) - <em>Dr. Patel request</em>
+  <br>&emsp;• Enhanced care plan with medication interactions (5 pts) - <em>Riley request</em>
+  <br>&emsp;• Patient satisfaction survey post-consultation (3 pts) - <em>Kevin request</em>
+  <br>&emsp;• Secure messaging between patients and providers (8 pts) - <em>Original requirement</em>
+  <br>&emsp;• Mobile app responsive design improvements (3 pts) - <em>Technical debt</em>
+  <br><br>
+
+  <strong>What items will you commit to for Sprint 2?</strong> (Consider your velocity calculation above)<br>
+  <form method="post" action="blah.html">
+    <div class="table">
+      <div class="tr">
+        <span class="th">Include in Sprint 2?</span>
+        <span class="th">Feature</span>
+        <span class="th">Story Points</span>
+        <span class="th">Justification</span>
+      </div>
+      <div class="tr">
+        <span class="td"><input type="checkbox" name="sprint2_items" value="hipaa_encryption"></span>
+        <span class="td">Complete HIPAA encryption protocols</span>
+        <span class="td">5</span>
+        <span class="td"><textarea name="hipaa_justification" rows="1" cols="50" placeholder="Why include or exclude?"></textarea></span>
+      </div>
+      <div class="tr">
+        <span class="td"><input type="checkbox" name="sprint2_items" value="screen_sharing"></span>
+        <span class="td">Screen sharing for providers</span>
+        <span class="td">8</span>
+        <span class="td"><textarea name="screen_justification" rows="1" cols="50" placeholder="Why include or exclude?"></textarea></span>
+      </div>
+      <div class="tr">
+        <span class="td"><input type="checkbox" name="sprint2_items" value="enhanced_care_plan"></span>
+        <span class="td">Enhanced care plan with medication interactions</span>
+        <span class="td">5</span>
+        <span class="td"><textarea name="care_plan_justification" rows="1" cols="50" placeholder="Why include or exclude?"></textarea></span>
+      </div>
+      <div class="tr">
+        <span class="td"><input type="checkbox" name="sprint2_items" value="satisfaction_survey"></span>
+        <span class="td">Patient satisfaction survey</span>
+        <span class="td">3</span>
+        <span class="td"><textarea name="survey_justification" rows="1" cols="50" placeholder="Why include or exclude?"></textarea></span>
+      </div>
+      <div class="tr">
+        <span class="td"><input type="checkbox" name="sprint2_items" value="secure_messaging"></span>
+        <span class="td">Secure messaging system</span>
+        <span class="td">8</span>
+        <span class="td"><textarea name="messaging_justification" rows="1" cols="50" placeholder="Why include or exclude?"></textarea></span>
+      </div>
+      <div class="tr">
+        <span class="td"><input type="checkbox" name="sprint2_items" value="mobile_responsive"></span>
+        <span class="td">Mobile responsive design improvements</span>
+        <span class="td">3</span>
+        <span class="td"><textarea name="mobile_justification" rows="1" cols="50" placeholder="Why include or exclude?"></textarea></span>
+      </div>
+    </div>
+  </form>
+  <br><strong>Total Story Points Selected:</strong> <span id="total_points">0</span> points
+  <br><em>(JavaScript will calculate this automatically based on your selections)</em>
+</li><br>
+
+<li>Reflection: Sprint Reviews and Retrospectives are crucial Agile ceremonies. Based on your experience in this lab, answer the following:
+  <br><br><strong>a. What was the most challenging aspect of managing conflicting stakeholder feedback?</strong>
+  <br><textarea name="feedback_challenge" rows="4" cols="120" placeholder="Describe the biggest challenge and how Agile principles help address it..." required></textarea>
+  <br><br><strong>b. How do retrospectives contribute to team improvement beyond just identifying problems?</strong>
+  <br><textarea name="retrospective_value" rows="4" cols="120" placeholder="Explain how retrospectives drive continuous improvement..." required></textarea>
+  <br><br><strong>c. Why is velocity tracking important, and what are its limitations?</strong>
+  <br><textarea name="velocity_analysis" rows="4" cols="120" placeholder="Discuss both the benefits and potential pitfalls of velocity metrics..." required></textarea>
+</li>
+</ol>
+
+<script>
+// Calculate total story points for Sprint 2 planning
+document.addEventListener('change', function(e) {
+    if (e.target.name === 'sprint2_items') {
+        const checkboxes = document.querySelectorAll('input[name="sprint2_items"]:checked');
+        const pointValues = {
+            'hipaa_encryption': 5,
+            'screen_sharing': 8,
+            'enhanced_care_plan': 5,
+            'satisfaction_survey': 3,
+            'secure_messaging': 8,
+            'mobile_responsive': 3
+        };
+        
+        let total = 0;
+        checkboxes.forEach(checkbox => {
+            total += pointValues[checkbox.value] || 0;
+        });
+        
+        document.getElementById('total_points').textContent = total;
+    }
+});
+</script>
+
+<br><br><strong>Lab 4 Complete! Don't forget to print the page to save your answers!</strong>
+</section>
 <br><br>
 <script>
 function filterLabs() {
