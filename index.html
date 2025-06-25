@@ -5,147 +5,380 @@
     <title>HTM251: Agile Project Management Fundamentals</title>
     <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #005ea2;
-            --accent: #cce5ff;
-            --bg-light: #f8f9fa;
-            --gray-border: #dee2e6;
-            --text-dark: #212529;
-        }
+    :root {
+    --primary: #005ea2;
+    --accent: #cce5ff;
+    --gray-border: #dee2e6;
+}
 
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            font-size: 16px;
-            line-height: 1.6;
-            background: var(--bg-light);
-            padding: 20px;
-            color: var(--text-dark);
-        }
+body.light {
+    --bg-light: #f8f9fa;
+    --text-dark: #212529;
+    --card-bg: white;
+    --header-bg: var(--primary);
+    --input-bg: #f4f4f4;
+    --table-head-bg: #f0f0f0;
+    --table-alt-row-bg: #f9f9f9;
+    --image-border: #ccc;
+}
 
-        h1, h2 {
-            color: var(--primary);
-        }
+body.dark {
+    --bg-light: #1c1e21;
+    --text-dark: #e9ecef;
+    --card-bg: #2c2f33;
+    --header-bg: #003d7a;
+    --input-bg: #333840;
+    --table-head-bg: #3a3d41;
+    --table-alt-row-bg: #2a2d31;
+    --image-border: #444;
+}
 
-        .header, .footer {
-            background-color: var(--primary);
-            color: white;
-            text-align: center;
-            padding: 15px 0;
-            border-radius: 8px;
-            margin-bottom: 40px;
-        }
+body {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    background: var(--bg-light);
+    padding: 20px;
+    color: var(--text-dark);
+    transition: background 0.3s ease, color 0.3s ease;
+}
 
-        .header h1 { margin: 0; }
-        .footer { margin-top: 40px; }
+h1, h2 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
 
-        .lab-section {
-            display: none;
-            background: white;
-            border-left: 5px solid var(--primary);
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            padding: 20px;
-            margin-bottom: 30px;
-            animation: fadeIn 0.4s ease;
-        }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
 
-        .lab-section.active {
-            display: block;
-        }
+.header, .footer {
+    background-color: var(--header-bg);
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    transition: background-color 0.3s ease;
+}
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+.header h1 { margin: 0; }
+.footer { margin-top: 40px; }
 
-        .card {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-        }
+.lab-section {
+    display: none;
+    background: var(--card-bg);
+    border-left: 5px solid var(--primary);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 20px;
+    margin-bottom: 30px;
+    animation: fadeIn 0.4s ease;
+    transition: background 0.3s ease;
+}
 
-        select, input, textarea {
-            border: 1px solid var(--gray-border);
-            border-radius: 4px;
-            padding: 6px;
-            width: 100%;
-            font-size: 1rem;
-            font-family: 'Segoe UI', sans-serif;
-        }
+.lab-section.active { display: block; }
 
-        select:hover, input:hover, textarea:hover {
-            outline: 2px solid var(--primary);
-        }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
-        .copy-button {
-            padding: 5px 10px;
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+.card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
 
-        .copy-button:hover {
-            background-color: #003d7a;
-        }
+.card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+}
 
-        .table {
-            display: table;
-            border-collapse: collapse;
-            width: 100%;
-            margin-top: 10px;
-        }
+select, input, textarea {
+    background-color: var(--input-bg);
+    color: var(--text-dark);
+    border: 1px solid var(--gray-border);
+    border-radius: 4px;
+    padding: 6px;
+    width: 100%;
+    font-size: 1rem;
+    font-family: 'Segoe UI', sans-serif;
+    transition: outline 0.2s ease;
+}
 
-        .tr { display: table-row; }
-        .td, .th {
-            display: table-cell;
-            border: 1px solid var(--gray-border);
-            padding: 10px;
-        }
+select:hover, input:hover, textarea:hover {
+    outline: 2px solid var(--primary);
+}
 
-        .th {
-            background-color: #f0f0f0;
-            font-weight: bold;
-        }
+.copy-button {
+    padding: 5px 10px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
-        .table .tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
+.copy-button:hover {
+    background-color: #003d7a;
+}
 
-        .copy-container {
-            margin: 10px 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+.copy-button:focus {
+    outline: 2px dashed var(--accent);
+    outline-offset: 2px;
+}
 
-        .copy-input {
-            flex-grow: 1;
-            padding: 5px;
-            font-family: monospace;
-            font-size: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f4f4f4;
-        }
+.table {
+    display: table;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 10px;
+}
 
-        img {
-            display: block;
-            margin-top: 10px;
-            max-width: 80%;
-            height: auto;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-    </style>
+.tr { display: table-row; }
+
+.td, .th {
+    display: table-cell;
+    border: 1px solid var(--gray-border);
+    padding: 10px;
+}
+
+.th {
+    background-color: var(--table-head-bg);
+    font-weight: bold;
+}
+
+.table .tr:nth-child(even) {
+    background-color: var(--table-alt-row-bg);
+}
+
+.copy-container {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.copy-input {
+    flex-grow: 1;
+    padding: 5px;
+    font-family: monospace;
+    font-size: 1rem;
+    border: 1px solid var(--gray-border);
+    border-radius: 5px;
+    background-color: var(--input-bg);
+    color: var(--text-dark);
+}
+
+img {
+    display: block;
+    margin-top: 10px;
+    max-width: 80%;
+    height: auto;
+    border: 1px solid var(--image-border);
+    border-radius: 4px;
+}
+.container {
+    max-width: 960px;
+    margin: auto;
+}
+
+.theme-toggle {
+    text-align: right;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+.theme-toggle label {
+    background-color: var(--card-bg);
+    padding: 8px 12px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    border: 1px solid var(--gray-border);
+}
+
+.filter-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.theme-switch {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.theme-switch .slider {
+    width: 40px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 20px;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.theme-switch .slider::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 2px;
+    left: 2px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.theme-switch input:checked + .slider {
+    background-color: var(--primary);
+}
+
+.theme-switch input:checked + .slider::before {
+    transform: translateX(20px);
+}
+
+.switch-label {
+    font-size: 0.9rem;
+    color: var(--text-dark);
+}
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 1rem;
+    background-color: var(--card-bg);
+    color: var(--text-dark);
+}
+
+.styled-table th,
+.styled-table td {
+    border: 1px solid var(--gray-border);
+    padding: 12px 10px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.styled-table thead th {
+    background-color: var(--table-head-bg);
+}
+
+.styled-table tbody tr:nth-child(even) {
+    background-color: var(--table-alt-row-bg);
+}
+.info-box {
+  margin-top: 10px;
+  padding: 10px;
+  border-left: 3px solid var(--primary);
+  background-color: var(--table-alt-row-bg);
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 1rem;
+  background-color: var(--card-bg);
+  color: var(--text-dark);
+}
+
+.styled-table th,
+.styled-table td {
+  border: 1px solid var(--gray-border);
+  padding: 10px;
+  vertical-align: top;
+}
+
+.styled-table thead th {
+  background-color: var(--table-head-bg);
+}
+
+textarea, select, input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  font-size: 1rem;
+  background-color: var(--input-bg);
+  color: var(--text-dark);
+  border: 1px solid var(--gray-border);
+  border-radius: 4px;
+}
+.toggle-button {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin: 10px 0;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-button:hover {
+  background-color: #003d7a;
+}
+  .radio-group label,
+  .checkbox-group label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-right: 16px;
+    margin-bottom: 8px;
+    cursor: pointer;
+  }
+
+  .radio-group,
+  .checkbox-group {
+    margin-left: 1em;
+    margin-top: 0.5em;
+  }
+
+  .radio-group input[type="radio"],
+  .checkbox-group input[type="checkbox"] {
+    flex-shrink: 0;
+  }
+  .form-group {
+    margin-bottom: 1em;
+  }
+
+  .form-group strong {
+    display: block;
+    margin-bottom: 0.5em;
+  }
+
+  .form-inline-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    padding-left: 1em;
+  }
+
+  .form-inline-options label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    font-weight: normal;
+  }
+</style>
 </head>
 <body>
     <header class="header"><h1>HTM251: Agile Project Management Fundamentals Labs</h1></header>
-    <div class="card">
+    <div class="card filter-bar">
   <label for="labFilter"><strong>Select Lab:</strong></label>
   <select id="labFilter" onchange="filterLabs()">
     <option value="">----Select----</option>
@@ -157,89 +390,104 @@
     <option value="Lab 4">Lab 4</option>
     <option value="Lab 5">Lab 5</option>
   </select>
+
+  <label class="theme-switch">
+    <input type="checkbox" id="theme-toggle">
+    <span class="slider"></span>
+    <span class="switch-label">Dark Mode</span>
+  </label>
 </div>
+
 
 <section class="lab-section active" data-lab="User Guide">
   <div class="card">
-    <h2>User Guide for HTM251: Agile Project Management Fundamentals Labs</h2>
+    <h2>User Guide</h2>
+    <p>Welcome to the HTM251 Agile Labs. Here's how to get started:</p>
     <ol>
-      <li>Read the entire scenario! Bits of it will be on each lab page, but it's important to read all the details first.</li>
-      <li>Using the dropdown above, select the lab you want to complete.</li>
-      <li>As you work through the labs, fill out all blanks and open text fields. You can re-size open-text fields via the bottom right-hand corner of the text field!</li>
-      <li>Remember, if you have any questions - ask! That's what the instructors are here for!</li>
+      <li>Read the entire scenario — only parts appear in each lab, but understanding the full story is essential.</li>
+      <li>Use the dropdown above to select the lab you want to complete.</li>
+      <li>Complete all required fields in each lab. Open-text fields are resizable using the bottom-right corner.</li>
+      <li>Ask questions! Your instructors are here to support you.</li>
     </ol>
-    <p><strong>Comments, Questions, Concerns, or General Feedback?</strong> Let us know at <a href="https://kevin-jeter-kg.github.io/" target="_blank">this Survey!</a></p>
+    <p><strong>Have comments or feedback?</strong> <a href="https://kevin-jeter-kg.github.io/" target="_blank">Fill out this quick survey.</a></p>
   </div>
 </section>
 
 <section class="lab-section" data-lab="Scenario">
   <div class="card">
-    <h2>Scenario Details</h2>
+    <h2>Scenario: Brosnan-Jeter Prestige Healthcare</h2>
+
     <p><strong>Project Title:</strong> Brosnan-Jeter Prestige Healthcare Worldwide Application Development and Deployment</p>
-    <p><strong>Description:</strong> An up-and-coming start-up led by two healthcare prodigies, Riley and Kevin, has secured funding to develop Brosnan-Jeter Prestige Healthcare Worldwide. It will serve as a mobile and desktop application that connects patients with their Primary Care Providers for virtual care, ranging from Physical Therapy and Diagnoses to Prescriptions and Testing. The Minimum Viable Product must be delivered in 6 weeks to meet a demo for a major hospital partner. Kevin and Riley and very strict on this 6 week demo – their future funding and business success depends on this.</p>
-    <p>Kevin and Riley are results-driven entrepreneurs with a bold vision to modernize patient care through streamlined, intuitive technology. While Kevin focuses on strategic alignment and brand reputation, Riley is more focused on clinical credibility and practical healthcare impact.</p>
-    
-    <p><strong>Business Goals:</strong></p>
+
+    <p><strong>Description:</strong> An up-and-coming start-up led by two healthcare prodigies, Riley and Kevin, has secured funding to develop Brosnan-Jeter Prestige Healthcare Worldwide. The platform will connect patients with Primary Care Providers for virtual care — including physical therapy, diagnoses, prescriptions, and testing. The Minimum Viable Product (MVP) must be delivered in 6 weeks for a high-stakes demo with a hospital partner.</p>
+
+    <p>Kevin and Riley are results-driven founders with distinct focus areas. Kevin drives strategic alignment and brand reputation. Riley emphasizes clinical credibility and patient-centered care.</p>
+
+    <h3>Business Goals</h3>
     <ul>
       <li>Reduce in-clinic appointment load by 25%</li>
       <li>Enable secure, HIPAA-compliant messaging and video calls</li>
       <li>Allow patients to view care plans, medications, and appointments</li>
-      <li>Deliver a seamless user experience across all devices</li>
+      <li>Deliver a seamless user experience across devices</li>
     </ul>
 
     <h3>Stakeholders</h3>
-    <div class="table">
-      <div class="tr">
-        <span class="th">Stakeholder Name</span>
-        <span class="th">Role</span>
-        <span class="th">Interests / Priorities</span>
-      </div>
-      <div class="tr">
-        <span class="td">Kevin Jeter</span>
-        <span class="td">Co-Founder; CEO</span>
-        <span class="td">High-level results: timeline, demo success, brand perception and investor confidence</span>
-      </div>
-      <div class="tr">
-        <span class="td">Riley Brosnan</span>
-        <span class="td">Co-Founder; Chief Clinical Officer</span>
-        <span class="td">Patient outcomes, clinical workflow integration, real-world medical credibility</span>
-      </div>
-      <div class="tr">
-        <span class="td">Dr. Priya Patel</span>
-        <span class="td">Primary Care Provider; Clinical Advisor</span>
-        <span class="td">Ease of use for providers, real-time patient access, stable video conferencing</span>
-      </div>
-      <div class="tr">
-        <span class="td">Janelle Ross</span>
-        <span class="td">Chief Product Officer</span>
-        <span class="td">Scope control, velocity, feature prioritization – must hit MVP definition</span>
-      </div>
-      <div class="tr">
-        <span class="td">Daniel Kwon</span>
-        <span class="td">Compliance and Risk Management Lead</span>
-        <span class="td">HIPAA, encryption, secure access control – nothing ships without his compliance sign-off</span>
-      </div>
-      <div class="tr">
-        <span class="td">Lisa Thompson</span>
-        <span class="td">Patient Advocate</span>
-        <span class="td">Represents users – needs accessibility, plain language, ease of use</span>
-      </div>
-      <div class="tr">
-        <span class="td">Dev Team (YOU!)</span>
-        <span class="td">Internal Team Members</span>
-        <span class="td">Balancing delivery with code quality, leads sprint planning and backlog management</span>
-      </div>
-    </div>
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Stakeholder Name</th>
+          <th>Role</th>
+          <th>Interests / Priorities</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Kevin Jeter</td>
+          <td>Co-Founder; CEO</td>
+          <td>Timeline, demo success, brand perception, investor confidence</td>
+        </tr>
+        <tr>
+          <td>Riley Brosnan</td>
+          <td>Co-Founder; Chief Clinical Officer</td>
+          <td>Clinical workflow integration, patient outcomes, medical credibility</td>
+        </tr>
+        <tr>
+          <td>Dr. Priya Patel</td>
+          <td>Primary Care Provider; Clinical Advisor</td>
+          <td>Provider usability, real-time patient access, video stability</td>
+        </tr>
+        <tr>
+          <td>Janelle Ross</td>
+          <td>Chief Product Officer</td>
+          <td>MVP definition, scope control, delivery velocity</td>
+        </tr>
+        <tr>
+          <td>Daniel Kwon</td>
+          <td>Compliance and Risk Management Lead</td>
+          <td>HIPAA, encryption, access control, compliance sign-off</td>
+        </tr>
+        <tr>
+          <td>Lisa Thompson</td>
+          <td>Patient Advocate</td>
+          <td>Accessibility, plain language, intuitive UX</td>
+        </tr>
+        <tr>
+          <td>Dev Team (YOU!)</td>
+          <td>Internal Team Members</td>
+          <td>Backlog management, sprint planning, balancing quality with delivery</td>
+        </tr>
+      </tbody>
+    </table>
 
-    <p><strong>Key Features:</strong></p>
+    <h3>Key Features</h3>
     <ul>
       <li>Secure login and role-based access</li>
       <li>Care plan and appointment visibility</li>
-      <li>Scheduling, secure messaging, and video consults</li>
-      <li>Push notifications and platform-wide accessibility</li>
+      <li>Scheduling, messaging, and video consults</li>
+      <li>Push notifications and accessibility support</li>
     </ul>
 
-    <p><strong>Constraints:</strong></p>
+    <h3>Constraints</h3>
     <ul>
       <li>Must meet HIPAA compliance</li>
       <li>Must work on iOS, Android, and Web</li>
@@ -247,799 +495,850 @@
       <li>Must be demo ready in 6 weeks</li>
     </ul>
 
-    <p><strong>Potential Challenges:</strong></p>
+    <h3>Potential Challenges</h3>
     <ul>
       <li>Conflicting priorities between founders</li>
-      <li>Overloaded backlog from clinical stakeholders</li>
-      <li>One Dev Team capacity constraint</li>
-      <li>Late compliance or accessibility concerns may delay delivery</li>
+      <li>Overloaded backlog from clinical advisors</li>
+      <li>Dev team capacity constraints</li>
+      <li>Late compliance or accessibility blockers</li>
     </ul>
   </div>
 </section>
 
 <section class="lab-section" data-lab="Lab 1">
-<h2> Lab 1: Starting our First Agile Project</h2>
-<ol>
-<em>//In this lab, you'll be classifying stakeholders, defining the product vision, and choosing our Agile Methodology.</em>
-<br><br><Strong>Project Title:</Strong> Brosnan-Jeter Prestige Healthcare Worldwide Application Development and Deployment
-<br><strong>Description:</strong> An up-and-coming start-up led by two healthcare prodigies, Riley and Kevin, has secured funding to develop Brosnan-Jeter Prestige Healthcare Worldwide. It will serve as a mobile and desktop application that connects patients with their Primary Care Providers for virtual care, ranging from Physical Therapy and Diagnoses to Prescriptions and Testing. The Minimum Viable Product must be delivered in 6 weeks to meet a demo for a major hospital partner. Kevin and Riley and very strict on this 6 week demo – their future funding and business success depends on this. 
-<br><br>Kevin and Riley are results-driven entrepreneurs with a bold vision to modernize patient care through streamlined, intuitive technology. While Kevin focuses on strategic alignment and brand reputation, Riley is more focused on clinical credibility and practical healthcare impact. 
-<br><br>Outlined below are some of their most critical business goals, <strong>in order of importance: </strong>
-    <br>&emsp;&emsp; 1. Reduce in-clinic appointment load by 25% 
-    <br>&emsp;&emsp; 2. Enable secure, HIPAA-compliant messaging and video calls between patients and Primary Care Providers
-    <br>&emsp;&emsp; 3. Allow patients to view care plans, medications, and appointment schedules 
-    <br>&emsp;&emsp;4. Deliver a seamless user experience across all devices
-<br><br><li>Classify 3 (three) stakeholders – with at least one (1) not already identified by the scenario – on the Power-Interest Grid below. 
-    <br>After you classify, identify the method of communication (i.e. call, email, etc.) and how often you intend to communicate with the stakeholder.<button onclick="toggleVisibility('quadrantDefinition')">Show/Hide Quadrant Definitions</button>
-    <div id="quadrantDefinition" style="display:none; margin-top:10px; padding:10px; border-left:3px solid #007BFF; background-color:#f9f9f9;">
-    <p><strong>Quadrant Definitions:</strong></p>
-    <p>
-      <strong>Manage Closely</strong> – keep them engaged and involved in decision-making; High Power, High Interest<br>
-      <strong>Keep Satisfied</strong> – provide enough info to maintain goodwill without overwhelming them; High Power, Low Interest.<br>
-      <strong>Keep Informed</strong> – provide regular updates; they can be helpful allies; Low Power, High Interest.<br>
-      <strong>Monitor</strong> – minimal effort unless their status changes; Low Power, Low Interest.
-    </p>
-  </div><br>
-  <br>
-  <style>
-    .table {
-      display: table;
-      border-collapse: collapse;
-      margin-top: 10px;
-    }
-    .tr {
-      display: table-row;
-    }
-    .td, .th {
-      display: table-cell;
-      border: 1px solid #ccc;
-      padding: 8px;
-    }
-    .th {
-      font-weight: bold;
-      background-color: #f0f0f0;
-    }
-  </style>
+  <div class="card">
+    <h2>Lab 1: Starting Our First Agile Project</h2>
 
-  <form method="post" action="blah.html">
-    <div class="table">
-      <div class="tr">
-        <span class="th">Stakeholder Name</span>
-        <span class="th">Power Level</span>
-        <span class="th">Interest Level</span>
-        <span class="th">Quadrant Classification</span>
-        <span class="th">Communication Type and Time</span>
+    <p><em>In this lab, you'll classify stakeholders, define the product vision, and choose an Agile methodology for your team.</em></p>
+
+    <h3>Project Overview</h3>
+    <p><strong>Project Title:</strong> Brosnan-Jeter Prestige Healthcare Worldwide Application Development and Deployment</p>
+    <p><strong>Description:</strong> An up-and-coming startup led by Riley and Kevin is building a mobile and desktop application that enables virtual healthcare. It will include features such as Physical Therapy, Diagnoses, Prescriptions, and Testing. The MVP must be demo-ready in 6 weeks for a hospital partner demo — this deadline is critical to securing future funding.</p>
+    <p>Kevin focuses on strategic alignment and brand perception, while Riley is committed to clinical impact and credibility.</p>
+
+    <p><strong>Business Goals (in order of importance):</strong></p>
+    <ul>
+      <li>Reduce in-clinic appointment load by 25%</li>
+      <li>Enable secure, HIPAA-compliant messaging and video calls</li>
+      <li>Allow patients to view care plans, medications, and appointments</li>
+      <li>Deliver a seamless user experience across devices</li>
+    </ul>
+
+    <h3>Task 1: Stakeholder Classification</h3>
+    <p>Classify 3 stakeholders on the Power-Interest Grid — including at least one who is not already in the scenario. Then, specify how you would communicate with them.
+
+    <button type="button" class="toggle-button" onclick="toggleVisibility('quadrantDefinition')">
+  Show/Hide Quadrant Definitions
+</button></p>
+<div id="quadrantDefinition" class="info-box" style="display: none;">
+        <p><strong>Quadrant Definitions:</strong></p>
+        <ul>
+          <li><strong>Manage Closely:</strong> High Power, High Interest — keep them actively engaged in decisions.</li>
+          <li><strong>Keep Satisfied:</strong> High Power, Low Interest — inform strategically to maintain goodwill.</li>
+          <li><strong>Keep Informed:</strong> Low Power, High Interest — update regularly and seek input.</li>
+          <li><strong>Monitor:</strong> Low Power, Low Interest — minimal updates unless priorities change.</li>
+        </ul>
       </div>
-      <div class="tr">
-        <span class="td"><input type="text" name="stakeholder1_name" required></span>
-        <span class="td">
-          <select name="stakeholder1_power" required>
-            <option value="">Select</option>
-            <option value="High">High</option>
-            <option value="Low">Low</option>
-          </select>
-        </span>
-        <span class="td">
-          <select name="stakeholder1_interest" required>
-            <option value="">Select</option>
-            <option value="High">High</option>
-            <option value="Low">Low</option>
-          </select>
-        </span>
-        <span class="td">
-          <select name="stakeholder1_quadrant" required>
-            <option value="">Select</option>
-            <option value="Manage Closely">Manage Closely</option>
-            <option value="Keep Satisfied">Keep Satisfied</option>
-            <option value="Keep Informed">Keep Informed</option>
-            <option value="Monitor">Monitor</option>
-          </select>
-        </span>
-        <span class="td"><textarea id="stakeholder1_communication" name="stakeholder1_communication" rows="1" cols="60" placeholder="" required></textarea></span>
+    </details>
+
+    <form method="post" action="blah.html">
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Stakeholder Name</th>
+            <th>Power Level</th>
+            <th>Interest Level</th>
+            <th>Quadrant Classification</th>
+            <th>Communication Method & Frequency</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Stakeholder 1 -->
+          <tr>
+            <td><input type="text" name="stakeholder1_name" required></td>
+            <td>
+              <select name="stakeholder1_power" required>
+                <option value="">Select</option>
+                <option value="High">High</option>
+                <option value="Low">Low</option>
+              </select>
+            </td>
+            <td>
+              <select name="stakeholder1_interest" required>
+                <option value="">Select</option>
+                <option value="High">High</option>
+                <option value="Low">Low</option>
+              </select>
+            </td>
+            <td>
+              <select name="stakeholder1_quadrant" required>
+                <option value="">Select</option>
+                <option value="Manage Closely">Manage Closely</option>
+                <option value="Keep Satisfied">Keep Satisfied</option>
+                <option value="Keep Informed">Keep Informed</option>
+                <option value="Monitor">Monitor</option>
+              </select>
+            </td>
+            <td><textarea name="stakeholder1_communication" rows="1" required></textarea></td>
+          </tr>
+
+          <!-- Stakeholder 2 -->
+          <tr>
+            <td><input type="text" name="stakeholder2_name" required></td>
+            <td>
+              <select name="stakeholder2_power" required>
+                <option value="">Select</option>
+                <option value="High">High</option>
+                <option value="Low">Low</option>
+              </select>
+            </td>
+            <td>
+              <select name="stakeholder2_interest" required>
+                <option value="">Select</option>
+                <option value="High">High</option>
+                <option value="Low">Low</option>
+              </select>
+            </td>
+            <td>
+              <select name="stakeholder2_quadrant" required>
+                <option value="">Select</option>
+                <option value="Manage Closely">Manage Closely</option>
+                <option value="Keep Satisfied">Keep Satisfied</option>
+                <option value="Keep Informed">Keep Informed</option>
+                <option value="Monitor">Monitor</option>
+              </select>
+            </td>
+            <td><textarea name="stakeholder2_communication" rows="1" required></textarea></td>
+          </tr>
+
+          <!-- Stakeholder 3 -->
+          <tr>
+            <td><input type="text" name="stakeholder3_name" required></td>
+            <td>
+              <select name="stakeholder3_power" required>
+                <option value="">Select</option>
+                <option value="High">High</option>
+                <option value="Low">Low</option>
+              </select>
+            </td>
+            <td>
+              <select name="stakeholder3_interest" required>
+                <option value="">Select</option>
+                <option value="High">High</option>
+                <option value="Low">Low</option>
+              </select>
+            </td>
+            <td>
+              <select name="stakeholder3_quadrant" required>
+                <option value="">Select</option>
+                <option value="Manage Closely">Manage Closely</option>
+                <option value="Keep Satisfied">Keep Satisfied</option>
+                <option value="Keep Informed">Keep Informed</option>
+                <option value="Monitor">Monitor</option>
+              </select>
+            </td>
+            <td><textarea name="stakeholder3_communication" rows="1" required></textarea></td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+
+    <h3>Task 2: Write a Vision Statement</h3>
+    <p>Draft a vision statement that inspires your team and aligns stakeholders.
+
+    <button type="button" class="toggle-button" onclick="toggleVisibility('visionTemplate')">
+  Show/Hide Vision Statement Template
+</button></p>
+<div id="visionTemplate" class="info-box" style="display: none;">
+         <p><strong>Template:</strong></p>
+        <p>
+          Our product aims to deliver <em>[primary value or benefit]</em><br>
+          For <em>[target user or customer]</em><br>
+          By providing <em>[key features or capabilities]</em><br>
+          Which will solve <em>[user problem or need]</em><br>
+          So that <em>[desired impact or outcome]</em>.
+        </p>
       </div>
-      <div class="tr">
-        <span class="td"><input type="text" name="stakeholder2_name" required></span>
-        <span class="td">
-          <select name="stakeholder2_power" required>
-            <option value="">Select</option>
-            <option value="High">High</option>
-            <option value="Low">Low</option>
-          </select>
-        </span>
-        <span class="td">
-          <select name="stakeholder2_interest" required>
-            <option value="">Select</option>
-            <option value="High">High</option>
-            <option value="Low">Low</option>
-          </select>
-        </span>
-        <span class="td">
-          <select name="stakeholder2_quadrant" required>
-            <option value="">Select</option>
-            <option value="Manage Closely">Manage Closely</option>
-            <option value="Keep Satisfied">Keep Satisfied</option>
-            <option value="Keep Informed">Keep Informed</option>
-            <option value="Monitor">Monitor</option>
-          </select>
-        </span>
-        <span class="td"><textarea id="stakeholder2_communication" name="stakeholder2_communication" rows="1" cols="60" placeholder="" required></textarea></span>
-      </div>
-      <div class="tr">
-        <span class="td"><input type="text" name="stakeholder3_name" required></span>
-        <span class="td">
-          <select name="stakeholder3_power" required>
-            <option value="">Select</option>
-            <option value="High">High</option>
-            <option value="Low">Low</option>
-          </select>
-        </span>
-        <span class="td">
-          <select name="stakeholder3_interest" required>
-            <option value="">Select</option>
-            <option value="High">High</option>
-            <option value="Low">Low</option>
-          </select>
-        </span>
-        <span class="td">
-          <select name="stakeholder3_quadrant" required>
-            <option value="">Select</option>
-            <option value="Manage Closely">Manage Closely</option>
-            <option value="Keep Satisfied">Keep Satisfied</option>
-            <option value="Keep Informed">Keep Informed</option>
-            <option value="Monitor">Monitor</option>
-          </select>
-        </span>
-        <span class="td"><textarea id="stakeholder3_communication" name="stakeholder3_communication" rows="1" cols="60" placeholder="" required></textarea></span>
-      </div>
-    </div>
-    <br>
-  </form>
-</li>
-<br><li>Write a vision statement that could be shared with stakeholders and serve as your guiding 'North Star' for your Agile team.
-    <br><br><label for="vision_statement"><strong>Vision Statement:</strong></label>
-    <button onclick="toggleVisibility('visionTemplate')">Show/Hide Vision Statement Template</button>
-    <div id="visionTemplate" style="display:none; margin-top:10px; padding:10px; border-left:3px solid #007BFF; background-color:#f9f9f9;">
-    <p><strong>Vision Statement Template:</strong></p>
-    <p>
-      Our product aims to deliver <em>[primary value or benefit]</em><br>
-      For <em>[target user or customer]</em><br>
-      By providing <em>[key features or capabilities]</em><br>
-      Which will solve <em>[user problem or need]</em><br>
-      So that <em>[desired impact or outcome]</em>.
-    </p>
-  </div><br>
-  <textarea id="vision_statement" name="vision_statement" rows="6" cols="120" placeholder="Type your vision statement here..." required></textarea>
-</li>
-</div>
-<br><li>
-  After classifying our stakeholders and defining the project vision, we need to recommend our project management approach! We know that Agile is needed, but which style of Agile would work best?
-  <br>&emsp;<em>Use a search engine (i.e. Google), lecture, and your experience to decide the best methodology and define why in a few sentences.</em>
-  <br><br>
-  <label for="agile_methodology"><strong>Select Agile Methodology:</strong></label>
-  <select id="agile_methodology" name="agile_methodology" required>
-    <option value="">-- Please choose an option --</option>
-    <option value="Scrum">Scrum</option>
-    <option value="Kanban">Kanban</option>
-    <option value="Extreme Programming (XP)">Extreme Programming (XP)</option>
-    <option value="Lean">Lean</option>
-    <option value="Agile Hybrid">Agile Hybrid</option>
-  </select>
-  <br>
-  <textarea id="agile_justification" name="agile_justification" rows="5" cols="120" placeholder="Why is this methodology the best fit? Explain your reasoning in 2–4 sentences..." required></textarea>
-</li>
-<br><br><strong>Lab 1 Complete! Don't forget to print the page to save your answers! </strong>
-</ol>
+    </details>
+
+    <textarea id="vision_statement" name="vision_statement" rows="6" placeholder="Type your vision statement here..." required></textarea>
+
+    <h3>Task 3: Recommend an Agile Methodology</h3>
+    <p>Which Agile style best suits this project? Use class lectures, external resources, or experience to justify your choice.</p>
+
+    <label for="agile_methodology"><strong>Agile Methodology:</strong></label>
+    <select id="agile_methodology" name="agile_methodology" required>
+      <option value="">-- Please choose an option --</option>
+      <option value="Scrum">Scrum</option>
+      <option value="Kanban">Kanban</option>
+      <option value="Extreme Programming (XP)">Extreme Programming (XP)</option>
+      <option value="Lean">Lean</option>
+      <option value="Agile Hybrid">Agile Hybrid</option>
+    </select>
+
+    <textarea id="agile_justification" name="agile_justification" rows="5" placeholder="Why is this methodology the best fit? Explain your reasoning in 2–4 sentences..." required></textarea>
+
+    <p><strong>Lab 1 Complete!</strong> Don’t forget to print or save your work.</p>
+  </div>
 </section>
-
 
 <section class="lab-section" data-lab="Lab 2">
-<h2> Lab 2: Shaping our Sprints and Tracking Progress</h2>
-<ol>
-<em>//In this lab, you'll be creating Epics, writing User Stories, creating a Product Backlog, and prioritizing work items.</em>
-<br><br><Strong>Project Title:</Strong> Brosnan-Jeter Prestige Healthcare Worldwide Application Development and Deployment
-<br><strong>Description:</strong> An up-and-coming start-up led by two healthcare prodigies, Riley and Kevin, has secured funding to develop Brosnan-Jeter Prestige Healthcare Worldwide. It will serve as a mobile and desktop application that connects patients with their Primary Care Providers for virtual care, ranging from Physical Therapy and Diagnoses to Prescriptions and Testing. The Minimum Viable Product must be delivered in 6 weeks to meet a demo for a major hospital partner. Kevin and Riley and very strict on this 6 week demo – their future funding and business success depends on this. 
-<br><br>Kevin and Riley are results-driven entrepreneurs with a bold vision to modernize patient care through streamlined, intuitive technology. While Kevin focuses on strategic alignment and brand reputation, Riley is more focused on clinical credibility and practical healthcare impact. 
-<br><br>Outlined below are some of their most critical business goals, <strong>in order of importance: </strong>
-    <br>&emsp;&emsp; 1. Reduce in-clinic appointment load by 25% 
-    <br>&emsp;&emsp; 2. Enable secure, HIPAA-compliant messaging and video calls between patients and Primary Care Providers
-    <br>&emsp;&emsp; 3. Allow patients to view care plans, medications, and appointment schedules 
-    <br>&emsp;&emsp; 4. Deliver a seamless user experience across all devices
-<br><br>
- 
-<br><br>
-<li>Based on the goals, stakeholder needs, and requested features, identify 3 Epics that represent the major feature groups or outcomes for the MVP. <button onclick="toggleVisibility('createEpics')">Show/Hide Creating Epics Help</button>
-    <div id="createEpics" style="display:none; margin-top:10px; padding:10px; border-left:3px solid #007BFF; background-color:#f9f9f9;">
-    <p><strong>Creating Epics:</strong></p>
-    <p>
-      1. An Epic should be broad enough to include 3–7 user stories, but not so vague it loses focus.<br>
-      2. If you find a <strong>cluster of related user stories</strong>, group them under a single Epic. Think of an Epic as a container that makes backlog management more manageable and thematic.<br>
-      &emsp; <em>If several stories start with “As a patient, I want to…” related to communication, they likely belong to an Epic about messaging or interaction.</em><br>
-      3. It's ok to start with User Stories first and then come back to catergorize you User Stories into Epics.  Agile isn't prescriptive - it's what works best for <strong>YOU</strong>.
-    </p>
-  </div>
-<br>
-<form method="post" action="blah.html">
-    <div class="table">
-      <div class="tr">
-        <span class="th">Epic Title</span>
-        <span class="th">Description</span>
-        <span class="th">Primary Stakeholders Impacted</span>
-      </div>
-      <div class="tr">
-        <span class="td">Virtual Consultations</span>
-        <span class="td">Enable secure, HIPAA-compliant real-time video calls between patients and PCPs</span>
-        <span class="td">Riley Brosnan, Dr. Patel, Daniel Kwon</span>
-      </div>
-      <div class="tr">
-        <span class="td"><textarea id="Epic Title" name="Epic Title" rows="1" cols="30" placeholder="" required></textarea></span>
-        <span class="td"><textarea id="Description" name="Description" rows="1" cols="80" placeholder="" required></textarea></span>
-        <span class="td"><textarea id="Primary Stakeholders Impacted" name="Primary Stakeholders Impacted" rows="1" cols="30" placeholder="" required></textarea></span>
-      </div>
-      <div class="tr">
-        <span class="td"><textarea id="Epic Title" name="Epic Title" rows="1" cols="30" placeholder="" required></textarea></span>
-        <span class="td"><textarea id="Description" name="Description" rows="1" cols="80" placeholder="" required></textarea></span>
-        <span class="td"><textarea id="Primary Stakeholders Impacted" name="Primary Stakeholders Impacted" rows="1" cols="30" placeholder="" required></textarea></span>
-      </div>
-      <div class="tr">
-        <span class="td"><textarea id="Epic Title" name="Epic Title" rows="1" cols="30" placeholder="" required></textarea></span>
-        <span class="td"><textarea id="Description" name="Description" rows="1" cols="80" placeholder="" required></textarea></span>
-        <span class="td"><textarea id="Primary Stakeholders Impacted" name="Primary Stakeholders Impacted" rows="1" cols="30" placeholder="" required></textarea></span>
-      </div>
+  <div class="card">
+    <h2>Lab 2: Shaping Our Sprints and Tracking Progress</h2>
+
+    <p><em>In this lab, you'll define Epics, write User Stories, build a Product Backlog, and reflect on sprint readiness.</em></p>
+
+    <h3>Project Summary</h3>
+    <p><strong>Project Title:</strong> Brosnan-Jeter Prestige Healthcare Worldwide Application Development and Deployment</p>
+    <p><strong>Description:</strong> Riley and Kevin are building a HIPAA-compliant mobile and desktop app that enables virtual healthcare. The MVP is due in 6 weeks. Riley focuses on clinical quality, while Kevin emphasizes strategy and brand.</p>
+
+    <p><strong>Business Goals (ordered by priority):</strong></p>
+    <ul>
+      <li>Reduce in-clinic appointment load by 25%</li>
+      <li>Enable secure, HIPAA-compliant messaging and video calls</li>
+      <li>Allow patients to view care plans, medications, and appointments</li>
+      <li>Deliver a seamless user experience across all devices</li>
+    </ul>
+
+    <h3>Task 1: Define Epics</h3>
+    <p>Based on the goals, stakeholder needs, and requested features, identify 3 Epics that represent the major feature groups or outcomes for the MVP.
+    <button type="button" class="toggle-button" onclick="toggleVisibility('createEpics')">
+      Show/Hide Creating Epics Help
+    </button></p>
+    <div id="createEpics" class="info-box" style="display: none;">
+      <p><strong>Creating Epics:</strong></p>
+      <ul>
+        <li>An Epic should be broad enough to include 3–7 user stories, but not so vague it loses focus.</li>
+        <li>If you find a cluster of related user stories, group them under a single Epic. Think of an Epic as a container that makes backlog management more manageable and thematic.</li>
+        <li>It's ok to start with User Stories first and then come back to catergorize you User Stories into Epics. Agile isn't prescriptive - it's what works best for YOU</li>
+      </ul>
     </div>
-</form>
-</li><br>
-<li>For the Epics you created, write 4 User Stories. Ensure your stories are meeting the <strong>INVEST</strong> criteria! <button onclick="toggleVisibility('createUserStories')">Show/Hide Creating User Stories Help</button>
-    <div id="createUserStories" style="display:none; margin-top:10px; padding:10px; border-left:3px solid #007BFF; background-color:#f9f9f9;">
-    <p><strong>Creating User Stories:</strong></p>
-    <p>
-      <em>"As a <strong>[user type]</strong>, I want to <strong>[action or goal]</strong> so that <strong>[benefit or reason]</strong>"<br><br></em>
-      Hints for writing: <br>
-      &emsp; 1. Avoid generic phrases like "As a user." Be specific as to which user (e.g. <em>patient, provider, admin, etc.</em>)<br>
-      &emsp; 2. Include the Why! Instead of saying "so that I can use the app," say "so that I can follow up on my treatment plan"<br>
-      &emsp; 3. Keep it small. Each story should be able to be completed in 1 sprint. <br><br>
-      Remember the INVEST criteria: <br> 
-      &emsp; 1. <strong>Independent</strong>:  If stories rely on each other, consider combining them or re-sequencing<br>
-      &emsp; 2. <strong>Negotiable</strong>:  If the story is overly detailed with technical specs or UI mockups, it’s not negotiable<br>
-      &emsp; 3. <strong>Valuable</strong>:  Ask “Who benefits from this?” and “How does this help the user or business?”<br>
-      &emsp; 4. <strong>Estimable</strong>:  You must be able to roughly estimate the effort or complexity of the story.<br>
-      &emsp; 5. <strong>Small</strong>:  Small stories reduce risk, make progress visible, and give fast feedback.<br>
-      &emsp; 6. <strong>Testable</strong>:  Vague stories like “Improve performance” or “Make it look better” are hard to test.<br>
-    </p>
-  </div>
-<form method="post" action="blah.html">
-    <div class="table">
-      <div class="tr">
-        <span class="th">Epic Title</span>
-        <span class="th">User Story</span>
-        <span class="th">Acceptance Criteria</span>
-      </div>
-      <div class="tr">
-        <span class="td">Virtual Consultations</span>
-        <span class="td">US001: As a patient, I want to join a video call with my doctor via my computer, so that I can receive care from home.</span>
-        <span class="td">Patient can initiate video call from appointment page 5 minutes prior to scheduled time; Provider is notified when patient has joined, Encrypted call</span>
-      </div>
-      <div class="tr">
-        <span class="td"><textarea id="Epic Title" name="Epic Title" rows="1" cols="30" placeholder="" required></textarea></span>
-        <span class="td"><textarea id="User Story" name="User Story" rows="1" cols="90" placeholder="US002" required></textarea></span>
-        <span class="td"><textarea id="Acceptance Criteria" name="Acceptance Criteria" rows="1" cols="90" placeholder="" required></textarea></span>
-      </div>
-      <div class="tr">
-        <span class="td"><textarea id="Epic Title" name="Epic Title" rows="1" cols="30" placeholder="" required></textarea></span>
-        <span class="td"><textarea id="User Story" name="User Story" rows="1" cols="90" placeholder="US003" required></textarea></span>
-        <span class="td"><textarea id="Acceptance Criteria" name="Acceptance Criteria" rows="1" cols="90" placeholder="" required></textarea></span>
-      </div>
-      <div class="tr">
-        <span class="td"><textarea id="Epic Title" name="Epic Title" rows="1" cols="30" placeholder="" required></textarea></span>
-        <span class="td"><textarea id="User Story" name="User Story" rows="1" cols="90" placeholder="US004" required></textarea></span>
-        <span class="td"><textarea id="Acceptance Criteria" name="Acceptance Criteria" rows="1" cols="90" placeholder="" required></textarea></span>
-      </div>
-      <div class="tr">
-        <span class="td"><textarea id="Epic Title" name="Epic Title" rows="1" cols="30" placeholder="" required></textarea></span>
-        <span class="td"><textarea id="User Story" name="User Story" rows="1" cols="90" placeholder="US005" required></textarea></span>
-        <span class="td"><textarea id="Acceptance Criteria" name="Acceptance Criteria" rows="1" cols="90" placeholder="" required></textarea></span>
-      </div>
+
+    <form method="post" action="blah.html">
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Epic Title</th>
+            <th>Description</th>
+            <th>Primary Stakeholders Impacted</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Virtual Consultations</td>
+            <td>Enable secure, HIPAA-compliant real-time video calls between patients and PCPs</td>
+            <td>Riley Brosnan, Dr. Patel, Daniel Kwon</td>
+          </tr>
+          <!-- Editable rows -->
+          <tr>
+            <td><textarea name="epic1_title" rows="1" required></textarea></td>
+            <td><textarea name="epic1_desc" rows="1" required></textarea></td>
+            <td><textarea name="epic1_stakeholders" rows="1" required></textarea></td>
+          </tr>
+          <tr>
+            <td><textarea name="epic2_title" rows="1" required></textarea></td>
+            <td><textarea name="epic2_desc" rows="1" required></textarea></td>
+            <td><textarea name="epic2_stakeholders" rows="1" required></textarea></td>
+          </tr>
+          <tr>
+            <td><textarea name="epic3_title" rows="1" required></textarea></td>
+            <td><textarea name="epic3_desc" rows="1" required></textarea></td>
+            <td><textarea name="epic3_stakeholders" rows="1" required></textarea></td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+
+    <h3>Task 2: Write User Stories</h3>
+    <p>For the Epics you created, write 4 User Stories. Ensure your stories are meeting the INVEST criteria!
+    <button type="button" class="toggle-button" onclick="toggleVisibility('createUserStories')">
+      Show/Hide Creating User Stories Help
+    </button></p>
+    <div id="createUserStories" class="info-box" style="display: none;">
+      <p><strong>Format:</strong> "As a <em>[user]</em>, I want to <em>[action]</em> so that <em>[benefit]</em>"</p>
+      <p><strong>Hints for Writing</strong></p>
+      <ul>
+        <li>Avoid generic phrases like "As a user." Be specific as to which user (e.g. patient, provider, admin, etc.)</li>
+        <li>Include the Why! Instead of saying "so that I can use the app," say "so that I can follow up on my treatment plan"</li>
+        <li>Keep it small. Each story should be able to be completed in 1 sprint.</li>
+      </ul>
+      <p><strong>INVEST criteria:</strong></p>
+      <ul>
+        <li><strong>I</strong>ndependent:  If stories rely on each other, consider combining them or re-sequencing</li>
+        <li><strong>N</strong>egotiable: If the story is overly detailed with technical specs or UI mockups, it’s not negotiable</li>
+        <li><strong>V</strong>aluable: Ask “Who benefits from this?” and “How does this help the user or business?”</li>
+        <li><strong>E</strong>stimable: You must be able to roughly estimate the effort or complexity of the story.</li>
+        <li><strong>S</strong>mall: Small stories reduce risk, make progress visible, and give fast feedback.</li>
+        <li><strong>T</strong>estable: Vague stories like “Improve performance” or “Make it look better” are hard to test.</li>
+      </ul>
     </div>
-</form>
-</li><br>
-<li>Now we're ready to prioritize! Create a backlog using the user stories above - breaking them down further as needed. <button onclick="toggleVisibility('createBacklog')">Show/Hide Creating User Stories Help</button>
-    <div id="createBacklog" style="display:none; margin-top:10px; padding:10px; border-left:3px solid #007BFF; background-color:#f9f9f9;">
-    <p><strong>The Backlog:</strong></p>
-    <p>
-      Hints for Backlog Creation and Prioritization: <br>
-      &emsp; 1. Start with the MVP in mind. <br>
-      &emsp; &emsp; <em>What must be done to be ready for the 6-week demo?</em> <br><br>
-      &emsp; 2. Your backlog should include more than just user stories. <br>
-      &emsp; &emsp; <em>Make sure to include technical tasks, compliance tasks, accessibility reviews, etc. Just make sure it's trackable!</em> <br><br>
-      &emsp; 3. Use relative sizing and don't aim for perfection. <br>
-      &emsp; &emsp; <em>Estimation helps with sprint planning and capacity planning, not forecasting down to the hour.</em>
-    </p>
-  </div>
-<form method="post" action="blah.html">
-    <div class="table">
-      <div class="tr">
-        <span class="th">ID</span>
-        <span class="th">Requirement</span>
-        <span class="th">User Story</span>
-        <span class="th">Priority (H/M/L)</span>
-        <span class="th">Effort (T-Shirt)</span>
-        <span class="th">Notes</span>
-      </div>
-      <div class="tr">
-        <span class="td">001</span>
-        <span class="td">Encryption protocols meet HIPAA Compliance</span>
-        <span class="td">US001</span>
-        <span class="td">H</span>
-        <span class="td">M</span>
-        <span class="td">See HIPAA Virtual call standards</span>
-      </div>
-      <div class="tr">
-        <span class="td">002</span>
-        <span class="td">Join button becomes selectable 5-minutes prior to start time</span>
-        <span class="td">US001</span>
-        <span class="td">H</span>
-        <span class="td">XS</span>
-        <span class="td">N/A</span>
-      </div>
-      <div class="tr">
-        <span class="td">003</span>
-        <span class="td"><textarea id="Requirement" name="Requirement" rows="1" cols="60" placeholder="" required></textarea></span>
-        <span class="td"><textarea id="User Story" name="User Story" rows="1" cols="10" placeholder="" required></textarea></span>
-        <span class="td"><textarea id="Priority (H/M/L)" name="Priority (H/M/L)" rows="1" cols="20" placeholder="" required></textarea></span>
-        <span class="td"><textarea id="Effort (T-Shirt)" name="Effort (T-Shirt)" rows="1" cols="20" placeholder="" required></textarea></span>
-        <span class="td"><textarea id="Notes" name="Notes" rows="1" cols="60" placeholder="" required></textarea></span>
-      </div>
-      <div class="tr">
-        <span class="td">004</span>
-        <span class="td"><textarea id="Requirement" name="Requirement" rows="1" cols="60" placeholder="" required></textarea></span>
-        <span class="td"><textarea id="User Story" name="User Story" rows="1" cols="10" placeholder="" required></textarea></span>
-        <span class="td"><textarea id="Priority (H/M/L)" name="Priority (H/M/L)" rows="1" cols="20" placeholder="" required></textarea></span>
-        <span class="td"><textarea id="Effort (T-Shirt)" name="Effort (T-Shirt)" rows="1" cols="20" placeholder="" required></textarea></span>
-        <span class="td"><textarea id="Notes" name="Notes" rows="1" cols="60" placeholder="" required></textarea></span>
-      </div>
-      <div class="tr">
-        <span class="td">005</span>
-        <span class="td"><textarea id="Requirement" name="Requirement" rows="1" cols="60" placeholder="" required></textarea></span>
-        <span class="td"><textarea id="User Story" name="User Story" rows="1" cols="10" placeholder="" required></textarea></span>
-        <span class="td"><textarea id="Priority (H/M/L)" name="Priority (H/M/L)" rows="1" cols="20" placeholder="" required></textarea></span>
-        <span class="td"><textarea id="Effort (T-Shirt)" name="Effort (T-Shirt)" rows="1" cols="20" placeholder="" required></textarea></span>
-        <span class="td"><textarea id="Notes" name="Notes" rows="1" cols="60" placeholder="" required></textarea></span>
-      </div>
-      <div class="tr">
-        <span class="td">006</span>
-        <span class="td"><textarea id="Requirement" name="Requirement" rows="1" cols="60" placeholder="" required></textarea></span>
-        <span class="td"><textarea id="User Story" name="User Story" rows="1" cols="10" placeholder="" required></textarea></span>
-        <span class="td"><textarea id="Priority (H/M/L)" name="Priority (H/M/L)" rows="1" cols="20" placeholder="" required></textarea></span>
-        <span class="td"><textarea id="Effort (T-Shirt)" name="Effort (T-Shirt)" rows="1" cols="20" placeholder="" required></textarea></span>
-        <span class="td"><textarea id="Notes" name="Notes" rows="1" cols="60" placeholder="" required></textarea></span>
-      </div>
+
+    <form method="post" action="blah.html">
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Epic Title</th>
+            <th>User Story</th>
+            <th>Acceptance Criteria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Virtual Consultations</td>
+            <td>US001: As a patient, I want to join a video call with my doctor via my computer, so I can receive care from home.</td>
+            <td>Patient can initiate video call 5 minutes early; Provider is notified; Call is encrypted.</td>
+          </tr>
+          <tr>
+            <td><textarea name="us_epic2" rows="1" required></textarea></td>
+            <td><textarea name="us_story2" rows="1" required></textarea></td>
+            <td><textarea name="us_criteria2" rows="1" required></textarea></td>
+          </tr>
+          <tr>
+            <td><textarea name="us_epic3" rows="1" required></textarea></td>
+            <td><textarea name="us_story3" rows="1" required></textarea></td>
+            <td><textarea name="us_criteria3" rows="1" required></textarea></td>
+          </tr>
+          <tr>
+            <td><textarea name="us_epic4" rows="1" required></textarea></td>
+            <td><textarea name="us_story4" rows="1" required></textarea></td>
+            <td><textarea name="us_criteria4" rows="1" required></textarea></td>
+          </tr>
+          <tr>
+            <td><textarea name="us_epic5" rows="1" required></textarea></td>
+            <td><textarea name="us_story5" rows="1" required></textarea></td>
+            <td><textarea name="us_criteria5" rows="1" required></textarea></td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+
+    <h3>Task 3: Create a Product Backlog</h3>
+    <p>Now we're ready to prioritize! Create a backlog using the user stories above - breaking them down further as needed. 
+    <button type="button" class="toggle-button" onclick="toggleVisibility('createBacklog')">
+      Show/Hide Backlog Creation Help
+    </button></p>
+    <div id="createBacklog" class="info-box" style="display: none;">
+      <ul>
+        <li>Start with the MVP in mind. <em>Focus on what's required for the 6-week MVP demo.</em></li>
+        <li>Your backlog should include more than just user stories. <em>Make sure to include technical tasks, compliance tasks, accessibility reviews, etc. Just make sure it's trackable!</em></li>
+        <li>Use relative sizing (e.g., T-shirt sizes) for effort estimates. <em>Estimation helps with sprint planning and capacity planning, not forecasting down to the hour.</em></li>
+      </ul>
     </div>
-</form>
-</li><br>
-<li>Now let's do some reflection! What was the most challenging part of this lab? Use at minimum 2-3 sentences.
-  <br>
-  <textarea id="Lab 2 Debrief" name="Lab 2 Debrief" rows="5" cols="120" placeholder="What was the most difficult part of creating Epics, User Stories, and the Product Backlog?" required></textarea>
-</li>
-<br><br>
-<strong>Lab 2 Complete! Don't forget to print the page to save your answers! </strong>
-</ol>
+
+    <form method="post" action="blah.html">
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Requirement</th>
+            <th>User Story</th>
+            <th>Priority</th>
+            <th>Effort</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>001</td>
+            <td>Encryption protocols meet HIPAA compliance</td>
+            <td>US001</td>
+            <td>H</td>
+            <td>M</td>
+            <td>See HIPAA virtual call standards</td>
+          </tr>
+          <tr>
+            <td>002</td>
+            <td>Join button becomes active 5 mins before start</td>
+            <td>US001</td>
+            <td>H</td>
+            <td>XS</td>
+            <td>N/A</td>
+          </tr>
+          <!-- Editable rows -->
+          <tr>
+            <td>003</td>
+            <td><textarea name="req3" rows="1" required></textarea></td>
+            <td><textarea name="req3_story" rows="1" required></textarea></td>
+            <td><textarea name="req3_priority" rows="1" required></textarea></td>
+            <td><textarea name="req3_effort" rows="1" required></textarea></td>
+            <td><textarea name="req3_notes" rows="1" required></textarea></td>
+          </tr>
+          <tr>
+            <td>004</td>
+            <td><textarea name="req4" rows="1" required></textarea></td>
+            <td><textarea name="req4_story" rows="1" required></textarea></td>
+            <td><textarea name="req4_priority" rows="1" required></textarea></td>
+            <td><textarea name="req4_effort" rows="1" required></textarea></td>
+            <td><textarea name="req4_notes" rows="1" required></textarea></td>
+          </tr>
+          <tr>
+            <td>005</td>
+            <td><textarea name="req5" rows="1" required></textarea></td>
+            <td><textarea name="req5_story" rows="1" required></textarea></td>
+            <td><textarea name="req5_priority" rows="1" required></textarea></td>
+            <td><textarea name="req5_effort" rows="1" required></textarea></td>
+            <td><textarea name="req5_notes" rows="1" required></textarea></td>
+          </tr>
+          <tr>
+            <td>006</td>
+            <td><textarea name="req6" rows="1" required></textarea></td>
+            <td><textarea name="req6_story" rows="1" required></textarea></td>
+            <td><textarea name="req6_priority" rows="1" required></textarea></td>
+            <td><textarea name="req6_effort" rows="1" required></textarea></td>
+            <td><textarea name="req6_notes" rows="1" required></textarea></td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+
+    <h3>Task 4: Reflect</h3>
+    <p>What was the most challenging part of this lab? Answer in 2–3 sentences.</p>
+    <textarea name="lab2_debrief" rows="5" placeholder="What was the most difficult part of creating Epics, User Stories, and the Product Backlog?" required></textarea>
+
+    <p><strong>Lab 2 Complete! Don’t forget to print or save your answers.</strong></p>
+  </div>
 </section>
+
 
 
 <section class="lab-section" data-lab="Lab 3">
-<h2> Lab 3: Executing in the Sprint</h2>
-<ol>
-<em>//In this lab, you’ll explore Sprint Planning, observe a real Daily Stand-Up, identify team blockers, and practice how to respond to change mid-sprint</em>
-<br><br>You're part of the development team building the MVP for Brosnan-Jeter Prestige Healthcare. Sprint 1 has kicked off. You've committed to 5 features that focus on login, video consults, and HIPAA compliance.
-<br>Kevin and Riley are enthusiastic but demanding. They care about results and want constant visibility. Your team must balance speed with smart decision-making during execution.
-<br><br>Based on the requirements chosen for the first sprint, complete all activities.
-<br>
-<form method="post" action="blah.html">
-    <div class="table">
-      <div class="tr">
-        <span class="th">ID</span>
-        <span class="th">Requirement</span>
-        <span class="th">User Story</span>
-        <span class="th">Priority (H/M/L)</span>
-        <span class="th">Story Points</span>
-        <span class="th">Iteration</span>
-        <span class="th">Notes</span>
-      </div>
-      <div class="tr">
-        <span class="td">001</span>
-        <span class="td">Encryption protocols meet HIPAA Compliance</span>
-        <span class="td">US001</span>
-        <span class="td">H</span>
-        <span class="td">3</span>
-        <span class="td">001</span>
-        <span class="td">See HIPAA Virtual call standards</span>
-      </div>
-      <div class="tr">
-        <span class="td">002</span>
-        <span class="td">Join button becomes selectable 5-minutes prior to start time</span>
-        <span class="td">US001</span>
-        <span class="td">H</span>
-        <span class="td">1</span>
-        <span class="td">001</span>
-        <span class="td">Front-end and time check logic</span>
-      </div>
-      <div class="tr">
-        <span class="td">003</span>
-        <span class="td">Notification triggers to provider when patient joins call</span>
-        <span class="td">US001</span>
-        <span class="td">H</span>
-        <span class="td">3</span>
-        <span class="td">001</span>
-        <span class="td">Push notification or in-app alert</span>
-      </div>
-      <div class="tr">
-        <span class="td">004</span>
-        <span class="td">Patient can view care plan details from dashboard</span>
-        <span class="td">US003</span>
-        <span class="td">H</span>
-        <span class="td">1</span>
-        <span class="td">001</span>
-        <span class="td">N/A</span>
-      </div>
-      <div class="tr">
-        <span class="td">005</span>
-        <span class="td">Patient login and role-based access control (patient, provider)</span>
-        <span class="td">US001</span>
-        <span class="td">H</span>
-        <span class="td">5</span>
-        <span class="td">004</span>
-        <span class="td">Shared auth with admin roles</span>
-      </div>
-    </div>
-</form>
-<br><br>
-<li>Plan before we build. 
-  <br>&emsp; a. Why do Agile Teams hold a Sprint Planning meeting?
-  <br><textarea id="Lab 3 - Sprint Planning" name="Lab 3 - Sprint Planning" rows="5" cols="120" placeholder="Write 1-2 sentences explaining the purpose and goal of Sprint Planning" required></textarea>
-  <br>&emsp; b. Given the list of sprint items identified for work, whcih carries the most risk? Why?
-  <br><textarea id="Lab 3 - Sprint Planning" name="Lab 3 - Sprint Planning" rows="5" cols="120" placeholder="Which sprint item carries the most risk? Why?" required></textarea>
-</li><br>
-<li>You’re on Day 4 of Sprint 1. During today’s stand-up, each team member gives a quick update. You'll identify who’s not aligned in the Daily Stand-Up?
-  <br>&emsp;<strong>Front-End Developer:</strong>
-  <br>&emsp;“Yesterday I finished the Join Video Call button and tested it. Today I’ll start the care plan dashboard. I’m still waiting on the API from the back-end team but will work around it for now.”
-  <br>&emsp;<strong>Back-End Developer:</strong>
-  <br>&emsp;“Still working on the login system. I was also exploring facial recognition just for fun. It’s not in this sprint, but it could impress leadership. I’ll keep playing with it today.”
-  <br>&emsp;<strong>QA Tester:</strong>
-  <br>&emsp;“Test cases are ready for login and video consults. Once the encryption review is done and I get server access, I’ll begin execution.”
-  <br><br>
+  <div class="card">
+    <h2>Lab 3: Executing in the Sprint</h2>
+    <p><em>// In this lab, you’ll explore Sprint Planning, observe a real Daily Stand-Up, identify team blockers, and practice how to respond to change mid-sprint</em></p>
 
-  <strong>a. Who is <em>not</em> following the expectations of a Daily Stand-Up?</strong><br>
-  &emsp;<input type="radio" name="q1" value="Front-End Developer"> Front-End Developer<br>
-  &emsp;<input type="radio" name="q1" value="Back-End Developer" required> Back-End Developer<br>
-  &emsp;<input type="radio" name="q1" value="QA Tester"> QA Tester<br><br>
+    <p>You're part of the development team building the MVP for <strong>Brosnan-Jeter Prestige Healthcare</strong>. Sprint 1 has kicked off. You've committed to 5 features that focus on login, video consults, and HIPAA compliance.</p>
 
-  <strong>b. What are they doing that breaks Agile team norms? (Select all that apply)</strong><br>
-  &emsp;<input type="checkbox" name="q2" value="No blockers"> They didn’t report any blockers<br>
-  &emsp;<input type="checkbox" name="q2" value="Not in sprint"> They are working on something not in the sprint plan<br>
-  &emsp;<input type="checkbox" name="q2" value="Not sprint-focused"> They didn’t focus on sprint goals<br>
-  &emsp;<input type="checkbox" name="q2" value="Skipped yesterday"> They skipped reporting what they did yesterday<br><br>
+    <p>Kevin and Riley are enthusiastic but demanding. They care about results and want constant visibility. Your team must balance speed with smart decision-making during execution.</p>
 
-  <strong>c. Why is this behavior risky to the team’s success?</strong>
-  <br>&emsp;<textarea id="Lab 3 - Standup Risk" name="Lab 3 - Standup Risk" rows="5" cols="120" placeholder="In 3-4 sentences, explain why this is risky to our success." required></textarea>
+    <p>Based on the requirements chosen for the first sprint, complete all activities.</p>
 
-  <br><strong>d. As a Scrum Master, what is the best way to approach and respond to this issue? Provide when, where, and how you'd resolve the problem.</strong>
-  <br>&emsp;<textarea id="Lab 3 - Scrum Master" name="Lab 3 - Scrum Master" rows="5" cols="120" placeholder="In 3-4 sentences, describe the best way to address this issue" required></textarea>
-</li><br>
-<li>Even the best sprint plans hit a few bumps. Below are issues your team is facing during Sprint 1. For each situation, choose or describe how your Agile team should respond.
-  <br><br>
-  &emsp;a. Kevin requests a mockup of an AI symptom checker that wasn’t in the sprint backlog. He believes it will impress potential investors. <strong>How should the team respond?</strong><br>
-  &emsp;&emsp;<input type="radio" name="issueA" value="addWithoutPlan"> Add the feature to the sprint immediately to make Kevin happy<br>
-  &emsp;&emsp;<input type="radio" name="issueA" value="ignoreRequest"> Ignore the request – it wasn’t in the plan<br>
-  &emsp;&emsp;<input type="radio" name="issueA" value="discussWithPO" required> Discuss the request in the next backlog refinement and consider it for the next sprint<br>
-  &emsp;&emsp;<input type="radio" name="issueA" value="createMockup"> Create a simple non-functional mockup and share it outside the sprint<br><br>
+    <form method="post" action="blah.html">
+      <div class="table">
+        <div class="tr">
+          <span class="th">ID</span>
+          <span class="th">Requirement</span>
+          <span class="th">User Story</span>
+          <span class="th">Priority (H/M/L)</span>
+          <span class="th">Story Points</span>
+          <span class="th">Iteration</span>
+          <span class="th">Notes</span>
+        </div>
+        <div class="tr">
+          <span class="td">001</span>
+          <span class="td">Encryption protocols meet HIPAA Compliance</span>
+          <span class="td">US001</span>
+          <span class="td">H</span>
+          <span class="td">3</span>
+          <span class="td">001</span>
+          <span class="td">See HIPAA Virtual call standards</span>
+        </div>
+        <div class="tr">
+          <span class="td">002</span>
+          <span class="td">Join button becomes selectable 5-minutes prior to start time</span>
+          <span class="td">US001</span>
+          <span class="td">H</span>
+          <span class="td">1</span>
+          <span class="td">001</span>
+          <span class="td">Front-end and time check logic</span>
+        </div>
+        <div class="tr">
+          <span class="td">003</span>
+          <span class="td">Notification triggers to provider when patient joins call</span>
+          <span class="td">US001</span>
+          <span class="td">H</span>
+          <span class="td">3</span>
+          <span class="td">001</span>
+          <span class="td">Push notification or in-app alert</span>
+        </div>
+        <div class="tr">
+          <span class="td">004</span>
+          <span class="td">Patient can view care plan details from dashboard</span>
+          <span class="td">US003</span>
+          <span class="td">H</span>
+          <span class="td">1</span>
+          <span class="td">001</span>
+          <span class="td">N/A</span>
+        </div>
+        <div class="tr">
+          <span class="td">005</span>
+          <span class="td">Patient login and role-based access control (patient, provider)</span>
+          <span class="td">US001</span>
+          <span class="td">H</span>
+          <span class="td">5</span>
+          <span class="td">004</span>
+          <span class="td">Shared auth with admin roles</span>
+        </div>
+      </div>
+    </form>
 
-  &emsp;b. The encryption module for video calls is still waiting on compliance review from Daniel Kwon. QA cannot proceed with testing. <strong>What should your team do to stay on track?</strong><br>
-  &emsp;&emsp;<textarea name="issueB" rows="3" cols="100" placeholder="Briefly describe what steps the team or Scrum Master should take to unblock QA."></textarea><br>
+    <hr>
 
-  &emsp;c. Lisa Thompson reports that the UI text is too small for elderly users. <strong>How can your team respond during this sprint — even if the design isn’t final?</strong><br>
-  &emsp;&emsp;<textarea name="issueD" rows="3" cols="100" placeholder="Suggest a quick action the team can take now to show responsiveness to accessibility."></textarea><br><br>
-</li>
-</ol>
-<strong>Lab 3 Complete! Don't forget to print the page to save your answers! </strong>
+    <ol>
+      <li>
+        <strong>Plan before we build.</strong><br>
+        a. Why do Agile Teams hold a Sprint Planning meeting?<br>
+        <textarea name="Lab 3 - Sprint Planning A" rows="4" cols="100" placeholder="Write 1-2 sentences explaining the purpose and goal of Sprint Planning" required></textarea><br><br>
+
+        b. Given the list of sprint items identified for work, which carries the most risk? Why?<br>
+        <textarea name="Lab 3 - Sprint Planning B" rows="4" cols="100" placeholder="Which sprint item carries the most risk? Why?" required></textarea>
+      </li>
+
+      <li>
+        <strong>Identify stand-up misalignment.</strong><br>
+        <p><strong>Front-End Developer:</strong> “Yesterday I finished the Join Video Call button and tested it. Today I’ll start the care plan dashboard. I’m still waiting on the API from the back-end team but will work around it for now.”</p>
+        <p><strong>Back-End Developer:</strong> “Still working on the login system. I was also exploring facial recognition just for fun. It’s not in this sprint, but it could impress leadership. I’ll keep playing with it today.”</p>
+        <p><strong>QA Tester:</strong> “Test cases are ready for login and video consults. Once the encryption review is done and I get server access, I’ll begin execution.”</p>
+
+        <div class="form-group">
+          <strong>a. Who is <em>not</em> following the expectations of a Daily Stand-Up?</strong>
+          <div class="form-inline-options">
+            <label><input type="radio" name="q1" value="Front-End Developer" required> Front-End Developer</label>
+            <label><input type="radio" name="q1" value="Back-End Developer"> Back-End Developer</label>
+            <label><input type="radio" name="q1" value="QA Tester"> QA Tester</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <strong>b. What are they doing that breaks Agile team norms? (Select all that apply)</strong>
+          <div class="form-inline-options">
+            <label><input type="checkbox" name="q2" value="No blockers"> Didn’t report any blockers</label>
+            <label><input type="checkbox" name="q2" value="Not in sprint"> Working on something not in sprint</label>
+            <label><input type="checkbox" name="q2" value="Not sprint-focused"> Didn’t focus on sprint goals</label>
+            <label><input type="checkbox" name="q2" value="Skipped yesterday"> Skipped reporting yesterday</label>
+          </div>
+        </div>
+
+        <p><strong>c. Why is this behavior risky to the team’s success?</strong></p>
+        <textarea name="Lab 3 - Standup Risk" rows="4" cols="100" placeholder="Explain why this is risky to our success." required></textarea><br><br>
+
+        <p><strong>d. As Scrum Master, how would you respond to this issue?</strong></p>
+        <textarea name="Lab 3 - Scrum Master" rows="4" cols="100" placeholder="Describe the best way to address this issue." required></textarea>
+      </li>
+
+      <li>
+        <strong>Responding to mid-sprint changes.</strong><br><br>
+        <div class="form-group">
+          <strong>a. Kevin requests a mockup of an AI symptom checker that wasn’t in the sprint backlog. How should the team respond?</strong>
+          <div class="form-inline-options">
+            <label><input type="radio" name="issueA" value="addWithoutPlan"> Add it to the sprint immediately</label>
+            <label><input type="radio" name="issueA" value="ignoreRequest"> Ignore the request</label>
+            <label><input type="radio" name="issueA" value="discussWithPO" required> Discuss during backlog refinement</label>
+            <label><input type="radio" name="issueA" value="createMockup"> Share a mockup outside sprint</label>
+          </div>
+        </div>
+
+        b. The encryption module is still waiting on compliance review from Daniel Kwon. QA cannot proceed. What should your team do?<br>
+        <textarea name="issueB" rows="3" cols="100" placeholder="How to unblock QA?"></textarea><br><br>
+
+        c. Lisa Thompson reports the UI text is too small for elderly users. What quick action can you take this sprint?<br>
+        <textarea name="issueD" rows="3" cols="100" placeholder="Suggest a quick accessibility response."></textarea>
+      </li>
+    </ol>
+
+    <p><strong>Lab 3 Complete! Don't forget to print the page to save your answers!</strong></p>
+  </div>
 </section>
 
 <section class="lab-section" data-lab="Lab 4">
-<h2> Lab 4: Sprint Review and Retrospective</h2>
-<ol>
-<em>//In this lab, you'll conduct a Sprint Review with stakeholders, manage conflicting feedback, facilitate a Sprint Retrospective, and analyze team performance metrics.</em>
-<br><br>Sprint 1 is complete! Your team has delivered 4 out of 5 committed features. The login system took longer than expected due to HIPAA compliance requirements, but video consultations, care plan viewing, and basic notifications are working. It's time to review progress with stakeholders and reflect on team performance.
-<br><br><Strong>Sprint 1 Results:</Strong>
-<br>&emsp;✅ Patient login and role-based access control - <em>COMPLETE</em>
-<br>&emsp;✅ Join video call 5 minutes before appointment - <em>COMPLETE</em>
-<br>&emsp;✅ Provider notification when patient joins - <em>COMPLETE</em>
-<br>&emsp;✅ Patient can view care plan from dashboard - <em>COMPLETE</em>
-<br>&emsp;❌ HIPAA encryption protocols - <em>IN PROGRESS (80% complete)</em>
-<br><br>The Sprint Review meeting is scheduled with all key stakeholders. You need to present the work, gather feedback, and plan next steps.
-<br><br>
-
-<li>Sprint Review Preparation: You're presenting to Kevin (CEO), Riley (CCO), Dr. Patel (Clinical Advisor), and Daniel Kwon (Compliance Lead). Each has different priorities and will react differently to your progress. <button onclick="toggleVisibility('sprintReviewHelp')">Show/Hide Sprint Review Best Practices</button>
-    <div id="sprintReviewHelp" style="display:none; margin-top:10px; padding:10px; border-left:3px solid #007BFF; background-color:#f9f9f9;">
-    <p><strong>Sprint Review Best Practices:</strong></p>
-    <p>
-      1. <strong>Focus on working software</strong> - demonstrate actual functionality, not mockups<br>
-      2. <strong>Be transparent about incomplete work</strong> - explain what's done, what's not, and why<br>
-      3. <strong>Gather stakeholder feedback</strong> - this shapes the product backlog for future sprints<br>
-      4. <strong>Discuss market conditions and timeline</strong> - has anything changed that affects priorities?<br>
-      5. <strong>Update the Product Backlog</strong> - add, remove, or re-prioritize based on feedback
+  <h2>Lab 4: Sprint Review and Retrospective</h2>
+  <ol>
+    <p class="info-box">
+      <em>In this lab, you'll conduct a Sprint Review with stakeholders, manage conflicting feedback, facilitate a Sprint Retrospective, and analyze team performance metrics.</em>
     </p>
-  </div>
-  <br><strong>a. What will you demonstrate to stakeholders?</strong> (Select all that apply)<br>
-  &emsp;<input type="checkbox" name="demo_items" value="login_system"> Working login system with role-based access<br>
-  &emsp;<input type="checkbox" name="demo_items" value="video_join"> Video call join functionality<br>
-  &emsp;<input type="checkbox" name="demo_items" value="care_plan"> Care plan dashboard view<br>
-  &emsp;<input type="checkbox" name="demo_items" value="notifications"> Provider notification system<br>
-  &emsp;<input type="checkbox" name="demo_items" value="encryption_progress"> Progress on HIPAA encryption (even though incomplete)<br><br>
 
-  <strong>b. How will you address the incomplete HIPAA encryption work with Daniel Kwon?</strong><br>
-  &emsp;<textarea id="hipaa_explanation" name="hipaa_explanation" rows="4" cols="120" placeholder="How will you explain the delay and provide confidence that compliance will be met?" required></textarea>
-</li><br>
-
-<li>Stakeholder Feedback Management: After your demo, stakeholders provide feedback. Some of it conflicts! <strong>Review each stakeholder's response and decide how to handle their feedback.</strong>
-  <br><br>
-  <form method="post" action="blah.html">
-    <div class="table">
-      <div class="tr">
-        <span class="th">Stakeholder</span>
-        <span class="th">Feedback</span>
-        <span class="th">Your Response</span>
-        <span class="th">Backlog Action</span>
-      </div>
-      <div class="tr">
-        <span class="td"><strong>Kevin (CEO)</strong></span>
-        <span class="td">"Great progress! Can we add a patient satisfaction survey after each call? It would look great in investor meetings."</span>
-        <span class="td">
-          <select name="kevin_response" required>
-            <option value="">Select Response</option>
-            <option value="add_immediately">Add to current sprint immediately</option>
-            <option value="add_backlog">Add to product backlog for future sprint</option>
-            <option value="discuss_impact">Discuss scope impact with Product Owner first</option>
-            <option value="decline_politely">Politely decline - not MVP critical</option>
-          </select>
-        </span>
-        <span class="td"><textarea name="kevin_backlog" rows="2" cols="40" placeholder="What backlog changes will you make?"></textarea></span>
-      </div>
-      <div class="tr">
-        <span class="td"><strong>Riley (CCO)</strong></span>
-        <span class="td">"The care plan view is too basic. Patients need to see medication interactions and contraindications for safety."</span>
-        <span class="td">
-          <select name="riley_response" required>
-            <option value="">Select Response</option>
-            <option value="add_immediately">Add to current sprint immediately</option>
-            <option value="add_backlog">Add to product backlog for future sprint</option>
-            <option value="discuss_impact">Discuss scope impact with Product Owner first</option>
-            <option value="decline_politely">Politely decline - not MVP critical</option>
-          </select>
-        </span>
-        <span class="td"><textarea name="riley_backlog" rows="2" cols="40" placeholder="What backlog changes will you make?"></textarea></span>
-      </div>
-      <div class="tr">
-        <span class="td"><strong>Dr. Patel</strong></span>
-        <span class="td">"Video quality is good, but I need to be able to share my screen to show test results. This is essential for effective consultations."</span>
-        <span class="td">
-          <select name="patel_response" required>
-            <option value="">Select Response</option>
-            <option value="add_immediately">Add to current sprint immediately</option>
-            <option value="add_backlog">Add to product backlog for future sprint</option>
-            <option value="discuss_impact">Discuss scope impact with Product Owner first</option>
-            <option value="decline_politely">Politely decline - not MVP critical</option>
-          </select>
-        </span>
-        <span class="td"><textarea name="patel_backlog" rows="2" cols="40" placeholder="What backlog changes will you make?"></textarea></span>
-      </div>
-      <div class="tr">
-        <span class="td"><strong>Daniel (Compliance)</strong></span>
-        <span class="td">"We cannot demo to the hospital partner without full HIPAA compliance. I need encryption completed before any external presentations."</span>
-        <span class="td">
-          <select name="daniel_response" required>
-            <option value="">Select Response</option>
-            <option value="commit_timeline">Commit to specific completion timeline</option>
-            <option value="prioritize_encryption">Re-prioritize sprint to focus on encryption</option>
-            <option value="request_extension">Request demo extension if needed</option>
-            <option value="parallel_development">Continue other work in parallel</option>
-          </select>
-        </span>
-        <span class="td"><textarea name="daniel_backlog" rows="2" cols="40" placeholder="What backlog changes will you make?"></textarea></span>
-      </div>
+    <div class="card">
+      <strong>Sprint 1 Results:</strong><br>
+      &emsp;✅ Patient login and role-based access control – <em>COMPLETE</em><br>
+      &emsp;✅ Join video call 5 minutes before appointment – <em>COMPLETE</em><br>
+      &emsp;✅ Provider notification when patient joins – <em>COMPLETE</em><br>
+      &emsp;✅ Patient can view care plan from dashboard – <em>COMPLETE</em><br>
+      &emsp;❌ HIPAA encryption protocols – <em>IN PROGRESS (80% complete)</em>
     </div>
-  </form>
-</li><br>
 
-<li>Sprint Retrospective: Time to reflect on what went well and what can be improved. Your team uses the Start/Stop/Continue format. <button onclick="toggleVisibility('retroHelp')">Show/Hide Retrospective Guidelines</button>
-    <div id="retroHelp" style="display:none; margin-top:10px; padding:10px; border-left:3px solid #007BFF; background-color:#f9f9f9;">
-    <p><strong>Effective Retrospectives:</strong></p>
-    <p>
-      <strong>START</strong> - What should we begin doing that we're not doing now?<br>
-      <strong>STOP</strong> - What should we stop doing because it's not helping or is harmful?<br>
-      <strong>CONTINUE</strong> - What's working well that we should keep doing?<br><br>
-      Focus on processes, communication, and team dynamics - not individual blame.
-    </p>
-  </div>
-  <br>Based on Sprint 1 experiences (HIPAA delays, scope creep requests, good collaboration), complete the retrospective:
-  <br><br>
-  <form method="post" action="blah.html">
-    <div class="table">
-      <div class="tr">
-        <span class="th">Category</span>
-        <span class="th">Team Feedback</span>
-        <span class="th">Action Item</span>
-        <span class="th">Owner</span>
+    <li>
+      <strong>Sprint Review Preparation</strong><br>
+      You're presenting to Kevin (CEO), Riley (CCO), Dr. Patel (Clinical Advisor), and Daniel Kwon (Compliance Lead).
+      <button class="toggle-button" onclick="toggleVisibility('sprintReviewHelp')">Show/Hide Sprint Review Best Practices</button>
+      <div id="sprintReviewHelp" class="info-box" style="display:none;">
+        <strong>Sprint Review Best Practices:</strong>
+        <ul>
+          <li><strong>Focus on working software</strong> – demonstrate actual functionality</li>
+          <li><strong>Be transparent about incomplete work</strong></li>
+          <li><strong>Gather stakeholder feedback</strong></li>
+          <li><strong>Discuss market conditions and timeline</strong></li>
+          <li><strong>Update the Product Backlog</strong></li>
+        </ul>
       </div>
-      <div class="tr">
-        <span class="td"><strong>START</strong></span>
-        <span class="td">Daily check-ins with Daniel Kwon on compliance items to avoid last-minute surprises</span>
-        <span class="td"><textarea name="start_action1" rows="2" cols="50" placeholder="What specific action will you take?"></textarea></span>
-        <span class="td"><textarea name="start_owner1" rows="1" cols="20" placeholder="Who is responsible?"></textarea></span>
-      </div>
-      <div class="tr">
-        <span class="td"><strong>START</strong></span>
-        <span class="td"><textarea name="start_feedback2" rows="2" cols="60" placeholder="What else should the team START doing?" required></textarea></span>
-        <span class="td"><textarea name="start_action2" rows="2" cols="50" placeholder="What specific action will you take?"></textarea></span>
-        <span class="td"><textarea name="start_owner2" rows="1" cols="20" placeholder="Who is responsible?"></textarea></span>
-      </div>
-      <div class="tr">
-        <span class="td"><strong>STOP</strong></span>
-        <span class="td">Accepting new requirements mid-sprint without impact analysis</span>
-        <span class="td"><textarea name="stop_action1" rows="2" cols="50" placeholder="What specific action will you take?"></textarea></span>
-        <span class="td"><textarea name="stop_owner1" rows="1" cols="20" placeholder="Who is responsible?"></textarea></span>
-      </div>
-      <div class="tr">
-        <span class="td"><strong>STOP</strong></span>
-        <span class="td"><textarea name="stop_feedback2" rows="2" cols="60" placeholder="What else should the team STOP doing?" required></textarea></span>
-        <span class="td"><textarea name="stop_action2" rows="2" cols="50" placeholder="What specific action will you take?"></textarea></span>
-        <span class="td"><textarea name="stop_owner2" rows="1" cols="20" placeholder="Who is responsible?"></textarea></span>
-      </div>
-      <div class="tr">
-        <span class="td"><strong>CONTINUE</strong></span>
-        <span class="td">Transparent daily stand-ups - everyone knows blockers and progress</span>
-        <span class="td"><textarea name="continue_action1" rows="2" cols="50" placeholder="How will you ensure this continues?"></textarea></span>
-        <span class="td"><textarea name="continue_owner1" rows="1" cols="20" placeholder="Who is responsible?"></textarea></span>
-      </div>
-      <div class="tr">
-        <span class="td"><strong>CONTINUE</strong></span>
-        <span class="td"><textarea name="continue_feedback2" rows="2" cols="60" placeholder="What else should the team CONTINUE doing?" required></textarea></span>
-        <span class="td"><textarea name="continue_action2" rows="2" cols="50" placeholder="How will you ensure this continues?"></textarea></span>
-        <span class="td"><textarea name="continue_owner2" rows="1" cols="20" placeholder="Who is responsible?"></textarea></span>
-      </div>
-    </div>
-  </form>
-</li><br>
 
-<li>Performance Metrics and Velocity: Analyze your team's performance to improve future sprint planning. <button onclick="toggleVisibility('metricsHelp')">Show/Hide Metrics Explanation</button>
-    <div id="metricsHelp" style="display:none; margin-top:10px; padding:10px; border-left:3px solid #007BFF; background-color:#f9f9f9;">
-    <p><strong>Key Agile Metrics:</strong></p>
-    <p>
-      <strong>Velocity</strong> - Story points completed per sprint (helps predict future capacity)<br>
-      <strong>Burn-down</strong> - Work remaining over time (shows if team is on track)<br>
-      <strong>Cycle Time</strong> - Time from start to completion of work items<br>
-      <strong>Sprint Goal Achievement</strong> - Did we meet our sprint objectives?
-    </p>
-  </div>
-  <br><strong>Sprint 1 Data:</strong>
-  <br>&emsp;• Committed Story Points: 13
-  <br>&emsp;• Completed Story Points: 8 (HIPAA encryption worth 5 points still in progress)
-  <br>&emsp;• Sprint Length: 2 weeks
-  <br>&emsp;• Team Size: 3 developers + 1 QA + 1 Scrum Master
-  <br><br>
-  <strong>a. What is your team's velocity for Sprint 1?</strong><br>
-  &emsp;<input type="text" name="velocity" placeholder="Enter velocity" required> story points per sprint
-  <br><br>
-  <strong>b. Based on this velocity, how many story points should you commit to in Sprint 2?</strong><br>
-  &emsp;<input type="radio" name="sprint2_commitment" value="8"> 8 points (same as completed)<br>
-  &emsp;<input type="radio" name="sprint2_commitment" value="10"> 10 points (slight increase)<br>
-  &emsp;<input type="radio" name="sprint2_commitment" value="13"> 13 points (same as originally planned)<br>
-  &emsp;<input type="radio" name="sprint2_commitment" value="15"> 15 points (increase capacity)<br>
-  <br><strong>c. Justify your Sprint 2 commitment decision:</strong><br>
-  &emsp;<textarea name="commitment_justification" rows="4" cols="120" placeholder="Explain your reasoning considering team capacity, lessons learned, and upcoming work..." required></textarea>
-  <br><br>
-  <strong>d. What factors might affect your velocity in future sprints?</strong> (Select all that apply)<br>
-  &emsp;<input type="checkbox" name="velocity_factors" value="compliance_reviews"> Additional compliance reviews<br>
-  &emsp;<input type="checkbox" name="velocity_factors" value="stakeholder_changes"> Stakeholder feedback and changes<br>
-  &emsp;<input type="checkbox" name="velocity_factors" value="technical_debt"> Technical debt from rushing features<br>
-  &emsp;<input type="checkbox" name="velocity_factors" value="team_learning"> Team learning curve on healthcare domain<br>
-  &emsp;<input type="checkbox" name="velocity_factors" value="integration_complexity"> Integration complexity increases<br>
-</li><br>
+      <div class="form-group">
+        <strong>a. What will you demonstrate to stakeholders?</strong><br>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="demo_items" value="login_system"> Working login system with role-based access</label>
+          <label><input type="checkbox" name="demo_items" value="video_join"> Video call join functionality</label>
+          <label><input type="checkbox" name="demo_items" value="care_plan"> Care plan dashboard view</label>
+          <label><input type="checkbox" name="demo_items" value="notifications"> Provider notification system</label>
+          <label><input type="checkbox" name="demo_items" value="encryption_progress"> Progress on HIPAA encryption</label>
+        </div>
+      </div>
 
-<li>Sprint Planning for Sprint 2: Based on feedback and retrospective insights, plan your next sprint. The 6-week demo deadline is approaching (4 weeks remaining).
-  <br><br><strong>Updated Product Backlog (Top Priority Items):</strong>
-  <br>&emsp;• Complete HIPAA encryption protocols (5 pts) - <em>Carry over from Sprint 1</em>
-  <br>&emsp;• Screen sharing for providers during video calls (8 pts) - <em>Dr. Patel request</em>
-  <br>&emsp;• Enhanced care plan with medication interactions (5 pts) - <em>Riley request</em>
-  <br>&emsp;• Patient satisfaction survey post-consultation (3 pts) - <em>Kevin request</em>
-  <br>&emsp;• Secure messaging between patients and providers (8 pts) - <em>Original requirement</em>
-  <br>&emsp;• Mobile app responsive design improvements (3 pts) - <em>Technical debt</em>
-  <br><br>
+      <div class="form-group">
+        <strong>b. How will you address the incomplete HIPAA encryption work with Daniel Kwon?</strong><br>
+        <textarea name="hipaa_explanation" rows="4" placeholder="How will you explain the delay and provide confidence that compliance will be met?" required></textarea>
+      </div>
+    </li>
 
-  <strong>What items will you commit to for Sprint 2?</strong> (Consider your velocity calculation above)<br>
-  <form method="post" action="blah.html">
-    <div class="table">
-      <div class="tr">
-        <span class="th">Include in Sprint 2?</span>
-        <span class="th">Feature</span>
-        <span class="th">Story Points</span>
-        <span class="th">Justification</span>
-      </div>
-      <div class="tr">
-        <span class="td"><input type="checkbox" name="sprint2_items" value="hipaa_encryption"></span>
-        <span class="td">Complete HIPAA encryption protocols</span>
-        <span class="td">5</span>
-        <span class="td"><textarea name="hipaa_justification" rows="1" cols="50" placeholder="Why include or exclude?"></textarea></span>
-      </div>
-      <div class="tr">
-        <span class="td"><input type="checkbox" name="sprint2_items" value="screen_sharing"></span>
-        <span class="td">Screen sharing for providers</span>
-        <span class="td">8</span>
-        <span class="td"><textarea name="screen_justification" rows="1" cols="50" placeholder="Why include or exclude?"></textarea></span>
-      </div>
-      <div class="tr">
-        <span class="td"><input type="checkbox" name="sprint2_items" value="enhanced_care_plan"></span>
-        <span class="td">Enhanced care plan with medication interactions</span>
-        <span class="td">5</span>
-        <span class="td"><textarea name="care_plan_justification" rows="1" cols="50" placeholder="Why include or exclude?"></textarea></span>
-      </div>
-      <div class="tr">
-        <span class="td"><input type="checkbox" name="sprint2_items" value="satisfaction_survey"></span>
-        <span class="td">Patient satisfaction survey</span>
-        <span class="td">3</span>
-        <span class="td"><textarea name="survey_justification" rows="1" cols="50" placeholder="Why include or exclude?"></textarea></span>
-      </div>
-      <div class="tr">
-        <span class="td"><input type="checkbox" name="sprint2_items" value="secure_messaging"></span>
-        <span class="td">Secure messaging system</span>
-        <span class="td">8</span>
-        <span class="td"><textarea name="messaging_justification" rows="1" cols="50" placeholder="Why include or exclude?"></textarea></span>
-      </div>
-      <div class="tr">
-        <span class="td"><input type="checkbox" name="sprint2_items" value="mobile_responsive"></span>
-        <span class="td">Mobile responsive design improvements</span>
-        <span class="td">3</span>
-        <span class="td"><textarea name="mobile_justification" rows="1" cols="50" placeholder="Why include or exclude?"></textarea></span>
-      </div>
-    </div>
-  </form>
-  <br><strong>Total Story Points Selected:</strong> <span id="total_points">0</span> points
-  <br><em>(JavaScript will calculate this automatically based on your selections)</em>
-</li><br>
+    <li>
+      <strong>Stakeholder Feedback Management</strong><br>
+      <p>Review each stakeholder's response and decide how to handle their feedback.</p>
+      <form method="post">
+        <div class="styled-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Stakeholder</th>
+                <th>Feedback</th>
+                <th>Your Response</th>
+                <th>Backlog Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Kevin (CEO)</strong></td>
+                <td>"Can we add a patient satisfaction survey after each call?"</td>
+                <td>
+                  <select name="kevin_response" required>
+                    <option value="">Select Response</option>
+                    <option value="add_immediately">Add to current sprint immediately</option>
+                    <option value="add_backlog">Add to product backlog</option>
+                    <option value="discuss_impact">Discuss scope impact first</option>
+                    <option value="decline_politely">Politely decline</option>
+                  </select>
+                </td>
+                <td><textarea name="kevin_backlog" rows="2" placeholder="What backlog changes?"></textarea></td>
+              </tr>
+              <tr>
+                <td><strong>Riley (CCO)</strong></td>
+                <td>"Care plan view is too basic. Need medication interactions."</td>
+                <td>
+                  <select name="riley_response" required>
+                    <option value="">Select Response</option>
+                    <option value="add_immediately">Add to current sprint</option>
+                    <option value="add_backlog">Add to product backlog</option>
+                    <option value="discuss_impact">Discuss scope impact</option>
+                    <option value="decline_politely">Politely decline</option>
+                  </select>
+                </td>
+                <td><textarea name="riley_backlog" rows="2"></textarea></td>
+              </tr>
+              <tr>
+                <td><strong>Dr. Patel</strong></td>
+                <td>"I need to share my screen to show test results."</td>
+                <td>
+                  <select name="patel_response" required>
+                    <option value="">Select Response</option>
+                    <option value="add_immediately">Add to current sprint</option>
+                    <option value="add_backlog">Add to product backlog</option>
+                    <option value="discuss_impact">Discuss scope impact</option>
+                    <option value="decline_politely">Politely decline</option>
+                  </select>
+                </td>
+                <td><textarea name="patel_backlog" rows="2"></textarea></td>
+              </tr>
+              <tr>
+                <td><strong>Daniel (Compliance)</strong></td>
+                <td>"We need HIPAA compliance before demoing."</td>
+                <td>
+                  <select name="daniel_response" required>
+                    <option value="">Select Response</option>
+                    <option value="commit_timeline">Commit to timeline</option>
+                    <option value="prioritize_encryption">Prioritize encryption</option>
+                    <option value="request_extension">Request extension</option>
+                    <option value="parallel_development">Continue other work</option>
+                  </select>
+                </td>
+                <td><textarea name="daniel_backlog" rows="2"></textarea></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </form>
+    </li>
 
-<li>Reflection: Sprint Reviews and Retrospectives are crucial Agile ceremonies. Based on your experience in this lab, answer the following:
-  <br><br><strong>a. What was the most challenging aspect of managing conflicting stakeholder feedback?</strong>
-  <br><textarea name="feedback_challenge" rows="4" cols="120" placeholder="Describe the biggest challenge and how Agile principles help address it..." required></textarea>
-  <br><br><strong>b. How do retrospectives contribute to team improvement beyond just identifying problems?</strong>
-  <br><textarea name="retrospective_value" rows="4" cols="120" placeholder="Explain how retrospectives drive continuous improvement..." required></textarea>
-  <br><br><strong>c. Why is velocity tracking important, and what are its limitations?</strong>
-  <br><textarea name="velocity_analysis" rows="4" cols="120" placeholder="Discuss both the benefits and potential pitfalls of velocity metrics..." required></textarea>
-</li>
-</ol>
+    <li>
+      <strong>Sprint Retrospective</strong><br>
+      <button class="toggle-button" onclick="toggleVisibility('retroHelp')">Show/Hide Retrospective Guidelines</button>
+      <div id="retroHelp" class="info-box" style="display:none;">
+        <strong>Effective Retrospectives:</strong>
+        <ul>
+          <li><strong>START</strong> – What should we begin doing?</li>
+          <li><strong>STOP</strong> – What should we stop doing?</li>
+          <li><strong>CONTINUE</strong> – What’s working well?</li>
+        </ul>
+      </div>
 
-<script>
-// Calculate total story points for Sprint 2 planning
-document.addEventListener('change', function(e) {
-    if (e.target.name === 'sprint2_items') {
-        const checkboxes = document.querySelectorAll('input[name="sprint2_items"]:checked');
-        const pointValues = {
-            'hipaa_encryption': 5,
-            'screen_sharing': 8,
-            'enhanced_care_plan': 5,
-            'satisfaction_survey': 3,
-            'secure_messaging': 8,
-            'mobile_responsive': 3
-        };
-        
-        let total = 0;
-        checkboxes.forEach(checkbox => {
-            total += pointValues[checkbox.value] || 0;
-        });
-        
-        document.getElementById('total_points').textContent = total;
-    }
-});
-</script>
+      <form method="post">
+        <div class="styled-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Team Feedback</th>
+                <th>Action Item</th>
+                <th>Owner</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>START</strong></td>
+                <td>Daily check-ins with Daniel on compliance</td>
+                <td><textarea name="start_action1"></textarea></td>
+                <td><textarea name="start_owner1"></textarea></td>
+              </tr>
+              <tr>
+                <td><strong>START</strong></td>
+                <td><textarea name="start_feedback2" required></textarea></td>
+                <td><textarea name="start_action2"></textarea></td>
+                <td><textarea name="start_owner2"></textarea></td>
+              </tr>
+              <tr>
+                <td><strong>STOP</strong></td>
+                <td>Accepting mid-sprint scope changes</td>
+                <td><textarea name="stop_action1"></textarea></td>
+                <td><textarea name="stop_owner1"></textarea></td>
+              </tr>
+              <tr>
+                <td><strong>STOP</strong></td>
+                <td><textarea name="stop_feedback2" required></textarea></td>
+                <td><textarea name="stop_action2"></textarea></td>
+                <td><textarea name="stop_owner2"></textarea></td>
+              </tr>
+              <tr>
+                <td><strong>CONTINUE</strong></td>
+                <td>Transparent daily stand-ups</td>
+                <td><textarea name="continue_action1"></textarea></td>
+                <td><textarea name="continue_owner1"></textarea></td>
+              </tr>
+              <tr>
+                <td><strong>CONTINUE</strong></td>
+                <td><textarea name="continue_feedback2" required></textarea></td>
+                <td><textarea name="continue_action2"></textarea></td>
+                <td><textarea name="continue_owner2"></textarea></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </form>
+    </li>
 
-<br><br><strong>Lab 4 Complete! Don't forget to print the page to save your answers!</strong>
+    <li>
+      <strong>Performance Metrics and Velocity</strong><br>
+      <button class="toggle-button" onclick="toggleVisibility('metricsHelp')">Show/Hide Metrics Explanation</button>
+      <div id="metricsHelp" class="info-box" style="display:none;">
+        <ul>
+          <li><strong>Velocity</strong> – Story points completed</li>
+          <li><strong>Burn-down</strong> – Work remaining over time</li>
+          <li><strong>Cycle Time</strong> – Time to complete work</li>
+          <li><strong>Sprint Goal Achievement</strong></li>
+        </ul>
+      </div>
+
+      <p><strong>Sprint 1 Data:</strong></p>
+      <ul>
+        <li>Committed: 13 pts</li>
+        <li>Completed: 8 pts</li>
+        <li>Sprint Length: 2 weeks</li>
+        <li>Team Size: 5 (3 devs, 1 QA, 1 Scrum Master)</li>
+      </ul>
+
+      <div class="form-group">
+        <strong>a. What is your team's velocity?</strong><br>
+        <input type="text" name="velocity" required> story points
+      </div>
+
+      <div class="form-group">
+        <strong>b. How many points will you commit to in Sprint 2?</strong><br>
+        <div class="radio-group">
+          <label><input type="radio" name="sprint2_commitment" value="8"> 8 pts</label>
+          <label><input type="radio" name="sprint2_commitment" value="10"> 10 pts</label>
+          <label><input type="radio" name="sprint2_commitment" value="13"> 13 pts</label>
+          <label><input type="radio" name="sprint2_commitment" value="15"> 15 pts</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <strong>c. Justify your Sprint 2 commitment decision:</strong><br>
+        <textarea name="commitment_justification" rows="4" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <strong>d. What factors might affect velocity?</strong><br>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="velocity_factors" value="compliance_reviews"> Compliance reviews</label>
+          <label><input type="checkbox" name="velocity_factors" value="stakeholder_changes"> Stakeholder changes</label>
+          <label><input type="checkbox" name="velocity_factors" value="technical_debt"> Technical debt</label>
+          <label><input type="checkbox" name="velocity_factors" value="team_learning"> Learning curve</label>
+          <label><input type="checkbox" name="velocity_factors" value="integration_complexity"> Integration complexity</label>
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <strong>Sprint Planning for Sprint 2</strong><br>
+      <p><strong>Updated Backlog:</strong></p>
+      <ul>
+        <li>HIPAA encryption – 5 pts</li>
+        <li>Screen sharing – 8 pts</li>
+        <li>Enhanced care plan – 5 pts</li>
+        <li>Patient survey – 3 pts</li>
+        <li>Secure messaging – 8 pts</li>
+        <li>Responsive design – 3 pts</li>
+      </ul>
+
+      <form>
+        <div class="styled-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Include?</th>
+                <th>Feature</th>
+                <th>Points</th>
+                <th>Justification</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><input type="checkbox" name="sprint2_items" value="hipaa_encryption"></td><td>HIPAA encryption</td><td>5</td><td><textarea name="hipaa_justification"></textarea></td></tr>
+              <tr><td><input type="checkbox" name="sprint2_items" value="screen_sharing"></td><td>Screen sharing</td><td>8</td><td><textarea name="screen_justification"></textarea></td></tr>
+              <tr><td><input type="checkbox" name="sprint2_items" value="enhanced_care_plan"></td><td>Care plan w/ meds</td><td>5</td><td><textarea name="care_plan_justification"></textarea></td></tr>
+              <tr><td><input type="checkbox" name="sprint2_items" value="satisfaction_survey"></td><td>Survey</td><td>3</td><td><textarea name="survey_justification"></textarea></td></tr>
+              <tr><td><input type="checkbox" name="sprint2_items" value="secure_messaging"></td><td>Secure messaging</td><td>8</td><td><textarea name="messaging_justification"></textarea></td></tr>
+              <tr><td><input type="checkbox" name="sprint2_items" value="mobile_responsive"></td><td>Responsive design</td><td>3</td><td><textarea name="mobile_justification"></textarea></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>Total Points Selected:</strong> <span id="total_points">0</span></p>
+      </form>
+    </li>
+
+    <li>
+      <strong>Reflection</strong><br>
+      <div class="form-group">
+        <strong>a. What was the most challenging aspect of managing feedback?</strong><br>
+        <textarea name="feedback_challenge" rows="4" required></textarea>
+      </div>
+      <div class="form-group">
+        <strong>b. How do retrospectives improve teams?</strong><br>
+        <textarea name="retrospective_value" rows="4" required></textarea>
+      </div>
+      <div class="form-group">
+        <strong>c. Why is velocity tracking important?</strong><br>
+        <textarea name="velocity_analysis" rows="4" required></textarea>
+      </div>
+    </li>
+  </ol>
+
+  <p><strong>Lab 4 Complete! Don’t forget to print or save your answers!</strong></p>
 </section>
+
 <section class="lab-section" data-lab="Lab 5">
 <h2>Lab 5: Agile Roles and Scaling Collaboration</h2>
 <ol>
@@ -1182,6 +1481,19 @@ document.addEventListener('change', function(e) {
 <strong>Lab 5 Complete! Remember to print your page to save your answers!</strong>
 </section>
 <script>
+    const toggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    body.classList.add(savedTheme);
+    toggle.checked = savedTheme === 'dark';
+
+    toggle.addEventListener('change', () => {
+        body.classList.toggle('dark', toggle.checked);
+        body.classList.toggle('light', !toggle.checked);
+        localStorage.setItem('theme', toggle.checked ? 'dark' : 'light');
+    });
+
 function filterLabs() {
     var selected = document.getElementById("labFilter").value;
     document.querySelectorAll(".lab-section").forEach(section => {
@@ -1204,11 +1516,13 @@ function copyToClipboard(button) {
 }
 
 function toggleVisibility(id) {
-    var element = document.getElementById(id);
-    if (element) {
-        element.style.display = (element.style.display === 'none' || element.style.display === '') ? 'block' : 'none';
+    const el = document.getElementById(id);
+    if (el.style.display === "none" || el.style.display === "") {
+      el.style.display = "block";
+    } else {
+      el.style.display = "none";
     }
-}
+  }
 </script>
 <footer class="footer">
     © 2025 Department of Veterans Affairs. All rights reserved.
