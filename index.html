@@ -1,128 +1,261 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>HTM251: Agile Project Management Fundamentals</title>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; background: #f9f9f9; padding: 20px; color: #333; }
-        h1, h2 { color: #012456; }
-        .copy-container { margin: 10px 0; display: flex; align-items: center; gap: 10px; }
-        .copy-input {
-            flex-grow: 1; padding: 5px; font-family: monospace;
-            font-size: 1rem; border: 1px solid #ccc; border-radius: 5px; background-color: #f4f4f4;
+        :root {
+            --primary: #005ea2;
+            --accent: #cce5ff;
+            --bg-light: #f8f9fa;
+            --gray-border: #dee2e6;
+            --text-dark: #212529;
         }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            background: var(--bg-light);
+            padding: 20px;
+            color: var(--text-dark);
+        }
+
+        h1, h2 {
+            color: var(--primary);
+        }
+
+        .header, .footer {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+
+        .header h1 { margin: 0; }
+        .footer { margin-top: 40px; }
+
+        .lab-section {
+            display: none;
+            background: white;
+            border-left: 5px solid var(--primary);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            padding: 20px;
+            margin-bottom: 30px;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .lab-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        select, input, textarea {
+            border: 1px solid var(--gray-border);
+            border-radius: 4px;
+            padding: 6px;
+            width: 100%;
+            font-size: 1rem;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        select:hover, input:hover, textarea:hover {
+            outline: 2px solid var(--primary);
+        }
+
         .copy-button {
-            padding: 5px 10px; background-color: #012456; color: white;
-            border: none; border-radius: 5px; cursor: pointer;
+            padding: 5px 10px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
-        .copy-button:hover { background-color: #0142a3; }
-        .lab-section { display: none; margin-top: 20px; padding: 10px; background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .lab-section.active { display: block; }
-        img { display: block; margin-top: 10px; max-width: 80%; height: auto; border: 1px solid #ccc; border-radius: 4px; }
-        .header {background-color: #012456; color: white; text-align: center; padding: 15px 0; margin-bottom: 40px; border-radius: 8px;}
-        .header h1 {color: white;}
-        .footer {background-color: #012456; color: white; text-align: center;padding: 15px 0;margin-top: 40px; }
+
+        .copy-button:hover {
+            background-color: #003d7a;
+        }
+
+        .table {
+            display: table;
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .tr { display: table-row; }
+        .td, .th {
+            display: table-cell;
+            border: 1px solid var(--gray-border);
+            padding: 10px;
+        }
+
+        .th {
+            background-color: #f0f0f0;
+            font-weight: bold;
+        }
+
+        .table .tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .copy-container {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .copy-input {
+            flex-grow: 1;
+            padding: 5px;
+            font-family: monospace;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f4f4f4;
+        }
+
+        img {
+            display: block;
+            margin-top: 10px;
+            max-width: 80%;
+            height: auto;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body>
     <header class="header"><h1>HTM251: Agile Project Management Fundamentals Labs</h1></header>
-    <label for="labFilter"><strong>Select Lab:</strong></label>
-    <select id="labFilter" onchange="filterLabs()">
-        <option value="">----Select----</option>
-<option value="User Guide" selected>User Guide</option>
-<option value="Scenario">Scenario</option>
-<option value="Lab 1">Lab 1</option>
-<option value="Lab 2">Lab 2</option>
-<option value="Lab 3">Lab 3</option>
-<option value="Lab 4">Lab 4</option>
-<option value="Lab 5">Lab 5</option>
-</select>
+    <div class="card">
+  <label for="labFilter"><strong>Select Lab:</strong></label>
+  <select id="labFilter" onchange="filterLabs()">
+    <option value="">----Select----</option>
+    <option value="User Guide" selected>User Guide</option>
+    <option value="Scenario">Scenario</option>
+    <option value="Lab 1">Lab 1</option>
+    <option value="Lab 2">Lab 2</option>
+    <option value="Lab 3">Lab 3</option>
+    <option value="Lab 4">Lab 4</option>
+    <option value="Lab 5">Lab 5</option>
+  </select>
+</div>
 
 <section class="lab-section active" data-lab="User Guide">
-<h2> User Guide for HTM251: Agile Project Management Fundamentals Labs</h2>
-<ol>
-<br>You've successfully found the labs for HTM251: Agile Project Management Fundamentals! So how do you use these? Follow these instructions! <br> <br>
-<li>Read the entire scenario! Bits of it will be on each lab page, but it's important to read all the details first.</li>
-<li>Using the dropdown above, select the lab you want to complete.</li>
-<li>As you work through the labs, fill out all blanks and open text fields. You can re-size open-text fields via the bottom right-hand corner of the text field!</li>
-<li> Remember, if you have any questions - ask! That's what the instructors are here for!</li>
-<br> <br> Comments, Questions, Concerns, or General Feedback? Let us know at <a href="https://kevin-jeter-kg.github.io/" target="'_blank">this Survey!</a>
-</ol>
+  <div class="card">
+    <h2>User Guide for HTM251: Agile Project Management Fundamentals Labs</h2>
+    <ol>
+      <li>Read the entire scenario! Bits of it will be on each lab page, but it's important to read all the details first.</li>
+      <li>Using the dropdown above, select the lab you want to complete.</li>
+      <li>As you work through the labs, fill out all blanks and open text fields. You can re-size open-text fields via the bottom right-hand corner of the text field!</li>
+      <li>Remember, if you have any questions - ask! That's what the instructors are here for!</li>
+    </ol>
+    <p><strong>Comments, Questions, Concerns, or General Feedback?</strong> Let us know at <a href="https://kevin-jeter-kg.github.io/" target="_blank">this Survey!</a></p>
+  </div>
 </section>
 
 <section class="lab-section" data-lab="Scenario">
-<h2>Scenario Details</h2>
-<ol> 
-<Strong>Project Title:</Strong> Brosnan-Jeter Prestige Healthcare Worldwide Application Development and Deployment
-<br><br> <strong>Description:</strong> An up-and-coming start-up led by two healthcare prodigies, Riley and Kevin, has secured funding to develop Brosnan-Jeter Prestige Healthcare Worldwide. It will serve as a mobile and desktop application that connects patients with their Primary Care Providers for virtual care, ranging from Physical Therapy and Diagnoses to Prescriptions and Testing. The Minimum Viable Product must be delivered in 6 weeks to meet a demo for a major hospital partner. Kevin and Riley and very strict on this 6 week demo – their future funding and business success depends on this. 
-<br><br> Kevin and Riley are results-driven entrepreneurs with a bold vision to modernize patient care through streamlined, intuitive technology. While Kevin focuses on strategic alignment and brand reputation, Riley is more focused on clinical credibility and practical healthcare impact. 
-<br><br> Outlined below are some of their most critical business goals, <strong>in order of importance: </strong>
-    <br>&emsp; 1. Reduce in-clinic appointment load by 25% 
-    <br>&emsp; 2. Enable secure, HIPAA-compliant messaging and video calls between patients and Primary Care Providers
-    <br>&emsp; 3. Allow patients to view care plans, medications, and appointment schedules 
-    <br>&emsp; 4. Deliver a seamless user experience across all devices 
-<br><br><table> 
-    <table style="border:1px solid black;border-collapse:collapse">
-        <tr>
-            <th style="background-color:black;color: white;">Stakeholder Name</th>
-            <th style="background-color:black;color: white;">Role</th>
-            <th style="background-color:black;color: white;">Interests / Priorities</th>
-        </tr>
-        <tr>
-            <td style="border:1px solid black">Kevin Jeter</td>
-            <td style="border:1px solid black">Co-Founder; CEO</td>
-            <td style="border:1px solid black">High level results: timeline, demo success, brand perception and investor confidence </td>
-        </tr>
-        <tr>
-            <td style="border:1px solid black">Riley Brosnan</td>
-            <td style="border:1px solid black">Co-Founder; Chief Clinical Officer</td>
-            <td style="border:1px solid black">Patient outcomes, clinical workflow integration, real-world medical credibility</td>
-        </tr>
-        <tr>
-            <td style="border:1px solid black">Dr. Priya Patel</td>
-            <td style="border:1px solid black">Primary Care Provider; Clinical Advisor </td>
-            <td style="border:1px solid black">Ease of use for providers, real-time patient access, stable video conferencing</td>
-        </tr>
-        <tr>
-            <td style="border:1px solid black">Janelle Ross</td>
-            <td style="border:1px solid black">Chief Product Officer (CPO)</td>
-            <td style="border:1px solid black">Scope control, velocity, feature prioritization – must hit MVP definition </td>
-        </tr>
-        <tr>
-            <td style="border:1px solid black">Daniel Kwon</td>
-            <td style="border:1px solid black">Compliance and Risk Management Lead</td>
-            <td style="border:1px solid black">HIPAA, encryption, secure access control – nothing ships without his compliance sign-off </td>
-        </tr>
-        <tr>
-            <td style="border:1px solid black">Lisa Thompson</td>
-            <td style="border:1px solid black">Patient Advocate</td>
-            <td style="border:1px solid black">Represents users – needs accessibility, plain language, ease of use </td>
-        </tr>
-            <td style="border:1px solid black">Dev Team (YOU!)</td>
-            <td style="border:1px solid black">Internal Team Members</td>
-            <td style="border:1px solid black">Balancing deliver with code quality, leads sprint planning and backlog management </td>
-    </table>
-<br>Key Requested Features, sourced from all stakeholders, include:
-    <br>&emsp; 1. Secure login and role-based access
-    <br>&emsp; 2. Ability to view personal care plan and appointments 
-    <br>&emsp; 3. Schedule or cancel an appointment with a PCP 
-    <br>&emsp; 4. Send or receive secure messages between patient and provider 
-    <br>&emsp; 5. Start, join, and end real-time video consults 
-    <br>&emsp; 6. Push notifications for reminders 
-<br><br>Requirements and Constraints, sourced from all stakeholders, include: 
-    <br>&emsp; 1. Must meet HIPAA compliance standards 
-    <br>&emsp; 2. Must function on iOS, Android, and Web 
-    <br>&emsp; 3. Must be accessible for all users, specifically older users and vision-impaired users 
-    <br>&emsp; 4. Must be demo ready in 6 weeks
-<br><br>Potential Challenges include: 
-    <br>&emsp; 1. Kevin and Riley have different priorities, namely vision vs. practicality, which may lead to mid-sprint changes 
-    <br>&emsp; 2. Clinical advisors may request more features that the CPO is comfortable committing to 
-    <br>&emsp; 3. There is only one Dev Team to work one sprint at a time 
-    <br>&emsp; 4. Late stage compliance and accessibility concerns have the potential to delay the MVP if not addressed early or managed properly 
-</ol>
-</section>
+  <div class="card">
+    <h2>Scenario Details</h2>
+    <p><strong>Project Title:</strong> Brosnan-Jeter Prestige Healthcare Worldwide Application Development and Deployment</p>
+    <p><strong>Description:</strong> An up-and-coming start-up led by two healthcare prodigies, Riley and Kevin, has secured funding to develop Brosnan-Jeter Prestige Healthcare Worldwide. It will serve as a mobile and desktop application that connects patients with their Primary Care Providers for virtual care, ranging from Physical Therapy and Diagnoses to Prescriptions and Testing. The Minimum Viable Product must be delivered in 6 weeks to meet a demo for a major hospital partner. Kevin and Riley and very strict on this 6 week demo – their future funding and business success depends on this.</p>
+    <p>Kevin and Riley are results-driven entrepreneurs with a bold vision to modernize patient care through streamlined, intuitive technology. While Kevin focuses on strategic alignment and brand reputation, Riley is more focused on clinical credibility and practical healthcare impact.</p>
+    
+    <p><strong>Business Goals:</strong></p>
+    <ul>
+      <li>Reduce in-clinic appointment load by 25%</li>
+      <li>Enable secure, HIPAA-compliant messaging and video calls</li>
+      <li>Allow patients to view care plans, medications, and appointments</li>
+      <li>Deliver a seamless user experience across all devices</li>
+    </ul>
 
+    <h3>Stakeholders</h3>
+    <div class="table">
+      <div class="tr">
+        <span class="th">Stakeholder Name</span>
+        <span class="th">Role</span>
+        <span class="th">Interests / Priorities</span>
+      </div>
+      <div class="tr">
+        <span class="td">Kevin Jeter</span>
+        <span class="td">Co-Founder; CEO</span>
+        <span class="td">High-level results: timeline, demo success, brand perception and investor confidence</span>
+      </div>
+      <div class="tr">
+        <span class="td">Riley Brosnan</span>
+        <span class="td">Co-Founder; Chief Clinical Officer</span>
+        <span class="td">Patient outcomes, clinical workflow integration, real-world medical credibility</span>
+      </div>
+      <div class="tr">
+        <span class="td">Dr. Priya Patel</span>
+        <span class="td">Primary Care Provider; Clinical Advisor</span>
+        <span class="td">Ease of use for providers, real-time patient access, stable video conferencing</span>
+      </div>
+      <div class="tr">
+        <span class="td">Janelle Ross</span>
+        <span class="td">Chief Product Officer</span>
+        <span class="td">Scope control, velocity, feature prioritization – must hit MVP definition</span>
+      </div>
+      <div class="tr">
+        <span class="td">Daniel Kwon</span>
+        <span class="td">Compliance and Risk Management Lead</span>
+        <span class="td">HIPAA, encryption, secure access control – nothing ships without his compliance sign-off</span>
+      </div>
+      <div class="tr">
+        <span class="td">Lisa Thompson</span>
+        <span class="td">Patient Advocate</span>
+        <span class="td">Represents users – needs accessibility, plain language, ease of use</span>
+      </div>
+      <div class="tr">
+        <span class="td">Dev Team (YOU!)</span>
+        <span class="td">Internal Team Members</span>
+        <span class="td">Balancing delivery with code quality, leads sprint planning and backlog management</span>
+      </div>
+    </div>
+
+    <p><strong>Key Features:</strong></p>
+    <ul>
+      <li>Secure login and role-based access</li>
+      <li>Care plan and appointment visibility</li>
+      <li>Scheduling, secure messaging, and video consults</li>
+      <li>Push notifications and platform-wide accessibility</li>
+    </ul>
+
+    <p><strong>Constraints:</strong></p>
+    <ul>
+      <li>Must meet HIPAA compliance</li>
+      <li>Must work on iOS, Android, and Web</li>
+      <li>Must support older and vision-impaired users</li>
+      <li>Must be demo ready in 6 weeks</li>
+    </ul>
+
+    <p><strong>Potential Challenges:</strong></p>
+    <ul>
+      <li>Conflicting priorities between founders</li>
+      <li>Overloaded backlog from clinical stakeholders</li>
+      <li>One Dev Team capacity constraint</li>
+      <li>Late compliance or accessibility concerns may delay delivery</li>
+    </ul>
+  </div>
+</section>
 
 <section class="lab-section" data-lab="Lab 1">
 <h2> Lab 1: Starting our First Agile Project</h2>
@@ -608,6 +741,7 @@
 </ol>
 <strong>Lab 3 Complete! Don't forget to print the page to save your answers! </strong>
 </section>
+
 <section class="lab-section" data-lab="Lab 4">
 <h2> Lab 4: Sprint Review and Retrospective</h2>
 <ol>
