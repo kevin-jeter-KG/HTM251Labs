@@ -375,7 +375,32 @@ textarea, select, input[type="text"] {
   gap: 0.5em;
   font-weight: normal;
 }
+.form-vertical-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
 
+.form-vertical-options label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5em;
+  max-width: 50px; 
+  background: transparent;
+  padding: 0.25em 0.5em;
+  border-radius: 4px;
+}
+
+.form-vertical-options input[type="radio"] {
+  flex: 0 0 auto;
+  margin-top: 0.2em;
+}
+
+.form-vertical-options span {
+  flex: auto;
+  white-space: normal;
+  word-wrap: break-word;
+}
 
 </style>
 </head>
@@ -1084,13 +1109,15 @@ textarea, select, input[type="text"] {
 
     <div class="form-group">
       <strong>a. What will you demonstrate to stakeholders?</strong>
-      <div class="form-inline-options">
+      <form>
+      <div class="form-vertical-options"> 
         <label><input type="checkbox" name="demo_items" value="login_system"> Working login with role-based access</label>
         <label><input type="checkbox" name="demo_items" value="video_join"> Video call join functionality</label>
         <label><input type="checkbox" name="demo_items" value="care_plan"> Care plan dashboard view</label>
         <label><input type="checkbox" name="demo_items" value="notifications"> Provider notification system</label>
         <label><input type="checkbox" name="demo_items" value="encryption_progress"> Progress on HIPAA encryption</label>
       </div>
+      </form>
     </div>
 
     <div class="form-group">
@@ -1262,12 +1289,14 @@ textarea, select, input[type="text"] {
 
     <div class="form-group">
       <strong>b. How many points will you commit to in Sprint 2?</strong>
-      <div class="form-inline-options">
+      <form>
+      <div class="form-vertical-options">        
         <label><input type="radio" name="sprint2_commitment" value="8"> 8 pts</label>
         <label><input type="radio" name="sprint2_commitment" value="10"> 10 pts</label>
         <label><input type="radio" name="sprint2_commitment" value="13"> 13 pts</label>
         <label><input type="radio" name="sprint2_commitment" value="15"> 15 pts</label>
       </div>
+      </form>
     </div>
 
     <div class="form-group">
@@ -1277,29 +1306,21 @@ textarea, select, input[type="text"] {
 
     <div class="form-group">
       <strong>d. What factors might affect velocity?</strong>
-      <div class="form-inline-options">
+      <form>
+      <div class="form-vertical-options"> 
         <label><input type="checkbox" name="velocity_factors" value="compliance_reviews"> Compliance reviews</label>
         <label><input type="checkbox" name="velocity_factors" value="stakeholder_changes"> Stakeholder changes</label>
         <label><input type="checkbox" name="velocity_factors" value="technical_debt"> Technical debt</label>
         <label><input type="checkbox" name="velocity_factors" value="team_learning"> Learning curve</label>
         <label><input type="checkbox" name="velocity_factors" value="integration_complexity"> Integration complexity</label>
       </div>
+      </form>
     </div>
   </div>
 
   <div class="card">
     <h3>Task 5: Sprint 2 Planning</h3>
-
-    <p><strong>Updated Backlog:</strong></p>
-    <ul>
-      <li>HIPAA encryption – 5 pts</li>
-      <li>Screen sharing – 8 pts</li>
-      <li>Enhanced care plan – 5 pts</li>
-      <li>Patient survey – 3 pts</li>
-      <li>Secure messaging – 8 pts</li>
-      <li>Responsive design – 3 pts</li>
-    </ul>
-
+    <p><strong>Updated Backlog:</strong></p> 
     <table class="styled-table">
       <thead>
         <tr>
@@ -1453,8 +1474,8 @@ textarea, select, input[type="text"] {
     <h3>Task 3: Scaling Agile for MVP Release</h3>
     <p>Your team is preparing for the MVP launch in 4 weeks.</p>
     <p><strong>a. Select the <em>three</em> most critical Agile scaling practices your teams must implement before the MVP release:</strong></p>
-    <form class="form-group">
-      <div class="form-inline-options">
+    <form>
+      <div class="form-vertical-options">
         <label><input type="checkbox" required> Hold coordinated sprint planning meetings across teams</label>
         <label><input type="checkbox"> Reduce sprint length to one week</label>
         <label><input type="checkbox"> Add more team members immediately</label>
@@ -1465,37 +1486,35 @@ textarea, select, input[type="text"] {
   </div>
 
   <div class="card">
-  <h3>Task 4: Multiple-Choice Reflection</h3>
-  <form>
-    <div class="form-group">
-      <strong>a. Which Agile role is essential for managing the product backlog and stakeholder expectations?</strong>
-      <div class="form-inline-options">
-        <label><input type="radio" name="essential_role" required> Scrum Master</label>
-        <label><input type="radio" name="essential_role"> Product Owner</label>
-        <label><input type="radio" name="essential_role"> Development Team</label>
+    <h3>Task 4: Multiple-Choice Reflection</h3>
+    <form>
+      <div class="form-vertical-options">
+        <label><input type="radio" name="essential_role" required> <span>Scrum Master</span></label>
+        <label><input type="radio" name="essential_role"> <span>Product Owner</span></label>
+        <label><input type="radio" name="essential_role"> <span>Development Team</span></label>
       </div>
-    </div>
 
-    <div class="form-group">
-      <strong>b. If the project scales to three Agile teams, which practice best supports coordination?</strong>
-      <div class="form-inline-options">
-        <label><input type="radio" name="coordination_practice" required> Daily Stand-ups within individual teams only</label>
-        <label><input type="radio" name="coordination_practice"> Cross-team Scrum-of-Scrums meetings</label>
-        <label><input type="radio" name="coordination_practice"> Eliminating sprint retrospectives</label>
       </div>
-    </div>
 
-    <div class="form-group">
-      <strong>c. Why is joint sprint planning crucial when scaling Agile teams?</strong>
-      <div class="form-inline-options">
-        <label><input type="radio" name="joint_planning" required> It ensures teams work independently without interaction</label>
-        <label><input type="radio" name="joint_planning"> It promotes transparency, identifies dependencies, and aligns goals</label>
-        <label><input type="radio" name="joint_planning"> It reduces the need for stakeholder involvement</label>
+      <div class="form-group">
+        <strong>b. If the project scales to three Agile teams, which practice best supports coordination?</strong>
+        <div class="form-vertical-options">
+          <label><input type="radio" name="coordination_practice" required> Daily Stand-ups within individual teams only</label>
+          <label><input type="radio" name="coordination_practice"> Cross-team Scrum-of-Scrums meetings</label>
+          <label><input type="radio" name="coordination_practice"> Eliminating sprint retrospectives</label>
+        </div>
       </div>
-    </div>
-  </form>
-</div>
 
+      <div class="form-group">
+        <strong>c. Why is joint sprint planning crucial when scaling Agile teams?</strong>
+        <div class="form-vertical-options">
+          <label><input type="radio" name="joint_planning" required> It ensures teams work independently without interaction</label>
+          <label><input type="radio" name="joint_planning"> It promotes transparency, identifies dependencies, and aligns goals</label>
+          <label><input type="radio" name="joint_planning"> It reduces the need for stakeholder involvement</label>
+        </div>
+      </div>
+    </form>
+  </div>
 
   <div class="card">
     <h3>Task 5: Open-Ended Reflection</h3>
