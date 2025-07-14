@@ -907,7 +907,7 @@ textarea, select, input[type="text"] {
 <section class="lab-section" data-lab="Lab 3">
   <div class="card">
     <h2>Lab 3: Executing in the Sprint</h2>
-    <p><em>// In this lab, you’ll explore Sprint Planning, observe a real Daily Stand-Up, identify team blockers, and practice how to respond to change mid-sprint</em></p>
+    <p><em>In this lab, you’ll explore Sprint Planning, observe a real Daily Stand-Up, identify team blockers, and practice how to respond to change mid-sprint.</em></p>
 
     <p>You're part of the development team building the MVP for <strong>Brosnan-Jeter Prestige Healthcare</strong>. Sprint 1 has kicked off. You've committed to 5 features that focus on login, video consults, and HIPAA compliance.</p>
 
@@ -916,573 +916,599 @@ textarea, select, input[type="text"] {
     <p>Based on the requirements chosen for the first sprint, complete all activities.</p>
 
     <form method="post" action="blah.html">
-      <div class="table">
-        <div class="tr">
-          <span class="th">ID</span>
-          <span class="th">Requirement</span>
-          <span class="th">User Story</span>
-          <span class="th">Priority (H/M/L)</span>
-          <span class="th">Story Points</span>
-          <span class="th">Iteration</span>
-          <span class="th">Notes</span>
-        </div>
-        <div class="tr">
-          <span class="td">001</span>
-          <span class="td">Encryption protocols meet HIPAA Compliance</span>
-          <span class="td">US001</span>
-          <span class="td">H</span>
-          <span class="td">3</span>
-          <span class="td">001</span>
-          <span class="td">See HIPAA Virtual call standards</span>
-        </div>
-        <div class="tr">
-          <span class="td">002</span>
-          <span class="td">Join button becomes selectable 5-minutes prior to start time</span>
-          <span class="td">US001</span>
-          <span class="td">H</span>
-          <span class="td">1</span>
-          <span class="td">001</span>
-          <span class="td">Front-end and time check logic</span>
-        </div>
-        <div class="tr">
-          <span class="td">003</span>
-          <span class="td">Notification triggers to provider when patient joins call</span>
-          <span class="td">US001</span>
-          <span class="td">H</span>
-          <span class="td">3</span>
-          <span class="td">001</span>
-          <span class="td">Push notification or in-app alert</span>
-        </div>
-        <div class="tr">
-          <span class="td">004</span>
-          <span class="td">Patient can view care plan details from dashboard</span>
-          <span class="td">US003</span>
-          <span class="td">H</span>
-          <span class="td">1</span>
-          <span class="td">001</span>
-          <span class="td">N/A</span>
-        </div>
-        <div class="tr">
-          <span class="td">005</span>
-          <span class="td">Patient login and role-based access control (patient, provider)</span>
-          <span class="td">US001</span>
-          <span class="td">H</span>
-          <span class="td">5</span>
-          <span class="td">004</span>
-          <span class="td">Shared auth with admin roles</span>
+      <h3>Task 1: Sprint Requirement Review</h3>
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Requirement</th>
+            <th>User Story</th>
+            <th>Priority (H/M/L)</th>
+            <th>Story Points</th>
+            <th>Iteration</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>001</td>
+            <td>Encryption protocols meet HIPAA Compliance</td>
+            <td>US001</td>
+            <td>H</td>
+            <td>3</td>
+            <td>001</td>
+            <td>See HIPAA Virtual call standards</td>
+          </tr>
+          <tr>
+            <td>002</td>
+            <td>Join button becomes selectable 5-minutes prior to start time</td>
+            <td>US001</td>
+            <td>H</td>
+            <td>1</td>
+            <td>001</td>
+            <td>Front-end and time check logic</td>
+          </tr>
+          <tr>
+            <td>003</td>
+            <td>Notification triggers to provider when patient joins call</td>
+            <td>US001</td>
+            <td>H</td>
+            <td>3</td>
+            <td>001</td>
+            <td>Push notification or in-app alert</td>
+          </tr>
+          <tr>
+            <td>004</td>
+            <td>Patient can view care plan details from dashboard</td>
+            <td>US003</td>
+            <td>H</td>
+            <td>1</td>
+            <td>001</td>
+            <td>N/A</td>
+          </tr>
+          <tr>
+            <td>005</td>
+            <td>Patient login and role-based access control (patient, provider)</td>
+            <td>US001</td>
+            <td>H</td>
+            <td>5</td>
+            <td>004</td>
+            <td>Shared auth with admin roles</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Task 2: Sprint Planning Reflection</h3>
+      <div class="form-group">
+        <strong>a. Why do Agile teams hold a Sprint Planning meeting?</strong>
+        <textarea name="Lab 3 - Sprint Planning A" rows="4" required placeholder="Write 1-2 sentences explaining the purpose and goal of Sprint Planning."></textarea>
+      </div>
+
+      <div class="form-group">
+        <strong>b. Which sprint item carries the most risk? Why?</strong>
+        <textarea name="Lab 3 - Sprint Planning B" rows="4" required placeholder="Which sprint item carries the most risk? Why?"></textarea>
+      </div>
+
+      <h3>Task 3: Stand-Up Diagnosis</h3>
+      <p><strong>Front-End Developer:</strong> “Yesterday I finished the Join Video Call button and tested it. Today I’ll start the care plan dashboard. I’m still waiting on the API from the back-end team but will work around it for now.”</p>
+      <p><strong>Back-End Developer:</strong> “Still working on the login system. I was also exploring facial recognition just for fun. It’s not in this sprint, but it could impress leadership. I’ll keep playing with it today.”</p>
+      <p><strong>QA Tester:</strong> “Test cases are ready for login and video consults. Once the encryption review is done and I get server access, I’ll begin execution.”</p>
+
+      <div class="form-group">
+        <strong>a. Who is <em>not</em> following the expectations of a Daily Stand-Up?</strong>
+        <div class="form-inline-options">
+          <label><input type="radio" name="q1" value="Front-End Developer" required> Front-End Developer</label>
+          <label><input type="radio" name="q1" value="Back-End Developer"> Back-End Developer</label>
+          <label><input type="radio" name="q1" value="QA Tester"> Quality Assurance Tester</label>
         </div>
       </div>
+
+      <div class="form-group">
+        <strong>b. What are they doing that breaks Agile norms? (Select all that apply)</strong>
+        <div class="form-inline-options">
+          <label><input type="checkbox" name="q2" value="No blockers"> Didn’t report any blockers</label>
+          <label><input type="checkbox" name="q2" value="Off-topic"> Didn’t focus on sprint goals</label>
+          <label><input type="checkbox" name="q2" value="Not sprint-related"> Didn't focus on sprint items</label>
+          <label><input type="checkbox" name="q2" value="No update"> Skipped reporting yesterday</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <strong>c. Why is this behavior risky to the team’s success?</strong>
+        <textarea name="Lab 3 - Standup Risk" rows="4" required placeholder="Explain why this is risky to our success."></textarea>
+      </div>
+
+      <div class="form-group">
+        <strong>d. As Scrum Master, how would you respond?</strong>
+        <textarea name="Lab 3 - Scrum Master" rows="4" required placeholder="Describe the best way to address this issue."></textarea>
+      </div>
+
+      <h3>Task 4: Mid-Sprint Change Management</h3>
+
+      <div class="form-group">
+        <strong>a. Kevin requests a mockup of an AI symptom checker (not in the sprint). How should the team respond?</strong>
+        <div class="form-inline-options">
+          <label><input type="radio" name="issueA" value="addWithoutPlan"> Add it to the sprint immediately</label>
+          <label><input type="radio" name="issueA" value="ignoreRequest"> Completely ignore the request</label>
+          <label><input type="radio" name="issueA" value="discussWithPO"> Discuss during backlog refinement</label>
+          <label><input type="radio" name="issueA" value="createMockup"> Share a mockup outside sprint</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <strong>b. The encryption module is blocked by compliance review. How should the team unblock QA?</strong>
+        <textarea name="issueB" rows="3" required placeholder="How to unblock QA?"></textarea>
+      </div>
+
+      <div class="form-group">
+        <strong>c. The UI text is too small for elderly users. What quick action can you take?</strong>
+        <textarea name="issueD" rows="3" required placeholder="Suggest a quick accessibility response."></textarea>
+      </div>
+
+      <p><strong>Lab 3 Complete!</strong> Don’t forget to print the page or save your answers.</p>
     </form>
-
-    <hr>
-
-    <ol>
-      <li>
-        <strong>Plan before we build.</strong><br>
-        a. Why do Agile Teams hold a Sprint Planning meeting?<br>
-        <textarea name="Lab 3 - Sprint Planning A" rows="4" cols="100" placeholder="Write 1-2 sentences explaining the purpose and goal of Sprint Planning" required></textarea><br><br>
-
-        b. Given the list of sprint items identified for work, which carries the most risk? Why?<br>
-        <textarea name="Lab 3 - Sprint Planning B" rows="4" cols="100" placeholder="Which sprint item carries the most risk? Why?" required></textarea>
-      </li>
-
-      <li>
-        <strong>Identify stand-up misalignment.</strong><br>
-        <p><strong>Front-End Developer:</strong> “Yesterday I finished the Join Video Call button and tested it. Today I’ll start the care plan dashboard. I’m still waiting on the API from the back-end team but will work around it for now.”</p>
-        <p><strong>Back-End Developer:</strong> “Still working on the login system. I was also exploring facial recognition just for fun. It’s not in this sprint, but it could impress leadership. I’ll keep playing with it today.”</p>
-        <p><strong>QA Tester:</strong> “Test cases are ready for login and video consults. Once the encryption review is done and I get server access, I’ll begin execution.”</p>
-
-        <div class="form-group">
-          <strong>a. Who is <em>not</em> following the expectations of a Daily Stand-Up?</strong>
-          <div class="form-inline-options">
-            <label><input type="radio" name="q1" value="Front-End Developer" required> Front-End Developer</label>
-            <label><input type="radio" name="q1" value="Back-End Developer"> Back-End Developer</label>
-            <label><input type="radio" name="q1" value="QA Tester"> QA Tester</label>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <strong>b. What are they doing that breaks Agile team norms? (Select all that apply)</strong>
-          <div class="form-inline-options">
-            <label><input type="checkbox" name="q2" value="No blockers"> Didn’t report any blockers</label>
-            <label><input type="checkbox" name="q2" value="Not in sprint"> Working on something not in sprint</label>
-            <label><input type="checkbox" name="q2" value="Not sprint-focused"> Didn’t focus on sprint goals</label>
-            <label><input type="checkbox" name="q2" value="Skipped yesterday"> Skipped reporting yesterday</label>
-          </div>
-        </div>
-
-        <p><strong>c. Why is this behavior risky to the team’s success?</strong></p>
-        <textarea name="Lab 3 - Standup Risk" rows="4" cols="100" placeholder="Explain why this is risky to our success." required></textarea><br><br>
-
-        <p><strong>d. As Scrum Master, how would you respond to this issue?</strong></p>
-        <textarea name="Lab 3 - Scrum Master" rows="4" cols="100" placeholder="Describe the best way to address this issue." required></textarea>
-      </li>
-
-      <li>
-        <strong>Responding to mid-sprint changes.</strong><br><br>
-        <div class="form-group">
-          <strong>a. Kevin requests a mockup of an AI symptom checker that wasn’t in the sprint backlog. How should the team respond?</strong>
-          <div class="form-inline-options">
-            <label><input type="radio" name="issueA" value="addWithoutPlan"> Add it to the sprint immediately</label>
-            <label><input type="radio" name="issueA" value="ignoreRequest"> Ignore the request</label>
-            <label><input type="radio" name="issueA" value="discussWithPO" required> Discuss during backlog refinement</label>
-            <label><input type="radio" name="issueA" value="createMockup"> Share a mockup outside sprint</label>
-          </div>
-        </div>
-
-        b. The encryption module is still waiting on compliance review from Daniel Kwon. QA cannot proceed. What should your team do?<br>
-        <textarea name="issueB" rows="3" cols="100" placeholder="How to unblock QA?"></textarea><br><br>
-
-        c. Lisa Thompson reports the UI text is too small for elderly users. What quick action can you take this sprint?<br>
-        <textarea name="issueD" rows="3" cols="100" placeholder="Suggest a quick accessibility response."></textarea>
-      </li>
-    </ol>
-
-    <p><strong>Lab 3 Complete! Don't forget to print the page to save your answers!</strong></p>
   </div>
 </section>
 
 <section class="lab-section" data-lab="Lab 4">
-  <h2>Lab 4: Sprint Review and Retrospective</h2>
-  <ol>
+  <div class="card">
+    <h2>Lab 4: Sprint Review and Retrospective</h2>
     <p class="info-box">
       <em>In this lab, you'll conduct a Sprint Review with stakeholders, manage conflicting feedback, facilitate a Sprint Retrospective, and analyze team performance metrics.</em>
     </p>
 
-    <div class="card">
-      <strong>Sprint 1 Results:</strong><br>
-      &emsp;✅ Patient login and role-based access control – <em>COMPLETE</em><br>
-      &emsp;✅ Join video call 5 minutes before appointment – <em>COMPLETE</em><br>
-      &emsp;✅ Provider notification when patient joins – <em>COMPLETE</em><br>
-      &emsp;✅ Patient can view care plan from dashboard – <em>COMPLETE</em><br>
-      &emsp;❌ HIPAA encryption protocols – <em>IN PROGRESS (80% complete)</em>
+    <h3>Sprint 1 Results</h3>
+    <ul>
+      <li>✅ Patient login and role-based access control – <em>COMPLETE</em></li>
+      <li>✅ Join video call 5 minutes before appointment – <em>COMPLETE</em></li>
+      <li>✅ Provider notification when patient joins – <em>COMPLETE</em></li>
+      <li>✅ Patient can view care plan from dashboard – <em>COMPLETE</em></li>
+      <li>❌ HIPAA encryption protocols – <em>IN PROGRESS (80% complete)</em></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Task 1: Sprint Review Preparation</h3>
+    <p>You're presenting to Kevin (CEO), Riley (CCO), Dr. Patel (Clinical Advisor), and Daniel Kwon (Compliance Lead).</p>
+
+    <button class="toggle-button" onclick="toggleVisibility('sprintReviewHelp')">Show/Hide Sprint Review Best Practices</button>
+    <div id="sprintReviewHelp" class="info-box" style="display:none;">
+      <ul>
+        <li><strong>Focus on working software</strong> – demonstrate actual functionality</li>
+        <li><strong>Be transparent about incomplete work</strong></li>
+        <li><strong>Gather stakeholder feedback</strong></li>
+        <li><strong>Discuss market conditions and timeline</strong></li>
+        <li><strong>Update the Product Backlog</strong></li>
+      </ul>
     </div>
 
-    <li>
-      <strong>Sprint Review Preparation</strong><br>
-      You're presenting to Kevin (CEO), Riley (CCO), Dr. Patel (Clinical Advisor), and Daniel Kwon (Compliance Lead).
-      <button class="toggle-button" onclick="toggleVisibility('sprintReviewHelp')">Show/Hide Sprint Review Best Practices</button>
-      <div id="sprintReviewHelp" class="info-box" style="display:none;">
-        <strong>Sprint Review Best Practices:</strong>
-        <ul>
-          <li><strong>Focus on working software</strong> – demonstrate actual functionality</li>
-          <li><strong>Be transparent about incomplete work</strong></li>
-          <li><strong>Gather stakeholder feedback</strong></li>
-          <li><strong>Discuss market conditions and timeline</strong></li>
-          <li><strong>Update the Product Backlog</strong></li>
-        </ul>
+    <div class="form-group">
+      <strong>a. What will you demonstrate to stakeholders?</strong>
+      <div class="form-inline-options">
+        <label><input type="checkbox" name="demo_items" value="login_system"> Working login with role-based access</label>
+        <label><input type="checkbox" name="demo_items" value="video_join"> Video call join functionality</label>
+        <label><input type="checkbox" name="demo_items" value="care_plan"> Care plan dashboard view</label>
+        <label><input type="checkbox" name="demo_items" value="notifications"> Provider notification system</label>
+        <label><input type="checkbox" name="demo_items" value="encryption_progress"> Progress on HIPAA encryption</label>
       </div>
+    </div>
 
-      <div class="form-group">
-        <strong>a. What will you demonstrate to stakeholders?</strong><br>
-        <div class="checkbox-group">
-          <label><input type="checkbox" name="demo_items" value="login_system"> Working login system with role-based access</label>
-          <label><input type="checkbox" name="demo_items" value="video_join"> Video call join functionality</label>
-          <label><input type="checkbox" name="demo_items" value="care_plan"> Care plan dashboard view</label>
-          <label><input type="checkbox" name="demo_items" value="notifications"> Provider notification system</label>
-          <label><input type="checkbox" name="demo_items" value="encryption_progress"> Progress on HIPAA encryption</label>
-        </div>
-      </div>
+    <div class="form-group">
+      <strong>b. How will you address the incomplete HIPAA encryption work with Daniel Kwon?</strong>
+      <textarea name="hipaa_explanation" rows="4" required></textarea>
+    </div>
+  </div>
 
-      <div class="form-group">
-        <strong>b. How will you address the incomplete HIPAA encryption work with Daniel Kwon?</strong><br>
-        <textarea name="hipaa_explanation" rows="4" placeholder="How will you explain the delay and provide confidence that compliance will be met?" required></textarea>
-      </div>
-    </li>
+  <div class="card">
+    <h3>Task 2: Stakeholder Feedback Management</h3>
+    <p>Review each stakeholder’s response and decide how to handle their feedback.</p>
 
-    <li>
-      <strong>Stakeholder Feedback Management</strong><br>
-      <p>Review each stakeholder's response and decide how to handle their feedback.</p>
-      <form method="post">
-        <div class="styled-table">
-          <table>
-            <thead>
-              <tr>
-                <th>Stakeholder</th>
-                <th>Feedback</th>
-                <th>Your Response</th>
-                <th>Backlog Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Kevin (CEO)</strong></td>
-                <td>"Can we add a patient satisfaction survey after each call?"</td>
-                <td>
-                  <select name="kevin_response" required>
-                    <option value="">Select Response</option>
-                    <option value="add_immediately">Add to current sprint immediately</option>
-                    <option value="add_backlog">Add to product backlog</option>
-                    <option value="discuss_impact">Discuss scope impact first</option>
-                    <option value="decline_politely">Politely decline</option>
-                  </select>
-                </td>
-                <td><textarea name="kevin_backlog" rows="2" placeholder="What backlog changes?"></textarea></td>
-              </tr>
-              <tr>
-                <td><strong>Riley (CCO)</strong></td>
-                <td>"Care plan view is too basic. Need medication interactions."</td>
-                <td>
-                  <select name="riley_response" required>
-                    <option value="">Select Response</option>
-                    <option value="add_immediately">Add to current sprint</option>
-                    <option value="add_backlog">Add to product backlog</option>
-                    <option value="discuss_impact">Discuss scope impact</option>
-                    <option value="decline_politely">Politely decline</option>
-                  </select>
-                </td>
-                <td><textarea name="riley_backlog" rows="2"></textarea></td>
-              </tr>
-              <tr>
-                <td><strong>Dr. Patel</strong></td>
-                <td>"I need to share my screen to show test results."</td>
-                <td>
-                  <select name="patel_response" required>
-                    <option value="">Select Response</option>
-                    <option value="add_immediately">Add to current sprint</option>
-                    <option value="add_backlog">Add to product backlog</option>
-                    <option value="discuss_impact">Discuss scope impact</option>
-                    <option value="decline_politely">Politely decline</option>
-                  </select>
-                </td>
-                <td><textarea name="patel_backlog" rows="2"></textarea></td>
-              </tr>
-              <tr>
-                <td><strong>Daniel (Compliance)</strong></td>
-                <td>"We need HIPAA compliance before demoing."</td>
-                <td>
-                  <select name="daniel_response" required>
-                    <option value="">Select Response</option>
-                    <option value="commit_timeline">Commit to timeline</option>
-                    <option value="prioritize_encryption">Prioritize encryption</option>
-                    <option value="request_extension">Request extension</option>
-                    <option value="parallel_development">Continue other work</option>
-                  </select>
-                </td>
-                <td><textarea name="daniel_backlog" rows="2"></textarea></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </form>
-    </li>
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Stakeholder</th>
+          <th>Feedback</th>
+          <th>Your Response</th>
+          <th>Backlog Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Kevin (CEO)</strong></td>
+          <td>"Can we add a patient satisfaction survey after each call?"</td>
+          <td>
+            <select name="kevin_response" required>
+              <option value="">Select Response</option>
+              <option value="add_immediately">Add to current sprint immediately</option>
+              <option value="add_backlog">Add to product backlog</option>
+              <option value="discuss_impact">Discuss scope impact first</option>
+              <option value="decline_politely">Politely decline</option>
+            </select>
+          </td>
+          <td><textarea name="kevin_backlog" rows="2"></textarea></td>
+        </tr>
+        <tr>
+          <td><strong>Riley (CCO)</strong></td>
+          <td>"Care plan view is too basic. Need medication interactions."</td>
+          <td>
+            <select name="riley_response" required>
+              <option value="">Select Response</option>
+              <option value="add_immediately">Add to current sprint</option>
+              <option value="add_backlog">Add to product backlog</option>
+              <option value="discuss_impact">Discuss scope impact</option>
+              <option value="decline_politely">Politely decline</option>
+            </select>
+          </td>
+          <td><textarea name="riley_backlog" rows="2"></textarea></td>
+        </tr>
+        <tr>
+          <td><strong>Dr. Patel</strong></td>
+          <td>"I need to share my screen to show test results."</td>
+          <td>
+            <select name="patel_response" required>
+              <option value="">Select Response</option>
+              <option value="add_immediately">Add to current sprint</option>
+              <option value="add_backlog">Add to product backlog</option>
+              <option value="discuss_impact">Discuss scope impact</option>
+              <option value="decline_politely">Politely decline</option>
+            </select>
+          </td>
+          <td><textarea name="patel_backlog" rows="2"></textarea></td>
+        </tr>
+        <tr>
+          <td><strong>Daniel (Compliance)</strong></td>
+          <td>"We need HIPAA compliance before demoing."</td>
+          <td>
+            <select name="daniel_response" required>
+              <option value="">Select Response</option>
+              <option value="commit_timeline">Commit to timeline</option>
+              <option value="prioritize_encryption">Prioritize encryption</option>
+              <option value="request_extension">Request extension</option>
+              <option value="parallel_development">Continue other work</option>
+            </select>
+          </td>
+          <td><textarea name="daniel_backlog" rows="2"></textarea></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-    <li>
-      <strong>Sprint Retrospective</strong><br>
-      <button class="toggle-button" onclick="toggleVisibility('retroHelp')">Show/Hide Retrospective Guidelines</button>
-      <div id="retroHelp" class="info-box" style="display:none;">
-        <strong>Effective Retrospectives:</strong>
-        <ul>
-          <li><strong>START</strong> – What should we begin doing?</li>
-          <li><strong>STOP</strong> – What should we stop doing?</li>
-          <li><strong>CONTINUE</strong> – What’s working well?</li>
-        </ul>
-      </div>
+  <div class="card">
+    <h3>Task 3: Sprint Retrospective</h3>
 
-      <form method="post">
-        <div class="styled-table">
-          <table>
-            <thead>
-              <tr>
-                <th>Category</th>
-                <th>Team Feedback</th>
-                <th>Action Item</th>
-                <th>Owner</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>START</strong></td>
-                <td>Daily check-ins with Daniel on compliance</td>
-                <td><textarea name="start_action1"></textarea></td>
-                <td><textarea name="start_owner1"></textarea></td>
-              </tr>
-              <tr>
-                <td><strong>START</strong></td>
-                <td><textarea name="start_feedback2" required></textarea></td>
-                <td><textarea name="start_action2"></textarea></td>
-                <td><textarea name="start_owner2"></textarea></td>
-              </tr>
-              <tr>
-                <td><strong>STOP</strong></td>
-                <td>Accepting mid-sprint scope changes</td>
-                <td><textarea name="stop_action1"></textarea></td>
-                <td><textarea name="stop_owner1"></textarea></td>
-              </tr>
-              <tr>
-                <td><strong>STOP</strong></td>
-                <td><textarea name="stop_feedback2" required></textarea></td>
-                <td><textarea name="stop_action2"></textarea></td>
-                <td><textarea name="stop_owner2"></textarea></td>
-              </tr>
-              <tr>
-                <td><strong>CONTINUE</strong></td>
-                <td>Transparent daily stand-ups</td>
-                <td><textarea name="continue_action1"></textarea></td>
-                <td><textarea name="continue_owner1"></textarea></td>
-              </tr>
-              <tr>
-                <td><strong>CONTINUE</strong></td>
-                <td><textarea name="continue_feedback2" required></textarea></td>
-                <td><textarea name="continue_action2"></textarea></td>
-                <td><textarea name="continue_owner2"></textarea></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </form>
-    </li>
-
-    <li>
-      <strong>Performance Metrics and Velocity</strong><br>
-      <button class="toggle-button" onclick="toggleVisibility('metricsHelp')">Show/Hide Metrics Explanation</button>
-      <div id="metricsHelp" class="info-box" style="display:none;">
-        <ul>
-          <li><strong>Velocity</strong> – Story points completed</li>
-          <li><strong>Burn-down</strong> – Work remaining over time</li>
-          <li><strong>Cycle Time</strong> – Time to complete work</li>
-          <li><strong>Sprint Goal Achievement</strong></li>
-        </ul>
-      </div>
-
-      <p><strong>Sprint 1 Data:</strong></p>
+    <button class="toggle-button" onclick="toggleVisibility('retroHelp')">Show/Hide Retrospective Guidelines</button>
+    <div id="retroHelp" class="info-box" style="display:none;">
       <ul>
-        <li>Committed: 13 pts</li>
-        <li>Completed: 8 pts</li>
-        <li>Sprint Length: 2 weeks</li>
-        <li>Team Size: 5 (3 devs, 1 QA, 1 Scrum Master)</li>
+        <li><strong>START</strong> – What should we begin doing?</li>
+        <li><strong>STOP</strong> – What should we stop doing?</li>
+        <li><strong>CONTINUE</strong> – What’s working well?</li>
       </ul>
+    </div>
 
-      <div class="form-group">
-        <strong>a. What is your team's velocity?</strong><br>
-        <input type="text" name="velocity" required> story points
-      </div>
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Team Feedback</th>
+          <th>Action Item</th>
+          <th>Owner</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>START</strong></td>
+          <td>Daily check-ins with Daniel on compliance</td>
+          <td><textarea name="start_action1"></textarea></td>
+          <td><textarea name="start_owner1"></textarea></td>
+        </tr>
+        <tr>
+          <td><strong>START</strong></td>
+          <td><textarea name="start_feedback2" required></textarea></td>
+          <td><textarea name="start_action2"></textarea></td>
+          <td><textarea name="start_owner2"></textarea></td>
+        </tr>
+        <tr>
+          <td><strong>STOP</strong></td>
+          <td>Accepting mid-sprint scope changes</td>
+          <td><textarea name="stop_action1"></textarea></td>
+          <td><textarea name="stop_owner1"></textarea></td>
+        </tr>
+        <tr>
+          <td><strong>STOP</strong></td>
+          <td><textarea name="stop_feedback2" required></textarea></td>
+          <td><textarea name="stop_action2"></textarea></td>
+          <td><textarea name="stop_owner2"></textarea></td>
+        </tr>
+        <tr>
+          <td><strong>CONTINUE</strong></td>
+          <td>Transparent daily stand-ups</td>
+          <td><textarea name="continue_action1"></textarea></td>
+          <td><textarea name="continue_owner1"></textarea></td>
+        </tr>
+        <tr>
+          <td><strong>CONTINUE</strong></td>
+          <td><textarea name="continue_feedback2" required></textarea></td>
+          <td><textarea name="continue_action2"></textarea></td>
+          <td><textarea name="continue_owner2"></textarea></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-      <div class="form-group">
-        <strong>b. How many points will you commit to in Sprint 2?</strong><br>
-        <div class="radio-group">
-          <label><input type="radio" name="sprint2_commitment" value="8"> 8 pts</label>
-          <label><input type="radio" name="sprint2_commitment" value="10"> 10 pts</label>
-          <label><input type="radio" name="sprint2_commitment" value="13"> 13 pts</label>
-          <label><input type="radio" name="sprint2_commitment" value="15"> 15 pts</label>
-        </div>
-      </div>
+  <div class="card">
+    <h3>Task 4: Performance Metrics and Velocity</h3>
 
-      <div class="form-group">
-        <strong>c. Justify your Sprint 2 commitment decision:</strong><br>
-        <textarea name="commitment_justification" rows="4" required></textarea>
-      </div>
-
-      <div class="form-group">
-        <strong>d. What factors might affect velocity?</strong><br>
-        <div class="checkbox-group">
-          <label><input type="checkbox" name="velocity_factors" value="compliance_reviews"> Compliance reviews</label>
-          <label><input type="checkbox" name="velocity_factors" value="stakeholder_changes"> Stakeholder changes</label>
-          <label><input type="checkbox" name="velocity_factors" value="technical_debt"> Technical debt</label>
-          <label><input type="checkbox" name="velocity_factors" value="team_learning"> Learning curve</label>
-          <label><input type="checkbox" name="velocity_factors" value="integration_complexity"> Integration complexity</label>
-        </div>
-      </div>
-    </li>
-
-    <li>
-      <strong>Sprint Planning for Sprint 2</strong><br>
-      <p><strong>Updated Backlog:</strong></p>
+    <button class="toggle-button" onclick="toggleVisibility('metricsHelp')">Show/Hide Metrics Explanation</button>
+    <div id="metricsHelp" class="info-box" style="display:none;">
       <ul>
-        <li>HIPAA encryption – 5 pts</li>
-        <li>Screen sharing – 8 pts</li>
-        <li>Enhanced care plan – 5 pts</li>
-        <li>Patient survey – 3 pts</li>
-        <li>Secure messaging – 8 pts</li>
-        <li>Responsive design – 3 pts</li>
+        <li><strong>Velocity</strong> – Story points completed</li>
+        <li><strong>Burn-down</strong> – Work remaining over time</li>
+        <li><strong>Cycle Time</strong> – Time to complete work</li>
+        <li><strong>Sprint Goal Achievement</strong></li>
       </ul>
+    </div>
 
-      <form>
-        <div class="styled-table">
-          <table>
-            <thead>
-              <tr>
-                <th>Include?</th>
-                <th>Feature</th>
-                <th>Points</th>
-                <th>Justification</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td><input type="checkbox" name="sprint2_items" value="hipaa_encryption"></td><td>HIPAA encryption</td><td>5</td><td><textarea name="hipaa_justification"></textarea></td></tr>
-              <tr><td><input type="checkbox" name="sprint2_items" value="screen_sharing"></td><td>Screen sharing</td><td>8</td><td><textarea name="screen_justification"></textarea></td></tr>
-              <tr><td><input type="checkbox" name="sprint2_items" value="enhanced_care_plan"></td><td>Care plan w/ meds</td><td>5</td><td><textarea name="care_plan_justification"></textarea></td></tr>
-              <tr><td><input type="checkbox" name="sprint2_items" value="satisfaction_survey"></td><td>Survey</td><td>3</td><td><textarea name="survey_justification"></textarea></td></tr>
-              <tr><td><input type="checkbox" name="sprint2_items" value="secure_messaging"></td><td>Secure messaging</td><td>8</td><td><textarea name="messaging_justification"></textarea></td></tr>
-              <tr><td><input type="checkbox" name="sprint2_items" value="mobile_responsive"></td><td>Responsive design</td><td>3</td><td><textarea name="mobile_justification"></textarea></td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p><strong>Total Points Selected:</strong> <span id="total_points">0</span></p>
-      </form>
-    </li>
+    <ul>
+      <li>Committed: 13 pts</li>
+      <li>Completed: 8 pts</li>
+      <li>Sprint Length: 2 weeks</li>
+      <li>Team Size: 5 (3 devs, 1 QA, 1 Scrum Master)</li>
+    </ul>
 
-    <li>
-      <strong>Reflection</strong><br>
-      <div class="form-group">
-        <strong>a. What was the most challenging aspect of managing feedback?</strong><br>
-        <textarea name="feedback_challenge" rows="4" required></textarea>
+    <div class="form-group">
+      <strong>a. What is your team’s velocity?</strong>
+      <input type="text" name="velocity" required>
+    </div>
+
+    <div class="form-group">
+      <strong>b. How many points will you commit to in Sprint 2?</strong>
+      <div class="form-inline-options">
+        <label><input type="radio" name="sprint2_commitment" value="8"> 8 pts</label>
+        <label><input type="radio" name="sprint2_commitment" value="10"> 10 pts</label>
+        <label><input type="radio" name="sprint2_commitment" value="13"> 13 pts</label>
+        <label><input type="radio" name="sprint2_commitment" value="15"> 15 pts</label>
       </div>
-      <div class="form-group">
-        <strong>b. How do retrospectives improve teams?</strong><br>
-        <textarea name="retrospective_value" rows="4" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <strong>c. Justify your Sprint 2 commitment decision:</strong>
+      <textarea name="commitment_justification" rows="4" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <strong>d. What factors might affect velocity?</strong>
+      <div class="form-inline-options">
+        <label><input type="checkbox" name="velocity_factors" value="compliance_reviews"> Compliance reviews</label>
+        <label><input type="checkbox" name="velocity_factors" value="stakeholder_changes"> Stakeholder changes</label>
+        <label><input type="checkbox" name="velocity_factors" value="technical_debt"> Technical debt</label>
+        <label><input type="checkbox" name="velocity_factors" value="team_learning"> Learning curve</label>
+        <label><input type="checkbox" name="velocity_factors" value="integration_complexity"> Integration complexity</label>
       </div>
-      <div class="form-group">
-        <strong>c. Why is velocity tracking important?</strong><br>
-        <textarea name="velocity_analysis" rows="4" required></textarea>
-      </div>
-    </li>
-  </ol>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Task 5: Sprint 2 Planning</h3>
+
+    <p><strong>Updated Backlog:</strong></p>
+    <ul>
+      <li>HIPAA encryption – 5 pts</li>
+      <li>Screen sharing – 8 pts</li>
+      <li>Enhanced care plan – 5 pts</li>
+      <li>Patient survey – 3 pts</li>
+      <li>Secure messaging – 8 pts</li>
+      <li>Responsive design – 3 pts</li>
+    </ul>
+
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Include?</th>
+          <th>Feature</th>
+          <th>Points</th>
+          <th>Justification</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><input type="checkbox" name="sprint2_items" value="hipaa_encryption"></td><td>HIPAA encryption</td><td>5</td><td><textarea name="hipaa_justification"></textarea></td></tr>
+        <tr><td><input type="checkbox" name="sprint2_items" value="screen_sharing"></td><td>Screen sharing</td><td>8</td><td><textarea name="screen_justification"></textarea></td></tr>
+        <tr><td><input type="checkbox" name="sprint2_items" value="enhanced_care_plan"></td><td>Care plan w/ meds</td><td>5</td><td><textarea name="care_plan_justification"></textarea></td></tr>
+        <tr><td><input type="checkbox" name="sprint2_items" value="satisfaction_survey"></td><td>Survey</td><td>3</td><td><textarea name="survey_justification"></textarea></td></tr>
+        <tr><td><input type="checkbox" name="sprint2_items" value="secure_messaging"></td><td>Secure messaging</td><td>8</td><td><textarea name="messaging_justification"></textarea></td></tr>
+        <tr><td><input type="checkbox" name="sprint2_items" value="mobile_responsive"></td><td>Responsive design</td><td>3</td><td><textarea name="mobile_justification"></textarea></td></tr>
+      </tbody>
+    </table>
+
+  <p><strong>Total Points Selected:</strong> <span id="total_points">0</span></p>
+  </div>
+
+  <div class="card">
+    <h3>Task 6: Reflection</h3>
+
+    <div class="form-group">
+      <strong>a. What was the most challenging aspect of managing feedback?</strong>
+      <textarea name="feedback_challenge" rows="4" required></textarea>
+    </div>
+    <div class="form-group">
+      <strong>b. How do retrospectives improve teams?</strong>
+      <textarea name="retrospective_value" rows="4" required></textarea>
+    </div>
+    <div class="form-group">
+      <strong>c. Why is velocity tracking important?</strong>
+      <textarea name="velocity_analysis" rows="4" required></textarea>
+    </div>
+  </div>
 
   <p><strong>Lab 4 Complete! Don’t forget to print or save your answers!</strong></p>
 </section>
 
+
 <section class="lab-section" data-lab="Lab 5">
-<h2>Lab 5: Agile Roles and Scaling Collaboration</h2>
-<ol>
-  <em>// In this lab, you'll clarify Agile roles, address cross-team collaboration, and plan for scaling Agile practices.</em>
-  <br><br>
+  <div class="card">
+    <h2>Lab 5: Agile Roles and Scaling Collaboration</h2>
+    <p class="info-box"><em>In this lab, you'll clarify Agile roles, address cross-team collaboration, and plan for scaling Agile practices.</em></p>
+  </div>
 
-  <li><strong>Agile Role Definitions:</strong> Clearly identify each Agile role and select its primary responsibility from the provided options.
+  <div class="card">
+    <h3>Task 1: Agile Role Definitions</h3>
+    <p>Clearly identify each Agile role and select its primary responsibility from the provided options.</p>
+    <form>
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Role</th>
+            <th>Primary Responsibility (select one)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Product Owner (PO)</td>
+            <td>
+              <select required>
+                <option value="">--Select--</option>
+                <option>Facilitates ceremonies</option>
+                <option>Owns product backlog and prioritizes work</option>
+                <option>Writes all code and tests</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Scrum Master</td>
+            <td>
+              <select required>
+                <option value="">--Select--</option>
+                <option>Defines acceptance criteria</option>
+                <option>Facilitates ceremonies and removes blockers</option>
+                <option>Creates UI/UX mockups</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Development Team</td>
+            <td>
+              <select required>
+                <option value="">--Select--</option>
+                <option>Leads sprint planning</option>
+                <option>Facilitates retrospectives</option>
+                <option>Delivers working software increments</option>
+              </select>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </div>
+
+  <div class="card">
+    <h3>Task 2: Cross-Team Collaboration</h3>
+    <p>Select the best Agile practice from the options provided for handling each scenario when Front-End and Back-End & Compliance teams collaborate.</p>
+    <form>
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Scenario</th>
+            <th>Recommended Agile Practice</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Front-End needs new API endpoints from Back-End</td>
+            <td>
+              <select required>
+                <option value="">--Select--</option>
+                <option>Hold weekly sync meetings to align integration points</option>
+                <option>Wait until Front-End is done, then define APIs</option>
+                <option>Back-End develops APIs first without consulting Front-End</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Compliance issue requires both teams to redesign login</td>
+            <td>
+              <select required>
+                <option value="">--Select--</option>
+                <option>Stop all work until compliance issue is resolved</option>
+                <option>Hold immediate joint sprint review and planning session</option>
+                <option>Back-End redesign alone and inform Front-End later</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Parallel stories from both teams need joint testing</td>
+            <td>
+              <select required>
+                <option value="">--Select--</option>
+                <option>Teams independently test their work and integrate at the end</option>
+                <option>Schedule joint testing sessions mid-sprint</option>
+                <option>Only test at the final release</option>
+              </select>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </div>
+
+  <div class="card">
+    <h3>Task 3: Scaling Agile for MVP Release</h3>
+    <p>Your team is preparing for the MVP launch in 4 weeks.</p>
+    <p><strong>a. Select the <em>three</em> most critical Agile scaling practices your teams must implement before the MVP release:</strong></p>
+    <form class="form-group">
+      <div class="form-inline-options">
+        <label><input type="checkbox" required> Hold coordinated sprint planning meetings across teams</label>
+        <label><input type="checkbox"> Reduce sprint length to one week</label>
+        <label><input type="checkbox"> Add more team members immediately</label>
+        <label><input type="checkbox"> Establish clear cross-team communication channels</label>
+        <label><input type="checkbox"> Conduct joint sprint reviews and retrospectives</label>
+      </div>
+    </form>
+  </div>
+
+  <div class="card">
+  <h3>Task 4: Multiple-Choice Reflection</h3>
   <form>
-    <div class="table">
-      <div class="tr">
-        <span class="th">Role</span>
-        <span class="th">Primary Responsibility (select one)</span>
+    <div class="form-group">
+      <strong>a. Which Agile role is essential for managing the product backlog and stakeholder expectations?</strong>
+      <div class="form-inline-options">
+        <label><input type="radio" name="essential_role" required> Scrum Master</label>
+        <label><input type="radio" name="essential_role"> Product Owner</label>
+        <label><input type="radio" name="essential_role"> Development Team</label>
       </div>
-      <div class="tr">
-        <span class="td">Product Owner (PO)</span>
-        <span class="td">
-          <select required>
-            <option value="">--Select--</option>
-            <option>Facilitates ceremonies</option>
-            <option>Owns product backlog and prioritizes work</option>
-            <option>Writes all code and tests</option>
-          </select>
-        </span>
+    </div>
+
+    <div class="form-group">
+      <strong>b. If the project scales to three Agile teams, which practice best supports coordination?</strong>
+      <div class="form-inline-options">
+        <label><input type="radio" name="coordination_practice" required> Daily Stand-ups within individual teams only</label>
+        <label><input type="radio" name="coordination_practice"> Cross-team Scrum-of-Scrums meetings</label>
+        <label><input type="radio" name="coordination_practice"> Eliminating sprint retrospectives</label>
       </div>
-      <div class="tr">
-        <span class="td">Scrum Master</span>
-        <span class="td">
-          <select required>
-            <option value="">--Select--</option>
-            <option>Defines acceptance criteria</option>
-            <option>Facilitates ceremonies and removes blockers</option>
-            <option>Creates UI/UX mockups</option>
-          </select>
-        </span>
-      </div>
-      <div class="tr">
-        <span class="td">Development Team</span>
-        <span class="td">
-          <select required>
-            <option value="">--Select--</option>
-            <option>Leads sprint planning</option>
-            <option>Facilitates retrospectives</option>
-            <option>Delivers working software increments</option>
-          </select>
-        </span>
+    </div>
+
+    <div class="form-group">
+      <strong>c. Why is joint sprint planning crucial when scaling Agile teams?</strong>
+      <div class="form-inline-options">
+        <label><input type="radio" name="joint_planning" required> It ensures teams work independently without interaction</label>
+        <label><input type="radio" name="joint_planning"> It promotes transparency, identifies dependencies, and aligns goals</label>
+        <label><input type="radio" name="joint_planning"> It reduces the need for stakeholder involvement</label>
       </div>
     </div>
   </form>
-  </li>
+</div>
 
-  <br>
 
-  <li><strong>Cross-Team Collaboration:</strong> Select the best Agile practice from the options provided for handling each scenario when two teams (Front-End and Back-End & Compliance) collaborate.
-  <form>
-    <div class="table">
-      <div class="tr">
-        <span class="th">Scenario</span>
-        <span class="th">Recommended Agile Practice</span>
-      </div>
-      <div class="tr">
-        <span class="td">Front-End needs new API endpoints from Back-End</span>
-        <span class="td">
-          <select required>
-            <option value="">--Select--</option>
-            <option>Hold weekly sync meetings to align integration points</option>
-            <option>Wait until Front-End is done, then define APIs</option>
-            <option>Back-End develops APIs first without consulting Front-End</option>
-          </select>
-        </span>
-      </div>
-      <div class="tr">
-        <span class="td">Compliance issue requires both teams to redesign login</span>
-        <span class="td">
-          <select required>
-            <option value="">--Select--</option>
-            <option>Stop all work until compliance issue is resolved</option>
-            <option>Hold immediate joint sprint review and planning session</option>
-            <option>Back-End redesign alone and inform Front-End later</option>
-          </select>
-        </span>
-      </div>
-      <div class="tr">
-        <span class="td">Parallel stories from both teams need joint testing</span>
-        <span class="td">
-          <select required>
-            <option value="">--Select--</option>
-            <option>Teams independently test their work and integrate at the end</option>
-            <option>Schedule joint testing sessions mid-sprint</option>
-            <option>Only test at the final release</option>
-          </select>
-        </span>
-      </div>
+  <div class="card">
+    <h3>Task 5: Open-Ended Reflection</h3>
+    <div class="form-group">
+      <strong>Briefly describe one challenge your team might face when scaling Agile and how you would address it:</strong>
+      <textarea rows="4" placeholder="Describe the challenge and your solution..." required></textarea>
     </div>
-  </form>
-  </li>
+  </div>
 
-  <br>
-
-  <li><strong>Scaling Agile for MVP Release:</strong> Your team is preparing for the MVP launch in 4 weeks.
-    <br><br><strong>a. Select the <em>three</em> most critical Agile scaling practices your teams must implement before the MVP release:</strong>
-    <br>
-    <form>
-      <input type="checkbox" required> Hold coordinated sprint planning meetings across teams<br>
-      <input type="checkbox"> Reduce sprint length to one week<br>
-      <input type="checkbox"> Add more team members immediately<br>
-      <input type="checkbox"> Establish clear cross-team communication channels<br>
-      <input type="checkbox"> Conduct joint sprint reviews and retrospectives<br>
-    </form>
-  </li>
-
-  <br>
-
-  <li><strong>Reflection:</strong> Select the correct answer to each question based on Agile best practices.
-    <form>
-      <br><strong>a. Which Agile role is essential for managing the product backlog and stakeholder expectations?</strong><br>
-      <input type="radio" name="essential_role" required> Scrum Master<br>
-      <input type="radio" name="essential_role"> Product Owner<br>
-      <input type="radio" name="essential_role"> Development Team<br><br>
-
-      <strong>b. If the project scales to three Agile teams, which practice best supports coordination?</strong><br>
-      <input type="radio" name="coordination_practice" required> Daily Stand-ups within individual teams only<br>
-      <input type="radio" name="coordination_practice"> Cross-team Scrum-of-Scrums meetings<br>
-      <input type="radio" name="coordination_practice"> Eliminating sprint retrospectives<br><br>
-
-      <strong>c. Why is joint sprint planning crucial when scaling Agile teams?</strong><br>
-      <input type="radio" name="joint_planning" required> It ensures teams work independently without interaction<br>
-      <input type="radio" name="joint_planning"> It promotes transparency, identifies dependencies, and aligns goals<br>
-      <input type="radio" name="joint_planning"> It reduces the need for stakeholder involvement<br>
-    </form>
-  </li>
-
-  <br>
-
-  <li><strong>Open-ended Reflection:</strong> Briefly describe one challenge your team might face when scaling Agile and how you would address it.
-    <br><textarea rows="4" cols="100" placeholder="Describe the challenge and your solution..."></textarea>
-  </li>
-
-</ol>
-
-<strong>Lab 5 Complete! Remember to print your page to save your answers!</strong>
+  <p><strong>Lab 5 Complete! Remember to print your page to save your answers!</strong></p>
 </section>
+
+
 <script>
     const toggle = document.getElementById('theme-toggle');
     const body = document.body;
@@ -1535,6 +1561,36 @@ function toggleVisibility(id) {
       e.preventDefault();
       e.returnValue = "Are you sure you want to leave? Your answers will be lost.";
   });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const checkboxes = document.querySelectorAll('table.styled-table input[type="checkbox"]');
+  const totalPointsEl = document.getElementById('total_points');
+
+  function updateTotalPoints() {
+    let total = 0;
+
+    checkboxes.forEach(checkbox => {
+      if (checkbox.checked) {
+        const row = checkbox.closest('tr');
+        const pointsCell = row.children[2]; // 3rd column = points
+        const points = parseInt(pointsCell.textContent.trim(), 10);
+        if (!isNaN(points)) {
+          total += points;
+        }
+      }
+    });
+
+    totalPointsEl.textContent = total;
+  }
+
+  checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', updateTotalPoints);
+  });
+
+  // Calculate on initial load
+  updateTotalPoints();
+});
 </script>
 </body>
 </html>
