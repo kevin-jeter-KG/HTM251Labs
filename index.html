@@ -882,7 +882,6 @@ textarea, select, input[type="text"] {
             <td>XS</td>
             <td>N/A</td>
           </tr>
-          <!-- Editable rows -->
           <tr>
             <td>003</td>
             <td><textarea name="req3" rows="1" required></textarea></td>
@@ -1021,21 +1020,25 @@ textarea, select, input[type="text"] {
 
       <div class="form-group">
         <strong>a. Who is <em>not</em> following the expectations of a Daily Stand-Up?</strong>
-        <div class="form-inline-options">
-          <label><input type="radio" name="q1" value="Front-End Developer" required> Front-End Developer</label>
-          <label><input type="radio" name="q1" value="Back-End Developer"> Back-End Developer</label>
-          <label><input type="radio" name="q1" value="QA Tester"> Quality Assurance Tester</label>
-        </div>
+        <table class="styled-table">
+          <tbody>
+            <tr><td><input type="radio" name="q1" value="Front-End Developer" required></td><td>Front-End Developer</td></tr>
+            <tr><td><input type="radio" name="q1" value="Back-End Developer"></td><td>Back-End Developer</td></tr>
+            <tr><td><input type="radio" name="q1" value="QA Tester"></td><td>Quality Assurance Tester</td></tr>
+          </tbody>
+        </table>
       </div>
 
       <div class="form-group">
         <strong>b. What are they doing that breaks Agile norms? (Select all that apply)</strong>
-        <div class="form-inline-options">
-          <label><input type="checkbox" name="q2" value="No blockers"> Didn’t report any blockers</label>
-          <label><input type="checkbox" name="q2" value="Off-topic"> Didn’t focus on sprint goals</label>
-          <label><input type="checkbox" name="q2" value="Not sprint-related"> Didn't focus on sprint items</label>
-          <label><input type="checkbox" name="q2" value="No update"> Skipped reporting yesterday</label>
-        </div>
+        <table class="styled-table">
+          <tbody>
+            <tr><td><input type="checkbox" name="q2" value="No blockers"></td><td>Didn’t report any blockers</td></tr>
+            <tr><td><input type="checkbox" name="q2" value="Off-topic"></td><td>Didn’t focus on sprint goals</td></tr>
+            <tr><td><input type="checkbox" name="q2" value="Not sprint-related"></td><td>Didn't focus on sprint items</td></tr>
+            <tr><td><input type="checkbox" name="q2" value="No update"></td><td>Skipped reporting yesterday</td></tr>
+          </tbody>
+        </table>
       </div>
 
       <div class="form-group">
@@ -1052,12 +1055,14 @@ textarea, select, input[type="text"] {
 
       <div class="form-group">
         <strong>a. Kevin requests a mockup of an AI symptom checker (not in the sprint). How should the team respond?</strong>
-        <div class="form-inline-options">
-          <label><input type="radio" name="issueA" value="addWithoutPlan"> Add it to the sprint immediately</label>
-          <label><input type="radio" name="issueA" value="ignoreRequest"> Completely ignore the request</label>
-          <label><input type="radio" name="issueA" value="discussWithPO"> Discuss during backlog refinement</label>
-          <label><input type="radio" name="issueA" value="createMockup"> Share a mockup outside sprint</label>
-        </div>
+        <table class="styled-table">
+          <tbody>
+            <tr><td><input type="radio" name="issueA" value="addWithoutPlan"></td><td>Add it to the sprint immediately</td></tr>
+            <tr><td><input type="radio" name="issueA" value="ignoreRequest"></td><td>Completely ignore the request</td></tr>
+            <tr><td><input type="radio" name="issueA" value="discussWithPO"></td><td>Discuss during backlog refinement</td></tr>
+            <tr><td><input type="radio" name="issueA" value="createMockup"></td><td>Share a mockup outside sprint</td></tr>
+          </tbody>
+        </table>
       </div>
 
       <div class="form-group">
@@ -1109,15 +1114,15 @@ textarea, select, input[type="text"] {
 
     <div class="form-group">
       <strong>a. What will you demonstrate to stakeholders?</strong>
-      <form>
-      <div class="form-vertical-options"> 
-        <label><input type="checkbox" name="demo_items" value="login_system"> Working login with role-based access</label>
-        <label><input type="checkbox" name="demo_items" value="video_join"> Video call join functionality</label>
-        <label><input type="checkbox" name="demo_items" value="care_plan"> Care plan dashboard view</label>
-        <label><input type="checkbox" name="demo_items" value="notifications"> Provider notification system</label>
-        <label><input type="checkbox" name="demo_items" value="encryption_progress"> Progress on HIPAA encryption</label>
-      </div>
-      </form>
+      <table class="styled-table">
+        <tbody>
+          <tr><td><input type="checkbox" name="demo_items" value="login_system"></td><td>Working login with role-based access</td></tr>
+          <tr><td><input type="checkbox" name="demo_items" value="video_join"></td><td>Video call join functionality</td></tr>
+          <tr><td><input type="checkbox" name="demo_items" value="care_plan"></td><td>Care plan dashboard view</td></tr>
+          <tr><td><input type="checkbox" name="demo_items" value="notifications"></td><td>Provider notification system</td></tr>
+          <tr><td><input type="checkbox" name="demo_items" value="encryption_progress"></td><td>Progress on HIPAA encryption</td></tr>
+        </tbody>
+      </table>
     </div>
 
     <div class="form-group">
@@ -1289,14 +1294,14 @@ textarea, select, input[type="text"] {
 
     <div class="form-group">
       <strong>b. How many points will you commit to in Sprint 2?</strong>
-      <form>
-      <div class="form-vertical-options">        
-        <label><input type="radio" name="sprint2_commitment" value="8"> 8 pts</label>
-        <label><input type="radio" name="sprint2_commitment" value="10"> 10 pts</label>
-        <label><input type="radio" name="sprint2_commitment" value="13"> 13 pts</label>
-        <label><input type="radio" name="sprint2_commitment" value="15"> 15 pts</label>
-      </div>
-      </form>
+      <table class="styled-table">
+        <tbody>
+          <tr><td><input type="radio" name="sprint2_commitment" value="8"></td><td>8 pts</td></tr>
+          <tr><td><input type="radio" name="sprint2_commitment" value="10"></td><td>10 pts</td></tr>
+          <tr><td><input type="radio" name="sprint2_commitment" value="13"></td><td>13 pts</td></tr>
+          <tr><td><input type="radio" name="sprint2_commitment" value="15"></td><td>15 pts</td></tr>
+        </tbody>
+      </table>
     </div>
 
     <div class="form-group">
@@ -1306,15 +1311,15 @@ textarea, select, input[type="text"] {
 
     <div class="form-group">
       <strong>d. What factors might affect velocity?</strong>
-      <form>
-      <div class="form-vertical-options"> 
-        <label><input type="checkbox" name="velocity_factors" value="compliance_reviews"> Compliance reviews</label>
-        <label><input type="checkbox" name="velocity_factors" value="stakeholder_changes"> Stakeholder changes</label>
-        <label><input type="checkbox" name="velocity_factors" value="technical_debt"> Technical debt</label>
-        <label><input type="checkbox" name="velocity_factors" value="team_learning"> Learning curve</label>
-        <label><input type="checkbox" name="velocity_factors" value="integration_complexity"> Integration complexity</label>
-      </div>
-      </form>
+    <table class="styled-table">
+      <tbody>
+        <tr><td><input type="checkbox" name="velocity" value="compliance reviews"></td><td>Compliance Reviews</td></tr>
+        <tr><td><input type="checkbox" name="velocity" value="compliance reviews"></td><td>Stakeholder changes</td></tr>
+        <tr><td><input type="checkbox" name="velocity" value="compliance reviews"></td><td>Technical debt</td></tr>
+        <tr><td><input type="checkbox" name="velocity" value="compliance reviews"></td><td>Learning curve</td></tr>
+        <tr><td><input type="checkbox" name="velocity" value="compliance reviews"></td><td>Integration complexity</td></tr>
+      </tbody>
+    </table>
     </div>
   </div>
 
@@ -1474,44 +1479,49 @@ textarea, select, input[type="text"] {
     <h3>Task 3: Scaling Agile for MVP Release</h3>
     <p>Your team is preparing for the MVP launch in 4 weeks.</p>
     <p><strong>a. Select the <em>three</em> most critical Agile scaling practices your teams must implement before the MVP release:</strong></p>
-    <form>
-      <div class="form-vertical-options">
-        <label><input type="checkbox" required> Hold coordinated sprint planning meetings across teams</label>
-        <label><input type="checkbox"> Reduce sprint length to one week</label>
-        <label><input type="checkbox"> Add more team members immediately</label>
-        <label><input type="checkbox"> Establish clear cross-team communication channels</label>
-        <label><input type="checkbox"> Conduct joint sprint reviews and retrospectives</label>
-      </div>
-    </form>
+    <table class="styled-table">
+      <tbody>
+        <tr><td><input type="checkbox" required></td><td>Hold coordinated sprint planning meetings across teams</td></tr>
+        <tr><td><input type="checkbox"></td><td>Reduce sprint length to one week</td></tr>
+        <tr><td><input type="checkbox"></td><td>Add more team members immediately</td></tr>
+        <tr><td><input type="checkbox"></td><td>Establish clear cross-team communication channels</td></tr>
+        <tr><td><input type="checkbox"></td><td>Conduct joint sprint reviews and retrospectives</td></tr>
+      </tbody>
+    </table>
   </div>
 
   <div class="card">
     <h3>Task 4: Multiple-Choice Reflection</h3>
     <form>
-      <div class="form-vertical-options">
-        <label><input type="radio" name="essential_role" required> <span>Scrum Master</span></label>
-        <label><input type="radio" name="essential_role"> <span>Product Owner</span></label>
-        <label><input type="radio" name="essential_role"> <span>Development Team</span></label>
-      </div>
-
+      <table class="styled-table">
+        <tbody>
+          <tr><td><input type="radio" name="essential_role" required></td><td>Scrum Master</td></tr>
+          <tr><td><input type="radio" name="essential_role"></td><td>Product Owner</td></tr>
+          <tr><td><input type="radio" name="essential_role"></td><td>Development Team</td></tr>
+        </tbody>
+      </table>
       </div>
 
       <div class="form-group">
         <strong>b. If the project scales to three Agile teams, which practice best supports coordination?</strong>
-        <div class="form-vertical-options">
-          <label><input type="radio" name="coordination_practice" required> Daily Stand-ups within individual teams only</label>
-          <label><input type="radio" name="coordination_practice"> Cross-team Scrum-of-Scrums meetings</label>
-          <label><input type="radio" name="coordination_practice"> Eliminating sprint retrospectives</label>
-        </div>
+        <table class="styled-table">
+          <tbody>
+            <tr><td><input type="radio" name="coordination_practice" required></td><td>Daily Stand-ups within individual teams only</td></tr>
+            <tr><td><input type="radio" name="coordination_practice"></td><td>Cross-team Scrum-of-Scrums meetings</td></tr>
+            <tr><td><input type="radio" name="coordination_practice"></td><td>Eliminating sprint retrospectives</td></tr>
+          </tbody>
+        </table>
       </div>
 
       <div class="form-group">
         <strong>c. Why is joint sprint planning crucial when scaling Agile teams?</strong>
-        <div class="form-vertical-options">
-          <label><input type="radio" name="joint_planning" required> It ensures teams work independently without interaction</label>
-          <label><input type="radio" name="joint_planning"> It promotes transparency, identifies dependencies, and aligns goals</label>
-          <label><input type="radio" name="joint_planning"> It reduces the need for stakeholder involvement</label>
-        </div>
+        <table class="styled-table">
+          <tbody>
+            <tr><td><input type="radio" name="joint_planning" required></td><td>It ensures teams work independently without interaction</td></tr>
+            <tr><td><input type="radio" name="joint_planning"></td><td>It promotes transparency, identifies dependencies, and aligns goals</td></tr>
+            <tr><td><input type="radio" name="joint_planning"></td><td>It reduces the need for stakeholder involvement</td></tr>
+          </tbody>
+        </table>
       </div>
     </form>
   </div>
